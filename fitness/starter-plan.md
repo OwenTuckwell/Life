@@ -4,10 +4,11 @@ You've got a gym — so we use it. This is a proper **3×/week full-body beginne
 
 > Note: if you have any injury or health condition, get the ok from a doctor first. Start lighter than you think — leave 2–3 reps "in the tank" while you learn the movements. Good form now = no setbacks later. If you're unsure how to do a lift, ask a gym staff member for a form check; it's what they're there for.
 
-## The week
-- **3 gym sessions** (e.g. Mon / Wed / Fri), alternating Workout A and B. Week 1: A, B, A. Week 2: B, A, B. And so on.
-- **8–10k steps most days** — walk on off days. This is your fat-loss engine.
-- **Sleep + protein daily** — you grow on rest, not in the gym.
+## The week (your slots)
+- **3 gym sessions — Mon / Thu / Sat mornings**, alternating Workout A and B. Week 1: A, B, A. Week 2: B, A, B. And so on. (See `habits/weekly-schedule.md` for how this fits your full week.)
+- **Golf Wed (9 holes) + Fri (18 holes)** covers a huge chunk of your steps/cardio — that's a real training stimulus, not nothing.
+- **8–10k steps most days** — walk on the other days. This is your fat-loss engine.
+- **Sleep + protein daily** — you grow on rest, not in the gym. Fixed wake/sleep time is your keystone (see the Cascade Protection Protocol).
 
 ## Every session
 - **Warm-up (5 min):** easy bike/row/incline walk, then a few light warm-up sets of your first lift.
