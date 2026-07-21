@@ -5,7 +5,7 @@ You've got a gym — so we use it. This is a proper **3×/week full-body beginne
 > Note: if you have any injury or health condition, get the ok from a doctor first. Start lighter than you think — leave 2–3 reps "in the tank" while you learn the movements. Good form now = no setbacks later. If you're unsure how to do a lift, ask a gym staff member for a form check; it's what they're there for.
 
 ## The week (your slots)
-- **3 gym sessions — Mon / Thu / Sat mornings**, alternating Workout A and B. Week 1: A, B, A. Week 2: B, A, B. And so on. (See `habits/weekly-schedule.md` for how this fits your full week.)
+- **3 gym sessions — Thu / Sat / Sun mornings**, alternating Workout A and B. Thursday is your fixed anchor; the weekend two flex around your ref game. (See `habits/weekly-schedule.md` for the full week.)
 - **Golf Wed (9 holes) + Fri (18 holes)** covers a huge chunk of your steps/cardio — that's a real training stimulus, not nothing.
 - **8–10k steps most days** — walk on the other days. This is your fat-loss engine.
 - **Sleep + protein daily** — you grow on rest, not in the gym. Fixed wake/sleep time is your keystone (see the Cascade Protection Protocol).
@@ -36,7 +36,7 @@ You've got a gym — so we use it. This is a proper **3×/week full-body beginne
 *(Whichever machines your gym has, these movement patterns are the same. Swap like-for-like if a machine's taken.)*
 
 ## Nutrition — keep it stupid simple to start
-- **Protein at every meal** (eggs, chicken, fish, dairy, legumes, whey). Roughly a palm-sized portion per meal — aim to gradually build toward ~1.6g per kg bodyweight/day.
+- **Protein at every meal** (chicken, turkey, fish, dairy, legumes, whey — no eggs, you're intolerant). Roughly a palm-sized portion per meal — aim to build toward ~1.6g per kg bodyweight/day. See `nutrition/meal-plan.md` for your egg-free daily plan.
 - **Whole foods most of the time.** Consistency beats perfection — aim 80/20, not sainthood.
 - **Don't drink your calories.** Water is the default; watch juice, soda, sugary coffees.
 - **Fat loss = slight calorie deficit; muscle = enough protein + progressive strength training.** No crash diets — they never stick, and you told me consistency is the goal.
