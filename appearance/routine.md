@@ -10,11 +10,15 @@ Appearance is the most *leveraged* of your three fronts: unlike fitness (months)
 - [ ] **Clothes that fit** — put on something clean that actually fits you. Fit beats brand every time.
 - [ ] **Posture reset** — shoulders back, stand tall. Free, instant, and changes how you're perceived and how you feel.
 
-## One-time / periodic level-ups (pick 1–2 this quarter)
-- **Haircut on a schedule** — find a good barber, go every 3–4 weeks. A sharp cut does more than most things.
-- **Clothes that fit** — you don't need many. A few t-shirts, one pair of jeans/trousers, and one nicer outfit — all *fitted* to your body. Tailoring a cheap item beats an expensive baggy one.
-- **Skincare starter kit** — gentle cleanser, moisturizer, SPF. Done.
-- **Posture project** — daily stretch for tight chest/hip flexors + core work (your fitness plan already covers this).
+## This quarter's level-ups (YOUR PICKS)
+You chose three, all low-effort and high-impact:
+
+- ✅ **Haircut on a schedule** — action this week: find a good barber (ask around / check reviews), book a cut, and set a recurring booking every 3–4 weeks. A sharp, regular cut is the single biggest appearance upgrade there is.
+- ✅ **Skincare basics** — buy three things: a gentle cleanser, a moisturizer, and an SPF moisturizer for daytime. That's the whole kit. Cleanse morning + night, moisturize after, SPF in the day. Results show in a couple of weeks.
+- ✅ **Posture project** — this is already built into your gym plan: **face pulls** (Workout B) plus daily thoracic + chest-opener stretches and the "shoulders back, stand tall" reset. Standing tall changes how you look *and* feel, instantly and for free.
+
+## Other level-ups for later
+- **Clothes that fit** — when you're ready: a few *fitted* basics beat a closet of baggy stuff. Tailoring a cheap item beats an expensive loose one. (Parked for a later quarter so you don't spread thin.)
 - **Sleep for your face** — 7–8h shows up in your skin and eyes within a week.
 
 ## What we track

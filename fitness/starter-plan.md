@@ -1,35 +1,48 @@
-# Fitness — Starter Plan
+# Fitness — Gym Plan (Beginner)
 
-Built to be **doable from average, at home or in a gym, with almost no equipment to start.** We scale it up once it's a habit. Consistency first; heavier/harder later.
+You've got a gym — so we use it. This is a proper **3×/week full-body beginner program**. It's the fastest, most proven way from "average" to visibly strong and lean. Full-body 3× beats fancy "bro splits" for beginners because you train each movement often and recover well.
 
-> Quick note: if you have any injury, medical condition, or it's been a long time since you moved, get the ok from a doctor first. Start lighter than you think you need to — soreness that stops you training is a step backward.
+> Note: if you have any injury or health condition, get the ok from a doctor first. Start lighter than you think — leave 2–3 reps "in the tank" while you learn the movements. Good form now = no setbacks later. If you're unsure how to do a lift, ask a gym staff member for a form check; it's what they're there for.
 
-## The engine: 3 pillars
-1. **Strength — 3×/week.** Full-body, compound movements. Builds the "in shape" look faster than anything.
-2. **Steps — daily.** Aim to build toward 8–10k/day. Walking is the most underrated fat-loss and mood tool there is.
-3. **Sleep + protein — daily.** You build muscle and lose fat while recovering, not while training. Non-negotiable.
+## The week
+- **3 gym sessions** (e.g. Mon / Wed / Fri), alternating Workout A and B. Week 1: A, B, A. Week 2: B, A, B. And so on.
+- **8–10k steps most days** — walk on off days. This is your fat-loss engine.
+- **Sleep + protein daily** — you grow on rest, not in the gym.
 
-## Beginner full-body session (~30–40 min, 3×/week)
-Do 3 rounds. Rest ~60–90s between exercises. Pick the hardest version you can do with good form.
+## Every session
+- **Warm-up (5 min):** easy bike/row/incline walk, then a few light warm-up sets of your first lift.
+- **Progressive overload:** each week try to add a rep or a little weight vs last time. When you hit the top of the rep range on all sets with good form, add weight next time. *This* is what drives change — beat your last log, even slightly.
+- **Log every set** (weight × reps) in your progress log or a notes app. If you don't log, you can't progressively overload.
 
-| Movement | Home (no gear) | Reps |
-|----------|----------------|------|
-| Squat | Bodyweight → goblet squat | 8–15 |
-| Push | Incline → full → knee push-up | 5–12 |
-| Hinge | Glute bridge → single-leg | 10–15 |
-| Row/pull | Backpack rows / doorway rows | 8–12 |
-| Core | Plank | 20–45s |
+## Workout A
+| Exercise | Sets × Reps | Notes |
+|----------|:-----------:|-------|
+| Squat (goblet → barbell) | 3 × 8–10 | Legs + everything. The king. |
+| Chest press (machine/DB/barbell) | 3 × 8–10 | Push. |
+| Seated cable row | 3 × 10–12 | Pull — great for posture. |
+| Dumbbell shoulder press | 3 × 10 | Shoulders. |
+| Plank | 3 × 30–45s | Core. |
 
-Progress by adding reps, then rounds, then load. When a session feels easy, make it harder — that's the whole game (progressive overload).
+## Workout B
+| Exercise | Sets × Reps | Notes |
+|----------|:-----------:|-------|
+| Romanian deadlift or leg press | 3 × 10 | Hamstrings/glutes. |
+| Lat pulldown | 3 × 10–12 | Back width — builds the V-taper. |
+| Incline dumbbell press | 3 × 10 | Upper chest. |
+| Face pulls | 3 × 15 | **Posture fix** — pulls shoulders back, undoes desk hunch. |
+| Hanging knee raise or cable crunch | 3 × 12 | Core/abs. |
+
+*(Whichever machines your gym has, these movement patterns are the same. Swap like-for-like if a machine's taken.)*
 
 ## Nutrition — keep it stupid simple to start
-- **Protein at every meal** (eggs, chicken, fish, dairy, legumes, whey). Roughly a palm-sized portion per meal to start.
-- **Whole foods most of the time**; you don't need to be perfect, you need to be consistent. 80/20.
-- **Don't drink your calories** (juice, soda, most coffee drinks). Water is the default.
-- **Fat loss = eat slightly less than you burn; muscle = enough protein + strength training.** Don't crash diet — it never lasts.
+- **Protein at every meal** (eggs, chicken, fish, dairy, legumes, whey). Roughly a palm-sized portion per meal — aim to gradually build toward ~1.6g per kg bodyweight/day.
+- **Whole foods most of the time.** Consistency beats perfection — aim 80/20, not sainthood.
+- **Don't drink your calories.** Water is the default; watch juice, soda, sugary coffees.
+- **Fat loss = slight calorie deficit; muscle = enough protein + progressive strength training.** No crash diets — they never stick, and you told me consistency is the goal.
 
 ## What we track
 - Sessions completed / week (target 3)
 - Daily steps (build toward 8k+)
-- Bodyweight, weekly, same time of day (trend matters, not the daily number)
-- A monthly progress photo (private to you — the mirror lies, photos don't)
+- Key lifts trending up (log weight × reps — this is your proof you're getting stronger)
+- Bodyweight, weekly, same time of day (trend, not the daily wobble)
+- Monthly progress photo (private — the mirror lies, photos don't)

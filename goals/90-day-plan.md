@@ -1,6 +1,7 @@
 # 90-Day Plan
 
-Quarter: 2026-07-20 → 2026-10-18
+Quarter: **2026-07-27 (Day 1) → 2026-10-25 (Day 90)**
+Setup week: 2026-07-21 → 07-26 (get the system ready, away for the weekend, lock in Monday).
 
 **Theme of this quarter: Become consistent.** Not fittest, not most stylish — *consistent*. If you win the consistency battle, the body and the look follow automatically. Everything below is designed so that showing up beats performing.
 
@@ -15,9 +16,10 @@ Three fronts, chosen from what you told me: **discipline, appearance, fitness.**
 2. **Fitness: 3 strength sessions + 8k steps/day, most weeks.**
    - Day 90 = 36+ sessions banked, walking 8k a day on autopilot, visibly stronger (more reps/harder variations than day 1).
 
-3. **Appearance: a locked-in daily grooming + presentation routine, and one "level-up."**
+3. **Appearance: a locked-in daily grooming routine + three chosen level-ups.**
    - Daily routine automatic (see `appearance/routine.md`).
-   - One bigger upgrade you choose: e.g. a proper haircut on a schedule, a small set of clothes that actually fit, a skincare basics kit, better posture. Pick 1–2, not all.
+   - This quarter's picks: **haircut on a schedule**, **skincare basics**, **posture** (folded into training).
+   - Day 90 = regular barber booked & kept, skincare a daily habit, noticeably straighter posture.
 
 ## What "done" looks like at day 90
 - You have a 90-day tracker that is *mostly green with no double-blanks.*
