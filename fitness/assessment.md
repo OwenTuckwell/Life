@@ -23,6 +23,6 @@
 ## Measurements to track (fill in when you can)
 | Date | Weight | Waist | Chest | Arms | Notes |
 |------|:------:|:-----:|:-----:|:----:|-------|
-| 2026-07-21 | | | | | Baseline |
+| 2026-07-21 | 77 kg | | | | Baseline |
 
 *Re-shoot progress photos monthly, same spot/lighting/time of day. Compare to baseline — the change won't be obvious day to day, but month to month it's undeniable.*

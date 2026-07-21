@@ -26,6 +26,8 @@ Built around your real week. **Gym is on your free mornings, not before work** �
 
 **Handling the variable ref game:** when you know that week's game time, slot gym into the free half of that day (ref morning → gym afternoon, or vice versa). The rule is simple: **3 gym sessions land in the week** — Thursday is fixed, the weekend two flex around reffing. Reffing itself is a solid 2+ hours on your feet, so it counts as activity too.
 
+**Bonus after-work sessions:** sometimes you'll hit the gym after work with your girlfriend — take it as a **bonus 4th session** when you're recovered (more training = faster results right now). Rules: never more than **4 gym days/week**, don't train 4 days in a row, and if you're sore or it'd stack badly, **swap it for Sunday** instead so you keep a rest day. Training together = a win-win.
+
 **Your cardio is basically handled for free:** golf Wed (9) + Fri (18) + reffing + daily walks. An 18-hole round alone is 10k+ steps. You don't need to add running.
 
 ## 🔒 The Cascade Protection Protocol (your #1 rule)

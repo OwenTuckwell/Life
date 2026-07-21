@@ -1,58 +1,58 @@
-# Meal Plan (egg-free)
+# Meal Plan (egg-free, budget-friendly)
 
-Built the way you asked: **same breakfast, lunch, and snacks every day**, dinner varies. Simple, repeatable, high-protein, no eggs, no thinking required. You batch-prep on Sunday and coast the rest of the week — which is exactly right for a consistency-first approach: remove the daily decision.
+Same breakfast, lunch, and snacks every day; dinner varies. Simple, repeatable, high-protein, no eggs, no bananas — and **cheap**, because saving money matters to you. Good news: the best budget foods (frozen chicken, frozen veg, rice, oats, yoghurt) are also the best physique foods. This plan works *with* your wallet, not against it.
 
-> Portions below are a sensible starting template (~2,000–2,200 kcal, ~150g protein) aimed at **recomposition** (build muscle + lean out slowly). Once you weigh in, tell me your bodyweight and I'll dial the numbers exactly. Adjust up if you're losing weight too fast or feel drained; down if the belly isn't shifting after 2–3 weeks.
-
-## Why protein is the one number that matters
-As a beginner in a recomp, protein is what lets you build muscle while leaning out. Target **~1.6–2.0g per kg bodyweight/day** (~140–160g for most guys your size). Hit protein and calories roughly, and the rest sorts itself.
+## Your numbers (calibrated to 77kg)
+- **Protein target: ~140–150g/day** (~1.8–2.0g per kg). This is the number that matters most — hit it and muscle-building is handled.
+- **Calories: ~2,200–2,400/day**, aimed at a **gentle recomposition** (build muscle + slowly lean the belly). You're genuinely active (3 gym + 2 golf + reffing + walks), so we don't go low — under-eating would tank your gym and energy.
+- **Tuning:** if you're dropping weight fast or feel flat in the gym → add a bit more rice/oats. If the belly hasn't budged after 2–3 weeks → trim slightly. The scale + mirror tell us; we adjust monthly at your review.
 
 ## The daily template
 
-### 🥣 Breakfast (repeat daily) — ~600 kcal, ~50g protein
-**Yoghurt & oats power bowl** (no cooking, great pre/post gym):
-- 200g Greek yoghurt (0–2% fat)
-- 60g rolled oats (or make it overnight oats)
-- 1 scoop whey protein (or dairy-free protein if needed)
-- 1 banana
-- Handful of berries
+### 🥣 Breakfast (repeat daily) — ~490 kcal, ~32g protein
+- 200g Greek yoghurt (0–2%)
+- 60g rolled oats
+- Handful of frozen berries (defrost a portion overnight — cheap by the bag)
 - 1 tbsp peanut butter
+- *(No banana — you're not a fan and don't need the extra carb. Good call.)*
 
-*On gym mornings:* half a banana or a coffee before, this bowl after. Kills the 9–10am slump you get from skipping breakfast.
+*On gym mornings (you train early/fasted):* just a coffee or small bite before, then this bowl after. It'll kill the 9–10am slump you get from skipping breakfast.
 
-### 🍎 Mid-morning snack — ~200 kcal, ~10g protein
-- An apple or handful of berries + a small handful of almonds
-- *(or a protein bar if you're out)*
+### 🥝 Mid-morning snack — ~120 kcal, ~2g protein
+- 2 kiwis (cheap, high vitamin C) — or any fruit that's on offer
 
-### 🍗 Lunch (repeat daily, batch-cooked Sunday) — ~600 kcal, ~50g protein
-**Chicken, rice & veg box:**
-- 180g cooked chicken breast (or turkey)
-- 75g dry rice, cooked (~200g cooked) — or sweet potato
-- Big handful of mixed veg (broccoli, peppers, etc.)
-- Drizzle of olive oil, seasoning/hot sauce to keep it interesting
+### 🍗 Lunch (batch-prep 4–5 on Sunday) — ~620 kcal, ~55g protein
+**Chicken, rice & veg box** — your cheap staple:
+- ~150g cooked chicken (from the big Farm Foods frozen bag)
+- 75–90g dry basmati rice, cooked (big bag = pennies per portion)
+- Big handful of frozen mixed veg (1kg bag)
+- Splash of oil, plus seasoning/hot sauce/soy so it never gets boring
 
-*Prep 4–5 of these Sunday. Swap chicken for tinned tuna/salmon or turkey mince to vary it if you get bored.*
+### 🥤 Afternoon snack — ~110 kcal, ~20g protein
+- **Clear whey** (you've got it in) + water. Great cheap protein top-up.
+- A couple of squares of **dark chocolate** as a treat if you fancy it (keep it to 2–3 squares — it's calorie-dense).
 
-### 🥤 Afternoon snack — ~250 kcal, ~30g protein
-- Protein shake + a piece of fruit, **or** another Greek yoghurt
-
-### 🍽️ Dinner (varies — enjoy it)
-- Protein (meat/fish) + carbs (potato/rice/pasta) + veg. Fill half the plate with veg, a palm of protein, a fist of carbs.
-- **Thursdays at your Dad's:** just eat what they make and enjoy it — one home-cooked family dinner a week is not going to derail anything. Don't weigh it, don't stress it.
-- Evenings with your girlfriend: same idea — eat sensibly, don't be the guy weighing broccoli on a date.
+### 🍽️ Dinner (varies) — aim ~650–700 kcal
+- Protein + carbs + veg. Half the plate veg, a palm of protein, a fist of carbs. 650–700 is a sensible cap — good target.
+- **Thursdays at your Dad's:** eat what they make and enjoy it. One home-cooked family dinner a week won't derail a thing.
+- **Evenings with your girlfriend:** eat sensibly, don't stress it. Don't be the guy weighing broccoli on a date.
 
 ### 💧 All day
-- Water: aim ~2.5–3 litres. Fill a bottle in the morning, refill after lunch.
-- Coffee's fine; watch the sugary/milky calorie-bomb versions.
+- Water ~2.5–3L. Fill a bottle each morning, refill after lunch.
 
-## Sunday prep list (10 min shop, ~30 min cook)
-- Greek yoghurt (big tub), oats, whey, bananas, berries, peanut butter, almonds
-- Chicken breast (or turkey mince), rice, frozen mixed veg, olive oil
-- Fruit for snacks, protein bars as backup
-- Cook 4–5 chicken+rice boxes for the work week
+## Rough daily total
+~2,250 kcal, **~150g protein** — right on target for a 77kg recomp. Protein lands mostly from the yoghurt, chicken and clear whey. Nice and simple.
+
+## Budget shop (all cheap, mostly frozen = no waste)
+- **Farm Foods:** big frozen chicken bag, 1kg frozen mixed veg, frozen berries
+- **Big bag basmati rice**, porridge oats (own-brand)
+- **Greek yoghurt** (big tub, own-brand), peanut butter (own-brand)
+- **Kiwis/fruit** on offer, dark chocolate (one bar lasts ages)
+- Clear whey — already have it
+- *Rough cost: this is about as cheap as a high-protein diet gets. Frozen + own-brand + batch-prep is the trick.*
 
 ## The rules
-- **Hit protein first**, calories roughly, everything else is detail.
-- **80/20** — the daily plan is your 80%; dinners and the odd treat are your 20%. That's sustainable; perfection isn't.
+- **Hit protein first** (~140–150g), calories roughly, the rest is detail.
+- **80/20** — the daily plan is your 80%; dinners and the odd treat are your 20%.
 - **Don't drink your calories** (juice, fizzy, sugary coffees).
-- No eggs anywhere — sorted.
+- Batch-prep Sunday so the week runs on autopilot — removing the daily decision is the whole point.
