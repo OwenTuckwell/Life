@@ -3,12 +3,23 @@
 Built around your real week. **Gym is on your free mornings, not before work** — you told me a 6:30am start is rough, and evenings are for your girlfriend. Free-morning gym means no brutal alarm and no evening slip risk. Best of both.
 
 ## Fixed points in your week
-- **Work:** Mon 9–5, Tue 9–5, Wed 9–4 (30-min commute, leave ~8:25).
-- **Golf:** Wed after work — 9 holes with your brother · Fri morning — 18 holes.
-- **Dad's for dinner:** Thursday afternoon/evening.
+- **Work:** Mon 09:00–17:00, Tue 09:00–17:00, Wed 09:00–16:00 (30-min commute, leave ~8:25).
+- **Gym:** Thu / Sat / Sun **09:00** (normal morning routine first, as if going to work).
+- **Golf:** Wed **17:30** — 9 holes with your brother · Fri morning — 18 holes (**tee time varies, tell me when booked**).
+- **Dad's for dinner:** Thursday, **round at 17:00**.
 - **Refereeing (side job):** one game most weekends, ~2–2.5h incl. travel, **time varies week to week**.
 - **Open Uni study:** light for now, will grow — lands on **Thu/Fri** as it ramps up.
 - **Girlfriend:** evenings, you part ~22:00–22:30.
+
+### Calendar skeleton (recurring, starting week of Mon 2026-07-27)
+Ready to create in Google Calendar (Europe/London) as soon as the connector is stable:
+- ☀️ Morning routine — daily 07:00–08:00 (wake, breakfast, skincare, stand tall)
+- 💼 Work — Mon & Tue 09:00–17:00, Wed 09:00–16:00 (reminder 35 min before to leave)
+- 🏋️ Gym (full body, alternate A/B) — Thu/Sat/Sun 09:00–10:00
+- ⛳ Golf 9 holes w/ brother — Wed 17:30–19:30
+- 🍽️ Dinner at Dad's — Thu 17:00–20:00
+- 🌙 Wind-down → lights out — daily 22:45–23:00 (protect sleep — the keystone)
+- ⛳ Fri 18-hole golf — added per week once tee time is known
 
 ## The week at a glance
 
