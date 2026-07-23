@@ -48,5 +48,13 @@ Do NOT chase money early or you'll quit when it's quiet. Audience and consistenc
 2. End on the hook: "Day 1 of 365. Let's see if this actually works."
 3. Post to all three platforms. Same clip. Done.
 
-## Open decision
-- **Visibility:** face-on personal brand, or faceless (hands/gym/food/progress, no face)? This sets the whole playbook — confirm before Day 1.
+## Visibility: FACE-ON (decided)
+Owen is going face-on — building a personal brand, talking to camera. He's not confident on camera yet, and that's on purpose: **the confidence arc is part of the story.** Day 1 stiff → Day 100 comfortable is exactly what audiences root for.
+
+### Face-on practical tips
+- **Talk like you're texting a mate**, not presenting. Don't script it word-for-word — bullet points in your head, then just talk. Rambling honesty beats a polished script.
+- **Lighting:** face a window or a lamp (light in front of you, not behind). Free and it's 80% of looking good on camera.
+- **Framing:** phone at eye level or slightly above, face filling the middle third. Steady — prop it up, don't hold it out.
+- **The first ones will be cringe. Everyone's are.** Post them anyway. The awkward early videos become the "look how far he's come" payoff later. That's a feature.
+- **One take, keep it.** Don't re-record ten times chasing perfect — it kills consistency and authenticity. Good enough + posted beats perfect + never.
+- **Confidence is a rep, like the gym.** Every video is a set. It compounds. By month two you won't think about it.
