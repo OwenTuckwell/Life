@@ -16,7 +16,7 @@ Talk it, don't read it. Bullets in your head, then say it natural. Rough words:
 "Average fitness, average discipline, average everything — and I'm done with it. So I've handed the whole plan to an AI. It coaches me, it's brutally honest with me, and I do what it says. The goal: get in the best shape of my life, actually build some discipline, and use that to build an income — all on camera, every day, so I can't quietly quit."
 
 **[What got set up — 0:16–0:30, over B-roll]**
-"Today we set it all up. It built my training plan, a meal plan on a budget, put my whole week in my calendar — it even called out my posture and my diet. Meal's prepped, gym days locked. And trust me, it does not let me off the hook."
+"I spent the whole weekend setting this up. It built my training plan, a meal plan on a budget, put my whole week in my calendar — it even called out my posture and my diet. Meal's prepped, gym days locked. And trust me, it does not let me off the hook."
 
 **[Day 1 + CTA — 0:30–0:40]**
 "This is Day 1 of 365. Follow along and let's find out: can an AI actually fix an average life… or do I fall apart by week two?"
