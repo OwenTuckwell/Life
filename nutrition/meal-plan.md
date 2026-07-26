@@ -10,11 +10,13 @@ Same breakfast, lunch, and snacks every day; dinner varies. Simple, repeatable, 
 ## The daily template
 
 ### 🥣 Breakfast (repeat daily) — ~490 kcal, ~32g protein
-- 200g Greek yoghurt (0–2%)
-- 60g rolled oats
+**Protein oats** (not a yoghurt bowl — Owen's not keen on Greek yoghurt):
+- 60g rolled oats made with milk (porridge or overnight oats)
+- 1 scoop regular creamy whey, stirred in *after* cooking / off the heat (NOT clear whey — that's a water-mix drink and goes weird in oats; keep clear whey for the afternoon)
 - Handful of frozen berries (defrost a portion overnight — cheap by the bag)
 - 1 tbsp peanut butter
-- *(No banana — you're not a fan and don't need the extra carb. Good call.)*
+- If too thick, loosen with a splash more milk/water. *(No banana — not a fan, don't need the carb.)*
+- *Greek yoghurt optional if you ever fancy it, but not required.*
 
 *On gym mornings (you train early/fasted):* just a coffee or small bite before, then this bowl after. It'll kill the 9–10am slump you get from skipping breakfast.
 
