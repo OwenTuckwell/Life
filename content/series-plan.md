@@ -1,6 +1,6 @@
 # Content Series — "I Let Claude Control My Life for 365 Days"
 
-A daily short-form series documenting the 365-day journey, starting Monday 2026-07-27 (Day 1). Posted for accountability first, income second. TikTok + YouTube Shorts + Instagram Reels (same clip, all three).
+A daily short-form series documenting the 365-day journey. **Intro / Episode 0 posts Mon 2026-07-27; Day 1 of 365 counts from Tue 2026-07-28.** Posted for accountability first, income second. TikTok + YouTube Shorts + Instagram Reels (same clip, all three).
 
 ## The concept
 An ordinary bloke hands his fitness, discipline, appearance — and the plan to build an income — to an AI coach for a year, and films every day. The hook is the *story and the tension*: does it actually work? The audience comes back to find out.

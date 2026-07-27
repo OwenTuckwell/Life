@@ -1,4 +1,6 @@
-# Day 1 Video — Launch ("I gave AI control of my life for 365 days")
+# Intro Video — Launch ("I gave AI control of my life for 365 days")
+
+**This is the INTRO / Episode 0, posted today (Mon).** It explains the whole thing and points at tomorrow. **Day 1 of 365 content starts tomorrow (Tue).**
 
 Post: TikTok + YouTube Shorts + Instagram Reels (same clip). Keep it **under 45 seconds**. Face-on. Authenticity over polish — a bit nervous is GOOD, it's the story.
 
@@ -18,8 +20,8 @@ Talk it, don't read it. Bullets in your head, then say it natural. Rough words:
 **[What got set up — 0:16–0:30, over B-roll]**
 "I spent the whole weekend setting this up. It built my training plan, a meal plan on a budget, put my whole week in my calendar — it even called out my posture and my diet. Meal's prepped, gym days locked. And trust me, it does not let me off the hook."
 
-**[Day 1 + CTA — 0:30–0:40]**
-"This is Day 1 of 365. Follow along and let's find out: can an AI actually fix an average life… or do I fall apart by week two?"
+**[Close + CTA — 0:30–0:40]**
+"Tomorrow is Day 1 of 365. Follow along and let's find out: can an AI actually fix an average life… or do I fall apart by week two?"
 
 ## Shot list (film these, cut the talking over the B-roll)
 - **Talking head** — the whole script, good light on your face, phone at eye level, steady.
@@ -34,11 +36,11 @@ Talk it, don't read it. Bullets in your head, then say it natural. Rough words:
 ## On-screen text (add these captions)
 - 0:00 — "I gave an AI control of my life for 365 days"
 - 0:16 — "It planned everything"
-- 0:30 — "Day 1 of 365"
+- 0:30 — "Tomorrow: Day 1 of 365"
 - End — "Follow the journey 👇"
 
 ## Caption
-> Day 1 of 365 🤖 I'm handing my entire life to an AI for a year — training, diet, discipline, even my confidence — to see if it can turn a completely average bloke into the best version of himself. Filmed every day. No hiding, no quitting. Let's go. #day1of365
+> This is where it starts. 🤖 I'm handing my entire life to an AI for a year — training, diet, discipline, even my confidence — to see if it can turn a completely average bloke into the best version of himself. Tomorrow is Day 1 of 365. Filmed every day. No hiding, no quitting. #day1of365
 
 ## Hashtags (pick ~6–8)
 #day1of365 #selfimprovement #discipline #fitnessjourney #transformation #ai #aiexperiment #accountability
