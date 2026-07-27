@@ -71,7 +71,23 @@ Instead of a time, trigger on arriving at the gym:
    - **Play Music** → gym playlist.
 3. Add a second automation: **Leave** that location → turn the Gym focus **Off**.
 
-## Granular calendar plan (wake / leave-home / to-the-minute)
+## Leave-home + wake nudges — DO THIS AS iPHONE ALARMS (recommended)
+The Google Calendar connector was unreliable, and honestly alarms are better for "leave now" nudges — louder, on the lock screen, dead reliable. Clock app → Alarms → + → set time → Repeat (days) → Label → Save:
+
+| Time | Repeat | Label |
+|------|--------|-------|
+| 07:00 | Every day | ☀️ Wake — oats, skincare, stand tall |
+| 08:25 | Mon/Tue/Wed | 🚗 Leave for work |
+| 08:40 | Thu/Sat/Sun | 🚗 Leave for gym |
+| 16:40 | Thu | 🚗 Leave for Dad's |
+| 16:55 | Wed | 🚗 Leave for golf |
+| 22:45 | Every day | 🌙 Wind down — lights out |
+| Fri | (per week) | 🚗 Leave for golf = tee − 35 min |
+
+Prefer gentler daytime nudges? Use the **Reminders** app for the leave-home ones (time + repeat + label) and keep Clock alarms for wake/bedtime.
+
+## Granular calendar plan (optional — only if the Calendar connector gets enabled)
+The main calendar (work, gym, golf, Dad's, routine, wind-down) is already in Google Calendar and shows on your phone. The alarms above cover the "leave/wake" timing without needing the connector at all. The calendar version below is optional.
 Travel times (door-to-door): gym 15 min · Wed golf 20 min · Dad's 20 min · Fri golf 20 min.
 Precise nudges (5-min events with a popup at the start time), recurring weekly:
 - **07:00 — ☀️ Wake** (popup reminder on the Morning routine event).
