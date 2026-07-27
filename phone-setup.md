@@ -42,6 +42,44 @@ Open the **Shortcuts** app → **Automation** tab → **+** → **Create Persona
 - **Work** — Mon–Wed 09:00–17:00, hides distractions.
 - **Gym** — quick manual toggle or automated; only music + timer.
 
+## Ready-made Shortcut recipes (detailed, tap by tap)
+
+### Recipe A — "Morning Kick" (07:00 daily)
+1. Shortcuts app → **Automation** → **+** → **Create Personal Automation**.
+2. **Time of Day** → 7:00 AM → **Daily** → Next.
+3. **Run Immediately** (so it doesn't ask permission each time).
+4. Add actions (tap "New Blank Automation" → Add Action):
+   - **Calendar → Get Upcoming Events** (Calendar: your Google cal, Count: 6) → then **Show Result**. (Pops today's plan on screen.)
+   - **Scripting → Show Notification**: "☀️ Day's on. Protein oats + coffee. Skincare + stand tall. Fill the water bottle. Let's go."
+   - *(Optional hype)* **Play Music** → a pumped-up track/playlist.
+5. Done.
+
+### Recipe B — "Wind-Down" (22:45 daily)
+1. Automation → **+** → Time of Day → 10:45 PM → Daily → **Run Immediately**.
+2. Actions:
+   - **Set Focus** → **Sleep** → On.
+   - **Set Low Power Mode** → On *(optional; dims things down)*.
+   - **Set Brightness** → ~20%.
+   - **Show Notification**: "🌙 Wind down. Lights out at 23:00. Phone on charge, out of reach. Never miss twice."
+3. Done. (Set a matching alarm/Sleep schedule in the Clock app for the actual wake.)
+
+### Recipe C — "Gym Mode" (location-based, best option)
+Instead of a time, trigger on arriving at the gym:
+1. Automation → **+** → **Arrive** → choose your gym's location.
+2. Actions:
+   - **Set Focus** → a **Gym** focus (create one in Settings → Focus: allows only music + timer) → On.
+   - **Play Music** → gym playlist.
+3. Add a second automation: **Leave** that location → turn the Gym focus **Off**.
+
+## Granular calendar plan (wake / leave-home / to-the-minute)
+Beyond the block events already in your calendar, add these precise nudges. Times to be finalised once travel times are known:
+- **07:00 — Wake** (reminder on the Morning routine event).
+- **08:25 — 🚗 Leave for work** (Mon/Tue/Wed; 30-min drive → 09:00 start).
+- **Thu/Sat/Sun — 🚗 Leave for gym** (09:00 session minus gym travel time).
+- **Wed — 🚗 Leave for golf** (17:30 tee minus travel from work).
+- **Thu — 🚗 Leave for Dad's** (17:00 arrival minus travel).
+- **Fri — 🚗 Leave for golf** (added each week with the tee time + travel).
+
 ## What this gets you
 - Home screen = today's plan, always visible.
 - Phone nudges you at the right moments (Claude pushes + Shortcuts).
