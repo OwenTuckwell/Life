@@ -72,13 +72,14 @@ Instead of a time, trigger on arriving at the gym:
 3. Add a second automation: **Leave** that location → turn the Gym focus **Off**.
 
 ## Granular calendar plan (wake / leave-home / to-the-minute)
-Beyond the block events already in your calendar, add these precise nudges. Times to be finalised once travel times are known:
-- **07:00 — Wake** (reminder on the Morning routine event).
-- **08:25 — 🚗 Leave for work** (Mon/Tue/Wed; 30-min drive → 09:00 start).
-- **Thu/Sat/Sun — 🚗 Leave for gym** (09:00 session minus gym travel time).
-- **Wed — 🚗 Leave for golf** (17:30 tee minus travel from work).
-- **Thu — 🚗 Leave for Dad's** (17:00 arrival minus travel).
-- **Fri — 🚗 Leave for golf** (added each week with the tee time + travel).
+Travel times (door-to-door): gym 15 min · Wed golf 20 min · Dad's 20 min · Fri golf 20 min.
+Precise nudges (5-min events with a popup at the start time), recurring weekly:
+- **07:00 — ☀️ Wake** (popup reminder on the Morning routine event).
+- **08:25 — 🚗 Leave for work** — Mon/Tue/Wed (30-min drive → 09:00 start).
+- **08:40 — 🚗 Leave for gym** — Thu/Sat/Sun (15 min → arrive ~08:55 for 09:00).
+- **16:55 — 🚗 Leave for golf** — Wed (20 min → arrive ~17:15 for 17:30 tee).
+- **16:40 — 🚗 Leave for Dad's** — Thu (20 min → arrive 17:00).
+- **Fri — 🚗 Leave for golf** — added each week: tee time − 35 min (20 travel + 15 buffer).
 
 ## What this gets you
 - Home screen = today's plan, always visible.
