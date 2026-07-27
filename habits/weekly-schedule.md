@@ -10,6 +10,7 @@ Built around your real week. **Gym is on your free mornings, not before work** �
 - **Refereeing (side job):** one game most weekends, ~2–2.5h incl. travel, **time varies week to week**.
 - **Open Uni study:** light for now, will grow — lands on **Thu/Fri** as it ramps up.
 - **Girlfriend:** evenings, you part ~22:00–22:30.
+- **Key date:** 🎂 Girlfriend's birthday — **Thu 2026-07-30** (still gymming that morning; evening likely with her, not Dad's).
 
 ### Calendar skeleton (recurring, starting week of Mon 2026-07-27)
 Ready to create in Google Calendar (Europe/London) as soon as the connector is stable:
