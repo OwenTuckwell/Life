@@ -23,12 +23,13 @@ Same breakfast, lunch, and snacks every day; dinner varies. Simple, repeatable, 
 ### 🥝 Mid-morning snack — ~120 kcal, ~2g protein
 - 2 kiwis (cheap, high vitamin C) — or any fruit that's on offer
 
-### 🍗 Lunch (batch-prep 4–5 on Sunday) — ~620 kcal, ~55g protein
-**Chicken, rice & veg box** — your cheap staple:
-- ~150g cooked chicken (from the big Farm Foods frozen bag)
-- 75–90g dry basmati rice, cooked (big bag = pennies per portion)
+### 🍗 Lunch (batch of 5, Sunday prep) — ~700 kcal, ~60g protein
+**Chicken, rice & veg box** — your cheap staple (full method + times in `nutrition/cooking-instructions.md`):
+- **1kg frozen chicken cooked, split over 5 boxes = ~200g cooked chicken each**
+- **75g dry basmati rice per portion**, cooked (big bag = pennies per portion)
 - Big handful of frozen mixed veg (1kg bag)
 - Splash of oil, plus seasoning/hot sauce/soy so it never gets boring
+- ⚠️ Cooked chicken/rice keep ~3–4 days — fridge 3 boxes, **freeze 2** and defrost the night before (details in cooking-instructions).
 
 ### 🥤 Afternoon snack — ~110 kcal, ~20g protein
 - **Clear whey** (you've got it in) + water. Great cheap protein top-up.
