@@ -19,7 +19,7 @@ Ready to create in Google Calendar (Europe/London) as soon as the connector is s
 - 🏋️ Gym (full body, alternate A/B) — Thu/Sat/Sun 09:00–10:00
 - ⛳ Golf 9 holes w/ brother — Wed 17:30–19:30
 - 🍽️ Dinner at Dad's — Thu 17:00–20:00
-- 🚶 Move — walk / mobility (aim 10k steps) — daily 12:30–13:00
+- 🚶 Move — morning walk/run — daily 07:10–07:40 (before work; then shower/shave/iron/pack, leave ~08:30). Mostly a walk; run only 1–2x/week. On gym days it's an easy warm-up — the gym is the main session.
 - 🌙 Wind-down → lights out — daily 22:45–23:00 (protect sleep — the keystone)
 - ⛳ Fri 18-hole golf — added per week once tee time is known
 
