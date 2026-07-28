@@ -9,14 +9,16 @@ Same breakfast, lunch, and snacks every day; dinner varies. Simple, repeatable, 
 
 ## The daily template
 
-### 🥣 Breakfast (repeat daily) — ~490 kcal, ~32g protein
-**Protein oats** (not a yoghurt bowl — Owen's not keen on Greek yoghurt):
-- 60g rolled oats made with milk (porridge or overnight oats)
-- 1 scoop regular creamy whey, stirred in *after* cooking / off the heat (NOT clear whey — that's a water-mix drink and goes weird in oats; keep clear whey for the afternoon)
-- Handful of frozen berries (defrost a portion overnight — cheap by the bag)
-- 1 tbsp peanut butter
-- If too thick, loosen with a splash more milk/water. *(No banana — not a fan, don't need the carb.)*
-- *Greek yoghurt optional if you ever fancy it, but not required.*
+### 🥣 Breakfast (repeat daily) — ~400 kcal, ~36g protein
+**Protein oats** (smaller version — the 60g one came to ~490–650 and was too much/too slow to eat):
+- **45g** rolled oats made with **~225ml skimmed milk** (porridge or overnight oats)
+- 1 scoop creamy whey, stirred in *after* cooking / off the heat (NOT clear whey — keep that for the afternoon)
+- Handful of frozen berries
+- **No peanut butter** — moved to a pre-gym rice cake (couldn't taste it in the porridge; better used as fuel)
+- If too thick, splash more milk. *(No banana.)*
+
+### 🏋️ Pre-gym snack (gym mornings only) — ~125 kcal
+- **1–2 rice cakes + 15g peanut butter**, ~30–45 min before training. Quick carbs to fuel the session + the PB you took off your porridge.
 
 *On gym mornings (you train early/fasted):* just a coffee or small bite before, then this bowl after. It'll kill the 9–10am slump you get from skipping breakfast.
 
