@@ -41,6 +41,13 @@ You've got a gym — so we use it. This is a proper **3×/week full-body beginne
 - **Don't drink your calories.** Water is the default; watch juice, soda, sugary coffees.
 - **Fat loss = slight calorie deficit; muscle = enough protein + progressive strength training.** No crash diets — they never stick, and you told me consistency is the goal.
 
+## Cardio & running (asked Day 1)
+You've already got loads of cardio — golf (Wed 9 / Fri 18), reffing, and 8–10k daily steps — so you don't NEED to run for fat loss or fitness.
+- **Don't run every morning.** Daily running eats recovery from lifting (you're building muscle) and a new daily obligation is exactly the over-reach that triggers your slip cascade as a beginner. Plus injury risk with no rest days.
+- **If you enjoy it:** 1–2 easy 3k runs/week, conversational pace, on non-lifting days. Not daily.
+- **Daily movement = the walk** (10k steps), low-impact and sustainable.
+- Nail the core plan for a few weeks first; add more only once it's automatic.
+
 ## What we track
 - Sessions completed / week (target 3)
 - Daily steps (build toward 8k+)
