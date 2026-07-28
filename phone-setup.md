@@ -37,6 +37,16 @@ Open the **Shortcuts** app → **Automation** tab → **+** → **Create Persona
 - Trigger: Time of Day → 09:00 (set one per day, or a calendar-based trigger).
 - Action: Turn on a **Gym** Focus mode that silences everything but plays your gym playlist.
 
+## 3b. Block social media in the mornings (free, native)
+**Settings → Screen Time → Downtime:** schedule 23:00 → 09:00, turn on **"Block at Downtime"** (hard block). Under **Always Allowed**, keep Phone/Messages; leave social apps OFF so they're blocked till 9am. Kills the morning doomscroll.
+- *Caveat:* TikTok is now partly "work" — post/film after 9am, or whitelist just TikTok and block the pure time-sinks (Insta/YouTube).
+- *Want more friction:* free apps **ScreenZen**, **Opal**, or **one sec** add a pause before opening an app.
+
+## 3c. Daily checklist on the home screen
+- **Free/native — Reminders app:** make a "Daily Non-Negotiables" list, add items as a **repeating daily** reminder, then add the **Reminders widget** to the home screen (tick items from the widget).
+- **Purpose-built — Streaks app (~£5):** habit tracker with a home-screen widget + streak counters. Ideal for the "never miss twice" system — you see the streak every unlock.
+- **Checklist items:** ☀️ Breakfast · 💪 Move (gym/walk) · 🍗 Protein · 💈 Skincare + stand tall · 🚶 10k steps · 🎥 Post video · 🌙 Lights out 23:00.
+
 ## 4. Focus modes (Settings → Focus)
 - **Sleep** — auto-on with the wind-down automation; silences notifications overnight.
 - **Work** — Mon–Wed 09:00–17:00, hides distractions.
