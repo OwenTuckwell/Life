@@ -15,6 +15,20 @@ You've got a gym — so we use it. This is a proper **3×/week full-body beginne
 - **Progressive overload:** each week try to add a rep or a little weight vs last time. When you hit the top of the rep range on all sets with good form, add weight next time. *This* is what drives change — beat your last log, even slightly.
 - **Log every set** (weight × reps) in your progress log or a notes app. If you don't log, you can't progressively overload.
 
+## Why these exercises (it's NOT random)
+This is a **full-body program**: each session trains your whole body through the basic movement patterns, not one body part. Workout A and B cover the same slots from different angles, so across the week you hit everything 2–3× — which is what drives muscle for a beginner.
+
+| Pattern | Workout A | Workout B |
+|---------|-----------|-----------|
+| Legs | Squat (quads) | RDL / leg press (hamstrings, glutes) |
+| Push | Chest press | Incline press |
+| Vertical push | Shoulder press | — |
+| Pull | Seated row (thickness) | Lat pulldown (width) |
+| Rear delts / posture | — | Face pulls |
+| Core | Plank | Hanging knee raise |
+
+**Arms** are trained on every set — presses hit triceps, pulls/rows hit biceps. Plenty for now. *Optional arm finisher if you want bigger arms:* 3 × 10–12 bicep curls + 3 × 10–12 tricep pushdowns, tacked onto the end of any session.
+
 ## Workout A
 | Exercise | Sets × Reps | Notes |
 |----------|:-----------:|-------|
