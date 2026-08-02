@@ -1,5 +1,7 @@
 # Meal Plan (egg-free, budget-friendly)
 
+> **Note:** Owen now runs nutrition through **MacroFactor** (it sets his macros/calories). These files are reference/history only — don't push meals in the daily brief.
+
 Same breakfast, lunch, and snacks every day; dinner varies. Simple, repeatable, high-protein, no eggs, no bananas — and **cheap**, because saving money matters to you. Good news: the best budget foods (frozen chicken, frozen veg, rice, oats, yoghurt) are also the best physique foods. This plan works *with* your wallet, not against it.
 
 ## Your numbers (calibrated to 77kg)

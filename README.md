@@ -24,6 +24,15 @@ Impressive people aren't more disciplined than you — they've just removed the 
 3. **Every Sunday** — 10 minutes with `reviews/weekly-review-template.md`. This is where average people quit and consistent people compound.
 4. **Every ~90 days** — we set new targets in `goals/`.
 
+## Daily brief format (how Owen wants his morning "what's the plan?")
+Each morning Owen messages "what's the plan today?" Respond with:
+- ⏱️ Today's timeline (the day's anchors from `habits/weekly-schedule.md`)
+- 🏋️ Gym: is it a session, which workout (A/B), and the lifts (`fitness/starter-plan.md`)
+- 📌 Anything to know (girlfriend's birthday, Sunday weekly review, ref game, etc.)
+- ❌ NO meals/macros — **MacroFactor runs nutrition.** The `nutrition/` files are reference only; don't push meals in the daily brief.
+
+Gym A/B rotation: gym days are Thu/Sat/Sun. Week 1 = A/B/A, week 2 = B/A/B, alternating.
+
 ## The rules
 
 - **Start embarrassingly small.** A habit you'll actually do beats a perfect plan you won't. We can always add.
