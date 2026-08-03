@@ -2,6 +2,9 @@
 
 Goal: get the most out of the morning — everything done, unrushed, out the door by 8:30 for a 9:00 start (30-min drive). This is the plan Claude leads every morning message with.
 
+## ⚠️ One-off: Tue 2026-08-04 — earlier start
+Leaving at **08:00** (not 8:30), so **up at 06:30** and shift the whole timeline 30 min earlier: 6:30 up → 6:35–7:05 walk → 7:05–7:22 shower+shave → 7:22–7:37 porridge → 7:37–7:50 skincare/dress/pack → 7:50–8:00 film + leave. (Remove this note after the 4th.)
+
 ## 🌙 Night-before prep (do it at wind-down — this is the real secret)
 Half the morning chaos is solved the night before. At ~22:45:
 - Iron & lay out tomorrow's clothes
