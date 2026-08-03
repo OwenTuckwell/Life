@@ -26,6 +26,7 @@ Impressive people aren't more disciplined than you — they've just removed the 
 
 ## Daily brief format (how Owen wants his morning "what's the plan?")
 Each morning Owen messages "what's the plan today?" Respond with:
+- ☀️ **The 7:00–8:30 morning action plan** (from `habits/morning-routine.md`) — lead with this; it's the priority. Adapt to whether it's a work day or gym day.
 - ⏱️ Today's timeline (the day's anchors from `habits/weekly-schedule.md`)
 - 🏋️ Gym: is it a session, which workout (A/B), and the lifts (`fitness/starter-plan.md`)
 - 📌 Anything to know (girlfriend's birthday, Sunday weekly review, ref game, etc.)
