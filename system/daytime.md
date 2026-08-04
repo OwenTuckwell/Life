@@ -19,11 +19,11 @@ Message:
 ## 08:25 — Leave for work (Mon / Tue / Wed)
 Check `system/one-offs.md` for a one-off earlier start first. Default message: "🚗 Leave for work now — 30-min drive, 09:00 start. Phone/keys/wallet." If a one-off sets an earlier start, the **07:00 brief and this nudge both shift** — the 22:00 brief the night before will have already flagged it.
 
-## 08:40 — Leave for gym (Thu / Sat / Sun)
-Gym is 09:00, ~15-min drive. Message: "🏋️ Leave for the gym — Workout [A/B] today. Water, pre-gym snack, let's go." Name the workout (from the A/B rotation). If a weekend ref game clashes that morning (logged in `system/one-offs.md`), the nightly brief will already have flexed gym to the free half of the day — respect what the plan says over the default 08:40.
+## 08:40 — Leave for gym (Thu / Fri)
+Gym is 09:00, ~15-min drive. **Thursday is the fixed gym day.** **Friday is gym too — UNLESS `system/one-offs.md` says golf is on that day** (then it's an 18-hole golf morning, and last night's brief will have set the golf leave time instead — send that, or skip this nudge). Default message: "🏋️ Leave for the gym — Workout [A/B] today. Water, pre-gym snack, let's go." Name the workout (from the A/B alternation — check the last gym entry). Weekend gym (Sat/Sun with no football) isn't a fixed nudge — the nightly brief gives that leave time.
 
-## 16:55 — Leave for golf (Wed)
-9 holes with his brother, 17:30, ~20-min drive. "⛳ Leave for golf — 9 holes, 17:30 tee. Clubs in the car."
+## 16:55 — Leave for golf (Wed, weather permitting)
+9 holes with his brother, 17:30, ~20-min drive. Check `system/one-offs.md`: if golf's washed out / not on this week, skip or soften. Otherwise: "⛳ Leave for golf — 9 holes, 17:30 tee. Clubs in the car."
 
 ## 16:40 — Leave for Dad's (Thu)
 Dinner, round ~17:00, ~20-min drive. "🍽️ Leave for Dad's — dinner ~17:00." Note: on the odd week this clashes with his girlfriend's plans — if `system/one-offs.md` logs that, the one-off wins, so soften to a question or skip.
@@ -31,9 +31,10 @@ Dinner, round ~17:00, ~20-min drive. "🍽️ Leave for Dad's — dinner ~17:00.
 ---
 
 ## Variable events (handled via `system/one-offs.md`, not a fixed trigger)
-- **Fri 18-hole golf** — tee time varies. When Owen tells Claude the tee time, it goes in `one-offs.md`; the **22:00 Thursday brief** reads it and gives the leave time (tee − 35 min: 20 travel + 15 buffer). Big steps day → no separate run.
-- **Weekend ref game** — time varies weekly. Once Owen logs the game time, the nightly brief slots gym into the free half of that day and gives the leave time.
-- **Anything new** — a meeting, appointment, day off, travel: Owen tells Claude, it lands in `one-offs.md`, and the next relevant nudge picks it up. No trigger editing needed.
+- **Football (Sat &/or Sun)** — game time varies weekly and depends on weather. Once Owen logs the game(s), the nightly brief gives the leave time and makes that day football; a weekend day with **no** game becomes a gym session. Football counts as real activity (legs + cardio).
+- **Fri 18-hole golf** — weather permitting. When Owen says golf's on (and the tee time), it goes in `one-offs.md`; the **22:00 Thursday brief** reads it, replaces Friday's gym with golf, and gives the leave time (tee − 35 min: 20 travel + 15 buffer). Big steps day → no separate run.
+- **Extra/3rd gym session** — on tight weeks the nightly brief may slot an after-work (or occasionally before-work) session; when it does, it tells Owen the time in the brief. Not a standing trigger.
+- **Anything new** — a meeting, appointment, day off, travel, wash-out: Owen tells Claude, it lands in `one-offs.md`, and the next relevant nudge picks it up. No trigger editing needed.
 
 ## The "something's coming up" principle
 These triggers are the fixed skeleton. The *intelligence* is that each fresh session reads `one-offs.md` + the logs and reasons about them, so the system reacts to a changing week instead of replaying a static routine — the exceptions come from Owen telling Claude, not from a calendar feed. If a genuinely new **fixed** commitment appears (new job hours, a class, a standing appointment), add a trigger for it — tell Claude and it wires one in.
