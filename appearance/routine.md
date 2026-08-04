@@ -15,7 +15,7 @@ You chose three, all low-effort and high-impact:
 
 - ✅ **Haircut on a schedule** — action this week: find a good barber (ask around / check reviews), book a cut, and set a recurring booking every 3–4 weeks. A sharp, regular cut is the single biggest appearance upgrade there is.
 - ✅ **Skincare basics** — buy three things: a gentle cleanser, a moisturizer, and an SPF moisturizer for daytime. That's the whole kit. Cleanse morning + night, moisturize after, SPF in the day. Results show in a couple of weeks.
-- ✅ **Posture project** — this is already built into your gym plan: **face pulls** (Workout B) plus daily thoracic + chest-opener stretches and the "shoulders back, stand tall" reset. Standing tall changes how you look *and* feel, instantly and for free.
+- ✅ **Posture project** — this is already built into your gym plan: **face pulls** (Workout B) plus the **daily 4 posture stretches** (now written out in `appearance/posture-stretches.md`) and the "shoulders back, stand tall" reset. Standing tall changes how you look *and* feel, instantly and for free.
 
 ## Jawline / under-chin (a conscious spot — here's the plan)
 Owen's self-conscious about his jaw/under-chin, especially in side profile. Honest take: structure is fine; the softness is mostly fat + posture + angle, all improvable. No obsessing — this improves as a side effect of the main plan.

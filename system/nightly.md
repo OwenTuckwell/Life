@@ -11,16 +11,16 @@ The main message. Two jobs: find out how today went, and hand him tomorrow decid
 
 **Before writing it, gather:**
 - Recent `progress/log.md` entries (last 2–3 days — what's the momentum, did he miss anything, is a "never miss twice" flag live?).
-- Tomorrow on **Google Calendar** (work / gym / golf / Dad's / ref game / birthdays / any one-off).
+- `system/one-offs.md` for anything unusual about tomorrow (early start, moved tee time, ref game, day off, plans) — this **overrides** the default weekly shape.
 - `habits/weekly-schedule.md` for the baseline shape of that weekday.
 - `habits/health-data.md` for any sleep/steps figures.
 
 **The message (keep it phone-length — a tight, scannable brief, not an essay):**
 
 1. **Check-in (ask, don't assume):** "How did today go?" — nudge for: did you move / gym done, rough step count, energy, and anything that slipped. One line. His reply gets logged (see below).
-2. **🌙 Asleep by / wake:** the numbers, explicitly. Default **lights out 23:00 → wake 07:00** (~8h). Hold wake at 07:00 seven days a week — it's the keystone. Only shift for a real calendar reason (e.g. early start, early tee time) and say why.
+2. **🌙 Asleep by / wake:** the numbers, explicitly. Default **lights out 23:00 → wake 07:00** (~8h). Hold wake at 07:00 seven days a week — it's the keystone. Only shift for a real reason logged in `one-offs.md` (e.g. early start, early tee time) and say why.
 3. **🏋️ Tomorrow's movement:** state it plainly — **walk / run / gym**. Decision rules below.
-4. **⏱️ Tomorrow's shape:** the day's anchors from the calendar (leave-for-work time, gym, golf tee + leave time, Dad's, ref game). Just the anchors, not a timetable.
+4. **⏱️ Tomorrow's shape:** the day's anchors from the weekly schedule + any `one-offs.md` override (leave-for-work time, gym, golf tee + leave time, Dad's, ref game). Just the anchors, not a timetable.
 5. **🌙 Night-before prep (the real secret):** "Do it now: lay out clothes, pack the bag, kit + trainers by the door, fill the water bottle." Half of a chaotic morning is solved here.
 
 Then **push a short teaser** to the phone (e.g. "🌙 Tomorrow's set — asleep by 23:00, wake 07:00, [movement]. How did today go?"), with the full brief in the session for when he taps in.

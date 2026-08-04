@@ -1,6 +1,6 @@
 # Life OS — your controller
 
-Not a repo you have to remember to open. A **controller** that runs your day: it wakes itself on a schedule, checks your live calendar and how the last few days went, decides what you need, and **pushes it to your phone** — a plan every night, nudges through the day, and a check-in that keeps it all honest.
+Not a repo you have to remember to open. A **controller** that runs your day: it wakes itself on a schedule, checks your plan, how the last few days went, and anything you've flagged, decides what you need, and **pushes it to your phone** — a plan every night, nudges through the day, and a check-in that keeps it all honest. It runs on the repo + reasoning (git is its memory), not a live calendar feed.
 
 ## The one idea that makes this work
 
@@ -12,7 +12,7 @@ Impressive people aren't more disciplined than you — they've removed the daily
 **`system/how-it-works.md`** — the engine: the scheduled triggers, what fires when, and how to change any of it. Read that first. The short version:
 
 - **Two messages every night** — **22:00** (tomorrow's plan + "how did today go?") and **22:30** (wind-down lock, lights out by 23:00). Spec: `system/nightly.md`.
-- **Nudges through the day** — 07:00 wake brief, leave-for-work / leave-for-gym / leave-for-golf / leave-for-Dad's, each reading your live calendar so one-offs beat the routine. Spec: `system/daytime.md`.
+- **Nudges through the day** — 07:00 wake brief, leave-for-work / leave-for-gym / leave-for-golf / leave-for-Dad's, each reading `system/one-offs.md` so anything you've flagged beats the routine. Spec: `system/daytime.md`.
 - **It adapts** — gym days are fixed (Thu/Sat/Sun); everything else (walk / run / rest) is decided each night off your load and how you're doing. Not the same routine on repeat.
 
 ## The repo, at a glance
