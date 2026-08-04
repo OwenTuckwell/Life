@@ -27,20 +27,42 @@ function updateFitbitSheet() {
     return;
   }
 
-  // Yesterday (Fitbit data for a day is complete the next morning).
+  // TODAY. Run this in the evening (see README) and the row holds last
+  // night's sleep + today's steps-so-far — exactly what the 22:00 check-in
+  // wants. Safe to run more than once a day: it UPDATES today's row rather
+  // than adding a duplicate.
   var tz = Session.getScriptTimeZone();
-  var d = new Date();
-  d.setDate(d.getDate() - 1);
-  var date = Utilities.formatDate(d, tz, 'yyyy-MM-dd');
+  var date = Utilities.formatDate(new Date(), tz, 'yyyy-MM-dd');
 
   var steps = getSteps_(service, date);
   var restingHr = getRestingHr_(service, date);
   var sleepHours = getSleepHours_(service, date);
 
   var sheet = getSheet_();
-  sheet.appendRow([date, sleepHours, steps, restingHr,
-                   Utilities.formatDate(new Date(), tz, 'yyyy-MM-dd HH:mm')]);
+  var row = [date, sleepHours, steps, restingHr,
+             Utilities.formatDate(new Date(), tz, 'yyyy-MM-dd HH:mm')];
+  upsertRow_(sheet, date, row);
   Logger.log('Wrote %s: sleep %s h, steps %s, resting HR %s', date, sleepHours, steps, restingHr);
+}
+
+// Replace today's row if it already exists, else append — so repeat runs
+// in a day keep one row per date with the latest numbers.
+function upsertRow_(sheet, date, row) {
+  var last = sheet.getLastRow();
+  if (last >= 2) {
+    var dates = sheet.getRange(2, 1, last - 1, 1).getValues();
+    for (var i = 0; i < dates.length; i++) {
+      var cell = dates[i][0];
+      var cellDate = (cell instanceof Date)
+        ? Utilities.formatDate(cell, Session.getScriptTimeZone(), 'yyyy-MM-dd')
+        : String(cell).trim();
+      if (cellDate === date) {
+        sheet.getRange(i + 2, 1, 1, row.length).setValues([row]);
+        return;
+      }
+    }
+  }
+  sheet.appendRow(row);
 }
 
 // ---- Fitbit API calls -------------------------------------------------
