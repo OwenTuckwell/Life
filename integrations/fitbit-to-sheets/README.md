@@ -31,16 +31,16 @@ In Apps Script: **Project Settings (⚙️) → Script Properties → Add script
 ## 5. Authorise once
 1. Run the function **`authorize`** (Run ▶). Approve the Google permissions prompt the first time.
 2. Open **Execution log**, click the Fitbit URL it prints, approve access.
-3. Run **`updateFitbitSheet`** — check the sheet: a row for yesterday should appear (Date, Sleep h, Steps, Resting HR).
+3. Run **`updateFitbitSheet`** — check the sheet: a row for today should appear (Date, Sleep h, Steps, Resting HR).
 
-## 6. Make it daily
+## 6. Make it run each evening (before the 22:00 check-in)
 Apps Script left sidebar → **Triggers (⏰) → Add Trigger**:
 - Function: `updateFitbitSheet`
-- Event source: **Time-driven → Day timer → 7am–8am**.
-Save. Done — a fresh row lands every morning.
+- Event source: **Time-driven → Day timer → 9pm–10pm**.
+Save. Now the row holds **last night's sleep + today's steps-so-far** — exactly what the nightly check-in and the app want. (The script pulls *today* and updates today's row, so it's safe to add a second midday trigger too if you want steps to refresh earlier — no duplicate rows.)
 
-## 7. Tell the controller
-Message Claude the Sheet's name ("Fitbit data"). It reads the latest row via the Google Drive connector each night — bad sleep quietly softens the next morning, low steps pushes the walk, a good streak green-lights an extra session. Logic: `habits/health-data.md`.
+## 7. How the numbers reach the check-in
+The real path is **through the app**: after step 8 below, FitForge auto-fills sleep/steps from the sheet and "Copy my day" sends them to the 22:00 coach. (The automated night nudge runs without connectors, so it can't read the sheet directly — the app carries the numbers in. When you chat with Claude in a normal session it *can* read the sheet via Google Drive — just tell it the sheet's name.) What the coach does with the data — bad sleep softens the morning, low steps pushes the walk, a good streak green-lights an extra session — is in `habits/health-data.md`.
 
 ## 8. Connect it to the FitForge app (auto-fill the Today page)
 This makes your sleep/steps show up in the app and pre-fill the nightly check-in — no typing.
@@ -57,4 +57,4 @@ If it doesn't load: the link must be the **CSV** one (not a normal share link), 
 ## If something breaks
 - **No data / 401 in the log** → re-run `authorize` (token expired or scope changed). `reset` clears the auth to start fresh.
 - **403 on sleep/HR** → the Fitbit app type isn't *Personal*; fix it at dev.fitbit.com.
-- **Wrong day** → the script pulls *yesterday* on purpose (a day's data is only complete the next morning); keep the trigger in the morning.
+- **Wrong day / stale numbers** → the script pulls *today* and runs in the evening on purpose, so the check-in sees last night's sleep + today's steps. If steps look low, it ran too early in the day — move the trigger later or add a second one.
