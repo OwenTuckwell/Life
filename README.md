@@ -24,6 +24,7 @@ Impressive people aren't more disciplined than you — they've removed the daily
 | `habits/` | Weekly schedule, morning routine, the tracker, and `health-data.md` (Fitbit/sleep/steps) |
 | `fitness/` | Training plan (gym A/B) + nutrition reference |
 | `progress/log.md` | **The memory** — every night's check-in lands here; tomorrow's brief reads it back |
+| `app/` | **FitForge** — the phone app (Netlify): Today hub, morning checklist, walk/run/gym logging, Fitbit panel, and "Copy my day" → the controller. See `app/README.md` |
 | `reviews/` | The Sunday weekly review |
 
 ## The loop
