@@ -314,7 +314,7 @@ canvas{ max-width:100%; }
           <button class="btn btn-primary btn-sm" onclick="saveCheckin()">Save check-in</button>
           <button class="btn btn-body btn-sm" onclick="copyDayForClaude()">📋 Copy my day for Claude</button>
         </div>
-        <p class="muted tiny" id="ciWalks" style="margin-top:12px"></p>
+        <div id="ciWalks" style="margin-top:12px"></div>
       </div>
     </section>
 
@@ -992,6 +992,7 @@ function renderRuns(){
     <div class="list-row"><div><strong class="num">${r.km.toFixed(2)} km</strong> <span class="muted num">in ${fmtDur(r.sec)}</span>
       <div class="tiny">${fmtDate(r.date)}${r.notes?' · '+esc(r.notes):''}</div></div>
       <div style="display:flex; gap:8px; align-items:center"><span class="chip chip-cardio num">${paceStr(r.sec/r.km)}</span>
+      <button class="btn btn-ghost btn-sm" onclick="editRun('${r.id}')" aria-label="Edit run">✎</button>
       <button class="btn btn-ghost btn-sm" onclick="delRun('${r.id}')" aria-label="Delete run">✕</button></div></div>`).join('')
   : '<div class="empty">No runs yet.</div>';
 }
@@ -1018,7 +1019,30 @@ function saveRun(){
   else toast('Run saved.');
   checkGoalCelebrations();
 }
-function delRun(id){ if(confirm('Delete this run?')){ DB.runs=DB.runs.filter(r=>r.id!==id); save(); renderRuns(); } }
+function delRun(id){ if(confirm('Delete this run?')){ DB.runs=DB.runs.filter(r=>r.id!==id); save(); closeModal(); renderRuns(); } }
+function editRun(id){
+  const r=DB.runs.find(x=>x.id===id); if(!r) return;
+  const min=Math.floor(r.sec/60), sec=r.sec%60;
+  openModal(`<h3>Edit run</h3>
+    <div class="grid cols-2">
+      <label class="field"><span>Date</span><input class="input" type="date" id="erDate" value="${r.date}"></label>
+      <label class="field"><span>Distance (km)</span><input class="input num" type="number" id="erKm" min="0" step="0.01" value="${r.km}"></label>
+      <label class="field"><span>Duration — minutes</span><input class="input num" type="number" id="erMin" min="0" value="${min}"></label>
+      <label class="field"><span>Duration — seconds</span><input class="input num" type="number" id="erSec" min="0" max="59" value="${sec}"></label>
+    </div>
+    <label class="field"><span>Notes</span><input class="input" id="erNotes" value="${esc(r.notes||'')}"></label>
+    <div style="display:flex; gap:10px; flex-wrap:wrap">
+      <button class="btn btn-cardio btn-sm" onclick="saveRunEdit('${id}')">Save changes</button>
+      <button class="btn btn-danger btn-sm" onclick="delRun('${id}')">Delete run</button>
+    </div>`);
+}
+function saveRunEdit(id){
+  const r=DB.runs.find(x=>x.id===id); if(!r) return;
+  const km=parseFloat($('#erKm').value), sec=(parseInt($('#erMin').value)||0)*60+(parseInt($('#erSec').value)||0);
+  if(!km||km<=0||sec<=0){ toast('Add a distance and duration.'); return; }
+  r.date=$('#erDate').value||r.date; r.km=km; r.sec=sec; r.notes=$('#erNotes').value.trim();
+  save(); closeModal(); renderRuns(); toast('Run updated.');
+}
 
 /* ================= EXERCISES ================= */
 function renderExercises(){
@@ -1371,6 +1395,7 @@ function resetData(){
 
 /* ================= TODAY / DAILY HUB ================= */
 const CHECKLIST_ITEMS = [
+  {id:'weigh',      label:'⚖️ Weigh-in (log in MacroFactor)'},
   {id:'water',      label:'💧 Big glass of water'},
   {id:'move',       label:'🚶 Move — walk / run / gym'},
   {id:'stretch',    label:'🧍 Posture stretches (the daily 4)'},
@@ -1502,7 +1527,42 @@ function saveWalk(){
 }
 function renderTodayWalks(){
   const walks=DB.walks.filter(w=>w.date===todayISO());
-  $('#ciWalks').textContent = walks.length ? ('Walks logged today: '+walks.map(w=>w.label).join('   ·   ')) : '';
+  const el=$('#ciWalks');
+  if(!walks.length){ el.innerHTML=''; return; }
+  el.innerHTML = '<div class="stat-label" style="margin-bottom:6px">Walks logged today</div>' + walks.map(w=>`
+    <div class="list-row" style="padding:7px 0"><div class="tiny">🚶 ${esc(w.label)}${w.notes?' · '+esc(w.notes):''}</div>
+      <div style="display:flex; gap:6px">
+        <button class="btn btn-ghost btn-sm" onclick="editWalk('${w.id}')" aria-label="Edit walk">✎</button>
+        <button class="btn btn-ghost btn-sm" onclick="delWalk('${w.id}')" aria-label="Delete walk">✕</button>
+      </div></div>`).join('');
+}
+function editWalk(id){
+  const w=DB.walks.find(x=>x.id===id); if(!w) return;
+  openModal(`<h3>Edit walk</h3>
+    <div class="grid cols-2">
+      <label class="field"><span>Date</span><input class="input" type="date" id="ewDate" value="${w.date}"></label>
+      <label class="field"><span>Steps</span><input class="input num" type="number" min="0" id="ewSteps" value="${w.steps||''}"></label>
+      <label class="field"><span>Distance km</span><input class="input num" type="number" step="0.1" min="0" id="ewKm" value="${w.km||''}"></label>
+      <label class="field"><span>Minutes</span><input class="input num" type="number" min="0" id="ewMin" value="${w.min||''}"></label>
+    </div>
+    <label class="field"><span>Notes</span><input class="input" id="ewNotes" value="${esc(w.notes||'')}"></label>
+    <div style="display:flex; gap:10px; flex-wrap:wrap">
+      <button class="btn btn-cardio btn-sm" onclick="saveWalkEdit('${id}')">Save changes</button>
+      <button class="btn btn-danger btn-sm" onclick="delWalk('${id}')">Delete walk</button>
+    </div>`);
+}
+function saveWalkEdit(id){
+  const w=DB.walks.find(x=>x.id===id); if(!w) return;
+  const steps=parseInt($('#ewSteps').value)||0, km=parseFloat($('#ewKm').value)||0, min=parseInt($('#ewMin').value)||0;
+  if(!steps && !km && !min){ toast('Add steps, distance, or minutes.'); return; }
+  w.date=$('#ewDate').value||w.date; w.steps=steps; w.km=km; w.min=min; w.notes=$('#ewNotes').value.trim();
+  w.label=[km?km+'km':'', steps?steps+' steps':'', min?min+'min':''].filter(Boolean).join(' · ');
+  save(); closeModal(); renderToday(); toast('Walk updated.');
+}
+function delWalk(id){
+  if(!confirm('Delete this walk?')) return;
+  DB.walks=DB.walks.filter(w=>w.id!==id);
+  save(); closeModal(); renderToday(); toast('Walk deleted.');
 }
 
 /* ================= INIT ================= */

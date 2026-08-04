@@ -25,6 +25,7 @@ Half the morning chaos is solved the night before. At ~22:45:
 ## ✅ The full checklist (tick every one — nothing's too small)
 **Wake & body**
 - [ ] Up at 7:00, no snooze
+- [ ] ⚖️ Weigh-in — log it in **MacroFactor** (weight + nutrition live there, not in this repo). Same time each morning, before food/water, for a clean trend.
 - [ ] Big glass of water, curtains/daylight open
 - [ ] Walk (or run, 1–2×/week)
 - [ ] 🧍 Posture stretches — the daily 4 (chin tucks, doorway chest, thoracic extension, wall angels)
