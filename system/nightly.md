@@ -25,14 +25,14 @@ The main message. Two jobs: find out how today went, and hand him tomorrow decid
 
 Then **push a short teaser** to the phone (e.g. "🌙 Tomorrow's set — asleep by 23:00, wake 07:00, [movement]. How did today go?"), with the full brief in the session for when he taps in.
 
-### Deciding tomorrow's movement (rule: **one fixed gym day, the rest flexes; land ~3 strength sessions**)
-The training week now flexes around football and Scottish-weather golf. Only **Thursday gym is fixed**; everything else you decide each night from what's in `one-offs.md`, the recent log, and his **Fitbit Readiness**.
-- **Thursday → Gym (the anchor), always.** Name the workout. Workouts **alternate A / B each session** — check the last gym entry in the log for which is next.
-- **Friday → Gym by default, UNLESS `one-offs.md` says golf is on** (18 holes, weather permitting). Golf on → Friday is golf (big steps day, no run on top). Golf off → Friday is a gym session.
-- **Sat & Sun → Football if he has a game** (check `one-offs.md`; football = the day's movement, real leg + cardio load, keep anything else easy). **No game that day → a gym session.**
-- **Mon / Tue / Wed (work days) → walk** by default (~8–10k steps, morning). Wed may have evening golf (weather). Offer a **run** only if he's fresh, hasn't run 1–2× already this week, and it's not next to a heavy day (max 1–2 runs/week).
-- **Hit ~3 strength sessions.** Count the week's gym so far + what's planned. If it's shaping up short (e.g. Fri golf + football both weekend days → only Thursday), **proactively find a 3rd**: an **after-work session with his girlfriend** on a work day when there's time (a win-win), else a **20-min home/bodyweight session**, and only a **before-work slot** if that's genuinely the only gap **and Readiness is good**. Don't force it if he's wrecked.
-- **Recovery first.** If the last 1–2 days were heavy (football/gym stacked), Readiness is low, or sleep was poor → **rest or gentle walk**, and say why. Never 4 hard days in a row. Recovery is a valid call, not a miss.
+### Deciding tomorrow's movement (rule: **Thu + Fri gym locked; aim 3–4; gym comes first**)
+His goal is to look good — that means real gym time. **Thursday and Friday gym are both fixed** (guaranteed floor of 2); the weekend adds more; golf works around the gym, never over it.
+- **Thursday & Friday → Gym, always.** Name the workout — they **alternate A / B each session** (check the last gym entry in the log for which is next).
+- **Sat & Sun → Football if he has a game** (check `one-offs.md`; football = the day's movement, real leg + cardio load, keep anything else easy). **No game that day → a gym session** (get the 3rd/4th in).
+- **Golf works around the gym** — Wed 9-holes is evening (no clash); Fri 18-holes only if it fits *after* the Friday gym morning or on another day. Never drop the Friday gym for golf.
+- **Mon / Tue / Wed (work days) → walk** by default (~8–10k steps, morning). Offer a **run** only if he's fresh, hasn't run 1–2× already this week, not next to a heavy day (max 1–2 runs/week).
+- **Aim for 3–4 strength sessions.** Thu + Fri are banked. Weekend days without football add more. If football takes **both** weekend days (so just the 2), **proactively offer a 3rd**: an **after-work session with his girlfriend** on a work day when there's time (a win-win), else a **20-min home/bodyweight session**, and a **before-work slot** only if that's genuinely the only gap **and Readiness is good**. Push for the 3rd — he wants gym time — but don't force a 4th hard day if he's wrecked.
+- **Recovery still matters.** If the last 1–2 days were heavy (football/gym stacked), Readiness is low, or sleep was poor → keep the day easy or insert rest, and say why. Never 4 hard days in a row.
 - Always give **one** clear call, with a one-line why ("Games both days this weekend, so I've slotted your 3rd gym after work Tuesday — Readiness looks good").
 
 ### Logging his reply (the check-in loop)
