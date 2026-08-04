@@ -917,9 +917,64 @@ function renderWorkoutHistory(){
       <div class="tiny">${fmtDate(w.date)} · ${w.exercises.map(e=>esc(exName(e.exerciseId))).join(', ')}</div></div>
       <div style="display:flex; gap:10px; align-items:center">
         <div style="text-align:right"><div class="num"><b>${Math.round(kgToDisplay(vol)).toLocaleString()}</b> ${U()}</div><div class="tiny">${sets} sets · ${fmtDur(w.durationSec||0)}</div></div>
+        <button class="btn btn-ghost btn-sm" onclick="editWorkout('${w.id}')" title="Edit / fix this workout" aria-label="Edit workout">✎</button>
         <button class="btn btn-ghost btn-sm" onclick="repeatWorkout('${w.id}')" title="Repeat this workout">↻</button>
       </div></div>`;
   }).join('') : '<div class="empty">No workouts yet.</div>';
+}
+
+/* ---- Edit a logged workout (fix mistakes) ---- */
+let editWO=null;
+function editWorkout(id){
+  const w=DB.workouts.find(x=>x.id===id); if(!w) return;
+  editWO=JSON.parse(JSON.stringify(w)); // edit a clone; only Save writes back
+  openModal(`<h3>Edit workout</h3><div id="editWOBody"></div>`);
+  renderEditWO();
+}
+function renderEditWO(){
+  const w=editWO;
+  $('#editWOBody').innerHTML = `
+    <div class="grid cols-2">
+      <label class="field"><span>Name</span><input class="input" value="${esc(w.name||'')}" onchange="editWO.name=this.value"></label>
+      <label class="field"><span>Date</span><input class="input" type="date" value="${w.date}" onchange="editWO.date=this.value"></label>
+    </div>
+    ${w.exercises.map((e,i)=>`
+      <div class="card" style="margin:10px 0; padding:12px">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px">
+          <strong>${esc(exName(e.exerciseId))}</strong>
+          <button class="btn btn-ghost btn-sm" onclick="editWORemoveEx(${i})" title="Remove this exercise" aria-label="Remove exercise">✕</button>
+        </div>
+        <div class="tiny muted" style="display:flex; gap:8px; margin-bottom:4px"><span style="flex:1">Weight (${U()})</span><span style="flex:1">Reps</span><span style="width:52px; text-align:center">Done</span><span style="width:34px"></span></div>
+        ${e.sets.map((s,j)=>`
+          <div style="display:flex; gap:8px; align-items:center; margin-bottom:6px">
+            <input class="input num" style="flex:1" type="number" step="0.5" min="0" value="${kgToDisplay(s.kg||0)}" onchange="editWOSet(${i},${j},'kg',this.value)" aria-label="Weight">
+            <input class="input num" style="flex:1" type="number" min="0" value="${s.reps||0}" onchange="editWOSet(${i},${j},'reps',this.value)" aria-label="Reps">
+            <button class="btn ${s.done?'btn-primary':'btn-ghost'} btn-sm" style="width:52px" onclick="editWOToggle(${i},${j})" aria-label="Toggle set done">${s.done?'✓':'–'}</button>
+            <button class="btn btn-ghost btn-sm" style="width:34px" onclick="editWODelSet(${i},${j})" aria-label="Delete set">✕</button>
+          </div>`).join('')}
+        <button class="btn btn-ghost btn-sm" onclick="editWOAddSet(${i})">+ Set</button>
+      </div>`).join('') || '<p class="muted tiny" style="margin:10px 0">No exercises left — saving will keep the workout empty, or delete it below.</p>'}
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+      <button class="btn btn-primary btn-sm" onclick="saveWorkoutEdit()">Save changes</button>
+      <button class="btn btn-danger btn-sm" onclick="delWorkout('${w.id}')">Delete workout</button>
+    </div>`;
+}
+function editWOSet(i,j,k,v){ const s=editWO.exercises[i].sets[j]; s[k]= k==='kg' ? displayToKg(parseFloat(v)||0) : parseInt(v)||0; }
+function editWOToggle(i,j){ const s=editWO.exercises[i].sets[j]; s.done=!s.done; renderEditWO(); }
+function editWOAddSet(i){ const sets=editWO.exercises[i].sets; const last=sets[sets.length-1]; sets.push({ kg:last?.kg||0, reps:last?.reps||0, done:true }); renderEditWO(); }
+function editWODelSet(i,j){ editWO.exercises[i].sets.splice(j,1); renderEditWO(); }
+function editWORemoveEx(i){ editWO.exercises.splice(i,1); renderEditWO(); }
+function saveWorkoutEdit(){
+  if(!editWO.date){ toast('Add a date.'); return; }
+  editWO.exercises=editWO.exercises.filter(e=>e.sets.length);
+  const idx=DB.workouts.findIndex(w=>w.id===editWO.id);
+  if(idx>=0) DB.workouts[idx]=editWO;
+  save(); editWO=null; closeModal(); renderWorkout(); toast('Workout updated.');
+}
+function delWorkout(id){
+  if(!confirm('Delete this whole workout? This cannot be undone.')) return;
+  DB.workouts=DB.workouts.filter(w=>w.id!==id);
+  save(); editWO=null; closeModal(); renderWorkout(); toast('Workout deleted.');
 }
 
 /* ================= RUNS ================= */
