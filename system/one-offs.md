@@ -14,7 +14,9 @@ Just message Claude in plain English ("early start Tuesday, need to leave at 8",
 ```
 
 ## Active one-offs
-*(nothing logged yet — tell Claude when something comes up)*
+- **2026-08-08 (Sat)** — ⚽ football game **14:45** · movement = football (leave time TBD — need travel time for a leave nudge).
+- **2026-08-09 (Sun)** — ⚽ football game, **time TBC** · movement = football (confirm time when known).
+- **Week note (w/c Mon 2026-08-04):** football BOTH weekend days → only Thu + Fri gym land by default. Coach should proactively slot a **3rd gym midweek** (after-work with girlfriend, Readiness permitting) and keep Thu/Fri from stacking too hard before the back-to-back games — mind the "no 4 hard days in a row" guardrail across Thu gym → Fri gym → Sat/Sun football.
 
 <!-- Example of a logged one-off (delete once real ones exist):
 - 2026-08-11 (Tue) — early start, leave 08:00 not 08:25 · wake 06:30, shift the whole morning 30 min earlier
