@@ -13,11 +13,11 @@ That's the whole requirement. Once notifications are on, the 22:00 / 22:30 messa
 
 > If a nudge ever doesn't arrive, 95% of the time it's OS notification permissions or a Focus mode eating it. Check those first.
 
-## 🔗 Recommended: keep Google Calendar current
-The controller reads your calendar live — it's how one-offs (early start, moved tee time, a new appointment) override the default routine. So:
-- Keep work / gym / golf / Dad's / ref games on the calendar (owentuckwell25@gmail.com).
-- Add Friday's golf tee time and each weekend's ref game when you know them — the nightly brief turns them into leave-times automatically.
-- Want the day visible at a glance too? Add the **Google Calendar** widget to your home screen (long-press home → **+** → Calendar → large widget).
+## 🔗 Recommended: tell the controller about exceptions
+There's no live calendar link — the controller runs on the repo + reasoning. So whenever something breaks the normal week, **just message Claude** and it logs it in `system/one-offs.md`, which every nudge reads:
+- "Early start Tuesday, leaving at 8" · "Golf's at 2pm Friday" · "Away this weekend" · "Ref game 10am Saturday" · "At my girlfriend's Thursday, not Dad's".
+- Friday's golf tee time and each weekend's ref game — tell Claude when you know them and the nightly brief turns them into leave-times automatically.
+- The standard week (work, gym, golf, Dad's) is already built in — you only ever need to flag the *exceptions*.
 
 ## 🧩 Optional backup (only if you want belt-and-braces)
 The controller replaces the need for these, but they're nice as a fail-safe:
@@ -26,5 +26,5 @@ The controller replaces the need for these, but they're nice as a fail-safe:
 - **Screen Time → Downtime 23:00 → 09:00** to hard-block the morning doomscroll (keep TikTok whitelisted if it's work; block the pure time-sinks).
 
 ## What Claude can and can't do (straight)
-- **Can:** push you timed, calendar-aware nudges; a nightly plan + check-in; log your days; adjust the plan or the schedule when you ask.
+- **Can:** push you timed, plan-aware nudges; a nightly plan + check-in; log your days; adjust the plan or the schedule when you ask.
 - **Can't:** control the phone directly (install apps, flip Focus modes, read your screen). Those few taps above are yours; everything after is automatic.

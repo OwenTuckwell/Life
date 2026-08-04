@@ -12,8 +12,8 @@ Built around your real week. **Gym is on your free mornings, not before work** �
 - **Girlfriend:** evenings, you part ~22:00–22:30.
 - **Key date:** 🎂 Girlfriend's birthday — **Thu 2026-07-30** (still gymming that morning; evening likely with her, not Dad's).
 
-### Calendar skeleton (recurring, starting week of Mon 2026-07-27)
-Ready to create in Google Calendar (Europe/London) as soon as the connector is stable:
+### The standard weekly shape (what the controller assumes)
+This is the default week the nudges are built around (Europe/London). Exceptions go in `system/one-offs.md`; this is the baseline everything falls back to:
 - ☀️ Morning routine — daily 07:00–08:00 (wake, breakfast, skincare, stand tall)
 - 💼 Work — Mon & Tue 09:00–17:00, Wed 09:00–16:00 (reminder 35 min before to leave)
 - 🏋️ Gym (full body, alternate A/B) — Thu/Sat/Sun 09:00–10:00
@@ -64,4 +64,4 @@ These are the live push nudges (see `system/how-it-works.md`). All handled for y
 - **22:30** — wind-down lock (lights out by 23:00)
 - **Sun 10am** — weekly review
 
-**Movement each day:** gym days are fixed (Thu/Sat/Sun); on every other day the 22:00 brief decides walk / run / rest based on your load and how you're doing (`system/nightly.md`). Fri golf + weekend ref games are read off the calendar, not fixed triggers.
+**Movement each day:** gym days are fixed (Thu/Sat/Sun); on every other day the 22:00 brief decides walk / run / rest based on your load and how you're doing (`system/nightly.md`). Fri golf + weekend ref games aren't fixed triggers — flag them to Claude and they go in `system/one-offs.md`.

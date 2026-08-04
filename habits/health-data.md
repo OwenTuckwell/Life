@@ -12,7 +12,7 @@ Claude **can** read a Google Sheet (via the Google Drive connector). So we pipe 
 
 Pick whichever source you actually use:
 - **From Google Fit / Health Connect (Android):** the app **Health Sync** (free trial / cheap) can export Fitbit → Google Fit → and on to a **Google Sheet** on a schedule. Or "Fitbit to Google Sheets" style tools.
-- **From Fitbit directly:** a **Google Apps Script** using the Fitbit Web API can write your daily sleep/steps/resting-HR into a Sheet each morning (well-documented, free; needs a one-time Fitbit developer app + OAuth). If you want this, tell Claude and it'll write the script for you to paste in.
+- **From Fitbit directly (recommended, fully hands-off):** a **Google Apps Script** using the Fitbit Web API writes your daily sleep/steps/resting-HR into a Sheet each morning. **It's written and ready** in `integrations/fitbit-to-sheets/` (script + step-by-step README) — free Google + free Fitbit account, iPhone fine, ~15-min one-time setup on your PC.
 - **Simplest of all:** a Sheet with columns `Date | Sleep (h) | Steps | Resting HR | Notes` that you (or an automation) fill in.
 
 Then tell Claude the Sheet's name. The nudges will read the latest row and react to it — no more being asked for numbers you've already tracked.
