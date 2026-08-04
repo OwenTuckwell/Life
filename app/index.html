@@ -252,6 +252,59 @@ canvas{ max-width:100%; }
   text-align:center; padding:34px 14px; color:var(--text3); font-size:.92rem;
   border:1.5px dashed var(--border); border-radius:var(--radius);
 }
+
+/* segmented control — Gym / Run / Walk switcher */
+.seg{ display:flex; gap:6px; background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:5px; margin-bottom:18px; }
+.seg button{ flex:1; background:none; border:none; color:var(--text2); font-weight:600; font-size:.95rem; padding:10px 8px; border-radius:9px; display:flex; align-items:center; justify-content:center; gap:7px; transition:background .15s,color .15s; }
+.seg button:hover{ color:var(--text); }
+.seg button.active{ background:var(--surface); color:var(--text); box-shadow:0 1px 4px rgba(0,0,0,.15); }
+.seg button[data-mode="gym"].active{ color:var(--strength); }
+.seg button[data-mode="run"].active,.seg button[data-mode="walk"].active{ color:var(--cardio); }
+.seg svg{ width:17px; height:17px; }
+
+/* macro rows — calories / protein / carbs / fat */
+.macro-row{ margin-bottom:12px; }
+.macro-row:last-child{ margin-bottom:0; }
+.macro-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:5px; font-size:.9rem; }
+.macro-head b{ font-variant-numeric:tabular-nums; }
+.macro-head .macro-tgt{ color:var(--text3); font-size:.8rem; font-weight:500; }
+.bar.p > div{ background:var(--strength); } .bar.c > div{ background:var(--cardio); } .bar.f > div{ background:var(--gold); } .bar.k > div{ background:var(--body); }
+.bar.over > div{ background:var(--danger); }
+
+/* recap — the screenshot-ready TikTok card (signature moment) */
+.recap{
+  border-radius:20px; overflow:hidden; border:1px solid var(--border);
+  background:linear-gradient(160deg,var(--surface) 0%,var(--bg2) 100%); box-shadow:var(--shadow);
+}
+.recap-top{ padding:22px 22px 18px; position:relative; }
+.recap-brand{ font-family:var(--font-display); font-size:.85rem; letter-spacing:.06em; color:var(--text3); }
+.recap-brand span{ color:var(--strength); }
+.recap-date{ font-family:var(--font-display); font-size:clamp(1.6rem,5.5vw,2.3rem); line-height:1.05; margin-top:6px; }
+.recap-day{ color:var(--text2); font-size:.95rem; margin-top:2px; }
+.recap-verdict{
+  display:inline-flex; align-items:center; gap:9px; margin-top:16px; padding:11px 18px; border-radius:14px;
+  font-family:var(--font-display); font-size:1.05rem; letter-spacing:.01em;
+}
+.recap-verdict.win{ background:var(--gold); color:#3a2b00; }
+.recap-verdict.mid{ background:var(--strength-soft); color:var(--strength); border:1px solid var(--strength); }
+.recap-verdict .big{ font-size:1.35rem; }
+.recap-goals{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+.recap-goal{ display:inline-flex; align-items:center; gap:7px; font-size:.85rem; font-weight:600; padding:7px 12px; border-radius:999px; background:var(--surface2); color:var(--text2); border:1px solid var(--border); }
+.recap-goal.on{ background:var(--body-soft); color:var(--body); border-color:transparent; }
+.recap-goal .tick{ width:17px; height:17px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; background:var(--surface); color:var(--text3); }
+.recap-goal.on .tick{ background:var(--body); color:#fff; }
+.recap-sections{ padding:4px 22px 22px; display:grid; gap:14px; }
+.recap-sec{ background:var(--bg2); border:1px solid var(--border); border-radius:14px; padding:15px; }
+.recap-sec .stat-label{ margin-bottom:10px; }
+.recap-ex{ display:flex; justify-content:space-between; align-items:center; gap:10px; padding:7px 0; border-bottom:1px solid var(--border); font-size:.92rem; }
+.recap-ex:last-child{ border-bottom:0; }
+.recap-ex .top{ color:var(--text3); font-size:.82rem; font-variant-numeric:tabular-nums; }
+.recap-kcal{ font-family:var(--font-display); font-size:2.1rem; line-height:1; }
+.recap-kcal small{ font-family:var(--font-body); font-size:.8rem; font-weight:600; color:var(--text2); }
+.recap-macros{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:14px; }
+.recap-macro{ text-align:center; background:var(--surface); border:1px solid var(--border); border-radius:11px; padding:9px 4px; }
+.recap-macro .v{ font-family:var(--font-display); font-size:1.15rem; }
+.recap-macro .l{ font-size:.68rem; text-transform:uppercase; letter-spacing:.07em; color:var(--text3); font-weight:700; margin-top:2px; }
 </style>
 </head>
 <body data-theme="midnight">
@@ -261,7 +314,7 @@ canvas{ max-width:100%; }
     <button class="nav-btn active" data-page="today"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg>Today</button>
     <button class="nav-btn" data-page="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</button>
     <button class="nav-btn" data-page="workout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg>Workout</button>
-    <button class="nav-btn" data-page="runs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="16" cy="5" r="2"/><path d="M13 8.5 9.5 11l2.5 3-1.5 5M13 8.5l3 1.5 3-1M13 8.5 9 8 6.5 10.5M11 14l-4 2"/></svg>Runs</button>
+    <button class="nav-btn" data-page="recap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>Recap</button>
     <button class="nav-btn" data-page="exercises"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Exercises</button>
     <button class="nav-btn" data-page="goals"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>Goals</button>
     <button class="nav-btn" data-page="bodyTrack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-6 4 4 5-8 4 5"/><path d="M3 21h18"/></svg>Body</button>
@@ -291,20 +344,37 @@ canvas{ max-width:100%; }
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px">
             <button class="btn btn-cardio btn-sm" onclick="openWalkModal()">+ Walk</button>
             <button class="btn btn-cardio btn-sm" onclick="openRunModal()">+ Run</button>
-            <button class="btn btn-primary btn-sm" onclick="go('workout')">+ Gym</button>
+            <button class="btn btn-primary btn-sm" onclick="goWorkout('gym')">+ Gym</button>
           </div>
           <div class="stat-label" style="margin:4px 0 8px">⌚ Fitbit</div>
           <div id="fitbitPanel"></div>
         </div>
       </div>
       <div class="card" style="margin-top:16px">
-        <div class="stat-label" style="margin-bottom:12px">🌙 Nightly check-in</div>
-        <div class="tiny muted" style="margin-bottom:6px">⌚ Straight off your Fitbit app</div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px">
+          <div class="stat-label">🍽️ Nutrition today</div>
+          <span class="tiny muted">Log totals from MacroFactor</span>
+        </div>
         <div class="grid cols-4">
-          <label class="field"><span>Readiness</span><input class="input num" type="number" min="0" max="100" id="ciReadiness" placeholder="72"></label>
-          <label class="field"><span>Sleep score</span><input class="input num" type="number" min="0" max="100" id="ciSleepScore" placeholder="84"></label>
-          <label class="field"><span>Sleep time</span><input class="input" id="ciSleepTime" placeholder="7h 32m"></label>
-          <label class="field"><span>Steps</span><input class="input num" type="number" min="0" id="ciSteps" placeholder="8000"></label>
+          <label class="field"><span>Calories (kcal)</span><input class="input num" type="number" min="0" id="nutKcal" placeholder="1650"></label>
+          <label class="field"><span>Protein (g)</span><input class="input num" type="number" min="0" id="nutProtein" placeholder="160"></label>
+          <label class="field"><span>Carbs (g)</span><input class="input num" type="number" min="0" id="nutCarbs" placeholder="150"></label>
+          <label class="field"><span>Fat (g)</span><input class="input num" type="number" min="0" id="nutFat" placeholder="55"></label>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin:2px 0 4px">
+          <button class="btn btn-primary btn-sm" onclick="saveNutrition()">Save nutrition</button>
+          <button class="btn btn-ghost btn-sm" onclick="go('settings')">Set daily targets</button>
+        </div>
+        <div id="nutProgress" style="margin-top:12px"></div>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <div class="stat-label" style="margin-bottom:4px">🌙 Nightly check-in</div>
+        <div class="tiny muted" style="margin-bottom:8px">⌚ Straight off your Fitbit app — <b>sleep &amp; scores = last night</b> (this morning's), <b>steps = today so far</b></div>
+        <div class="grid cols-4">
+          <label class="field"><span>Readiness <span class="tiny muted">(today)</span></span><input class="input num" type="number" min="0" max="100" id="ciReadiness" placeholder="72"></label>
+          <label class="field"><span>Sleep score <span class="tiny muted">(last night)</span></span><input class="input num" type="number" min="0" max="100" id="ciSleepScore" placeholder="84"></label>
+          <label class="field"><span>Sleep time <span class="tiny muted">(last night)</span></span><input class="input" id="ciSleepTime" placeholder="7h 32m"></label>
+          <label class="field"><span>Steps <span class="tiny muted">(today)</span></span><input class="input num" type="number" min="0" id="ciSteps" placeholder="8000"></label>
           <label class="field"><span>Resting HR</span><input class="input num" type="number" min="0" id="ciRestingHr" placeholder="58"></label>
         </div>
         <div class="tiny muted" style="margin:12px 0 6px">🙂 How you feel</div>
@@ -329,7 +399,7 @@ canvas{ max-width:100%; }
     <section class="page" id="page-dashboard">
       <div class="page-head">
         <div><h1 class="page-title" id="greeting">Welcome back</h1><div class="page-sub" id="todayLine"></div></div>
-        <button class="btn btn-primary" onclick="go('workout')">+ Start workout</button>
+        <button class="btn btn-primary" onclick="goWorkout('gym')">+ Start workout</button>
       </div>
       <div class="grid cols-4" id="dashStats"></div>
       <div class="grid cols-2" style="margin-top:16px">
@@ -349,31 +419,45 @@ canvas{ max-width:100%; }
       </div>
     </section>
 
-    <!-- ============ WORKOUT ============ -->
+    <!-- ============ WORKOUT (gym · run · walk) ============ -->
     <section class="page" id="page-workout">
       <div class="page-head">
-        <div><h1 class="page-title">Workout</h1><div class="page-sub">Log sets — beat your previous bests.</div></div>
+        <div><h1 class="page-title">Workout</h1><div class="page-sub" id="workoutSub">Pick what you did — gym, run or walk.</div></div>
         <div id="workoutHeadBtns"></div>
       </div>
-      <div id="workoutArea"></div>
-      <div class="card" style="margin-top:16px">
-        <div class="stat-label" style="margin-bottom:10px">Workout history</div>
-        <div id="workoutHistory"></div>
-      </div>
-    </section>
 
-    <!-- ============ RUNS ============ -->
-    <section class="page" id="page-runs">
-      <div class="page-head">
-        <div><h1 class="page-title">Runs</h1><div class="page-sub">Distance, pace and personal bests.</div></div>
-        <button class="btn btn-cardio" onclick="openRunModal()">+ Log run</button>
+      <div class="seg" id="workoutSeg">
+        <button data-mode="gym" class="active" onclick="setWorkoutMode('gym')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg>Gym</button>
+        <button data-mode="run" onclick="setWorkoutMode('run')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="16" cy="5" r="2"/><path d="M13 8.5 9.5 11l2.5 3-1.5 5M13 8.5l3 1.5 3-1M13 8.5 9 8 6.5 10.5M11 14l-4 2"/></svg>Run</button>
+        <button data-mode="walk" onclick="setWorkoutMode('walk')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 4.5a1.5 1.5 0 1 0 0-.01M11 21l1.5-6-2.5-2 1-6M9.5 9 6 11m6.5-4 3 1.5.5 3"/></svg>Walk</button>
       </div>
-      <div class="grid cols-4" id="runStats"></div>
-      <div class="grid cols-2" style="margin-top:16px">
-        <div class="card"><div class="stat-label">Pace over time (min/km)</div><div class="chart-box"><canvas id="chPace"></canvas></div></div>
-        <div class="card"><div class="stat-label">Weekly distance</div><div class="chart-box"><canvas id="chRunDist"></canvas></div></div>
+
+      <!-- GYM MODE -->
+      <div id="wmGym" class="wm">
+        <div id="workoutArea"></div>
+        <div class="card" style="margin-top:16px">
+          <div class="stat-label" style="margin-bottom:10px">Workout history</div>
+          <div id="workoutHistory"></div>
+        </div>
       </div>
-      <div class="card" style="margin-top:16px"><div class="stat-label" style="margin-bottom:10px">Run log</div><div id="runList"></div></div>
+
+      <!-- RUN MODE -->
+      <div id="wmRun" class="wm" style="display:none">
+        <div style="display:flex; justify-content:flex-end; margin-bottom:14px"><button class="btn btn-cardio" onclick="openRunModal()">+ Log run</button></div>
+        <div class="grid cols-4" id="runStats"></div>
+        <div class="grid cols-2" style="margin-top:16px">
+          <div class="card"><div class="stat-label">Pace over time (min/km)</div><div class="chart-box"><canvas id="chPace"></canvas></div></div>
+          <div class="card"><div class="stat-label">Weekly distance</div><div class="chart-box"><canvas id="chRunDist"></canvas></div></div>
+        </div>
+        <div class="card" style="margin-top:16px"><div class="stat-label" style="margin-bottom:10px">Run log</div><div id="runList"></div></div>
+      </div>
+
+      <!-- WALK MODE -->
+      <div id="wmWalk" class="wm" style="display:none">
+        <div style="display:flex; justify-content:flex-end; margin-bottom:14px"><button class="btn btn-cardio" onclick="openWalkModal()">+ Log walk</button></div>
+        <div class="grid cols-3" id="walkStats"></div>
+        <div class="card" style="margin-top:16px"><div class="stat-label" style="margin-bottom:10px">Walk log</div><div id="walkList"></div></div>
+      </div>
     </section>
 
     <!-- ============ EXERCISES ============ -->
@@ -428,7 +512,7 @@ canvas{ max-width:100%; }
         <div class="stat-label" style="margin-bottom:12px">Quick links</div>
         <div style="display:flex; gap:10px; flex-wrap:wrap">
           <button class="btn btn-ghost btn-sm" onclick="go('exercises')">Exercise library & PBs</button>
-          <button class="btn btn-ghost btn-sm" onclick="go('workout')">Workout history</button>
+          <button class="btn btn-ghost btn-sm" onclick="goWorkout('gym')">Workout history</button>
         </div>
       </div>
       <div class="card">
@@ -452,6 +536,17 @@ canvas{ max-width:100%; }
         <button class="btn btn-primary btn-sm" onclick="saveFitbitUrl()">Save link</button>
       </div>
       <div class="card" style="margin-top:16px">
+        <div class="stat-label" style="margin-bottom:12px">🍽️ Daily nutrition targets</div>
+        <p class="muted tiny" style="margin-bottom:12px">Set your daily goals. Hitting protein and staying at or under calories counts toward a complete day on your recap. Leave blank to just track the numbers without a target.</p>
+        <div class="grid cols-4">
+          <label class="field"><span>Calories (kcal)</span><input class="input num" type="number" min="0" id="tgtKcal" placeholder="1650"></label>
+          <label class="field"><span>Protein (g)</span><input class="input num" type="number" min="0" id="tgtProtein" placeholder="160"></label>
+          <label class="field"><span>Carbs (g)</span><input class="input num" type="number" min="0" id="tgtCarbs" placeholder="150"></label>
+          <label class="field"><span>Fat (g)</span><input class="input num" type="number" min="0" id="tgtFat" placeholder="55"></label>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="saveMacroTargets()">Save targets</button>
+      </div>
+      <div class="card" style="margin-top:16px">
         <div class="stat-label" style="margin-bottom:12px">Your data</div>
         <p class="muted" style="margin-bottom:12px">Everything is stored in this browser only. Export a backup file regularly, and import it to move to another device.</p>
         <div style="display:flex; gap:10px; flex-wrap:wrap">
@@ -462,13 +557,27 @@ canvas{ max-width:100%; }
         </div>
       </div>
     </section>
+
+    <!-- ============ RECAP ============ -->
+    <section class="page" id="page-recap">
+      <div class="page-head">
+        <div><h1 class="page-title">Recap</h1><div class="page-sub">Your day at a glance — screenshot it for the video.</div></div>
+        <label class="field" style="margin-bottom:0"><span class="tiny">Day</span><input class="input" type="date" id="recapDate" onchange="renderRecap()"></label>
+      </div>
+      <div id="recapCard"></div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px">
+        <button class="btn btn-body btn-sm" onclick="copyRecap()">📋 Copy recap text</button>
+        <button class="btn btn-ghost btn-sm" onclick="setRecapToday()">Jump to today</button>
+      </div>
+      <p class="muted tiny" style="margin-top:10px">Tip: screen-record or screenshot the card above for your TikTok. It uses your current theme, so switch to Daylight in Settings if you want a bright background.</p>
+    </section>
   </main>
 </div>
 
 <nav class="tabbar">
   <button class="active" data-page="today"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg>Today</button>
   <button data-page="workout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg>Workout</button>
-  <button data-page="runs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="16" cy="5" r="2"/><path d="M13 8.5 9.5 11l2.5 3-1.5 5M13 8.5l3 1.5 3-1M13 8.5 9 8 6.5 10.5M11 14l-4 2"/></svg>Runs</button>
+  <button data-page="recap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>Recap</button>
   <button data-page="goals"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>Goals</button>
   <button data-page="bodyTrack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-6 4 4 5-8 4 5"/><path d="M3 21h18"/></svg>Body</button>
   <button data-page="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.6-2-3.4-2.4 1a7 7 0 0 0-2-1.2L14 3h-4l-.5 2.6a7 7 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.6A7 7 0 0 0 5 12c0 .4 0 .8.1 1.2l-2 1.6 2 3.4 2.4-1a7 7 0 0 0 2 1.2L10 21h4l.5-2.6a7 7 0 0 0 2-1.2l2.4 1 2-3.4-2-1.6c.1-.4.1-.8.1-1.2Z"/></svg>More</button>
@@ -508,13 +617,13 @@ let DB = load();
 function load(){
   try{
     const raw = localStorage.getItem(KEY);
-    if(raw){ const d = JSON.parse(raw); if(d && d.exercises){ d.templates??=[]; d.measurements??=[]; d.checkins??=[]; d.walks??=[]; d.checklist??={}; d.settings.fitbitCsvUrl??=''; return d; } }
+    if(raw){ const d = JSON.parse(raw); if(d && d.exercises){ d.templates??=[]; d.measurements??=[]; d.checkins??=[]; d.walks??=[]; d.checklist??={}; d.nutrition??={}; d.settings.fitbitCsvUrl??=''; d.settings.macroTargets??={ kcal:null, protein:null, carbs:null, fat:null }; return d; } }
   }catch(e){ console.warn('Storage unavailable, running in-memory only.', e); }
   return {
-    settings:{ theme:'midnight', units:'kg', name:'', fitbitCsvUrl:'' },
+    settings:{ theme:'midnight', units:'kg', name:'', fitbitCsvUrl:'', macroTargets:{ kcal:null, protein:null, carbs:null, fat:null } },
     exercises: DEFAULT_EXERCISES.map((e,i)=>({ id:'ex'+i, name:e[0], category:e[1], custom:false })),
     workouts:[], runs:[], weights:[], goals:[], templates:[], measurements:[], activeWorkout:null,
-    checkins:[], walks:[], checklist:{}
+    checkins:[], walks:[], checklist:{}, nutrition:{}
   };
 }
 function save(){ try{ localStorage.setItem(KEY, JSON.stringify(DB)); }catch(e){} }
@@ -619,7 +728,7 @@ function go(page){
 }
 document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
 function renderPage(p){
-  ({ today:renderToday, dashboard:renderDashboard, workout:renderWorkout, runs:renderRuns, exercises:renderExercises,
+  ({ today:renderToday, dashboard:renderDashboard, workout:renderWorkoutPage, recap:renderRecap, exercises:renderExercises,
      goals:renderGoals, bodyTrack:renderBody, settings:renderSettings })[p]?.();
 }
 
@@ -721,7 +830,22 @@ function drawSplitChart(){
         options:{ responsive:true, maintainAspectRatio:false, cutout:'62%', plugins:{ legend:{ position:'right', labels:{ color:css('--text3') } }, tooltip:{ enabled:false } } } });
 }
 
-/* ================= WORKOUT LOGGER ================= */
+/* ================= WORKOUT PAGE (gym · run · walk) ================= */
+let workoutMode='gym';
+function setWorkoutMode(mode){
+  workoutMode=mode;
+  ['gym','run','walk'].forEach(m=>{ const el=$('#wm'+m[0].toUpperCase()+m.slice(1)); if(el) el.style.display = m===mode?'':'none'; });
+  document.querySelectorAll('#workoutSeg button').forEach(b=>b.classList.toggle('active', b.dataset.mode===mode));
+  const subs={ gym:'Log sets — beat your previous bests.', run:'Distance, pace and personal bests.', walk:'Steps, distance and minutes on your feet.' };
+  $('#workoutSub').textContent=subs[mode];
+  if(mode==='gym') renderWorkout();
+  else if(mode==='run') renderRuns();
+  else renderWorkoutWalks();
+}
+function renderWorkoutPage(){ setWorkoutMode(workoutMode); }
+function goWorkout(mode){ workoutMode=mode||'gym'; go('workout'); }
+
+/* ================= WORKOUT LOGGER (GYM) ================= */
 function renderWorkout(){
   const area=$('#workoutArea'), head=$('#workoutHeadBtns');
   const aw=DB.activeWorkout;
@@ -961,10 +1085,31 @@ function renderEditWO(){
           </div>`).join('')}
         <button class="btn btn-ghost btn-sm" onclick="editWOAddSet(${i})">+ Set</button>
       </div>`).join('') || '<p class="muted tiny" style="margin:10px 0">No exercises left — saving will keep the workout empty, or delete it below.</p>'}
+    <div style="border:1px solid var(--border); border-radius:12px; padding:12px; margin-top:12px; background:var(--bg2)">
+      <div class="stat-label" style="margin-bottom:8px">Forgot one? Add an exercise</div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center">
+        <select class="input" id="editWOAddSel" style="flex:1; min-width:170px">
+          ${[...DB.exercises].sort((a,b)=>a.name.localeCompare(b.name)).map(e=>`<option value="${e.id}">${esc(e.name)}</option>`).join('')}
+          <option value="__new">＋ Create a new exercise…</option>
+        </select>
+        <button class="btn btn-primary btn-sm" onclick="editWOAddExercise()">Add exercise</button>
+      </div>
+    </div>
     <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
       <button class="btn btn-primary btn-sm" onclick="saveWorkoutEdit()">Save changes</button>
       <button class="btn btn-danger btn-sm" onclick="delWorkout('${w.id}')">Delete workout</button>
     </div>`;
+}
+function editWOAddExercise(){
+  let id=$('#editWOAddSel').value;
+  if(id==='__new'){
+    const name=prompt('New exercise name:'); if(!name||!name.trim()) return;
+    const ex={ id:uid(), name:name.trim(), category:'Custom', custom:true };
+    DB.exercises.push(ex); save(); id=ex.id;
+  }
+  if(!id) return;
+  editWO.exercises.push({ exerciseId:id, sets:[{kg:0,reps:0,done:true}] });
+  renderEditWO();
 }
 function editWOSet(i,j,k,v){ const s=editWO.exercises[i].sets[j]; s[k]= k==='kg' ? displayToKg(parseFloat(v)||0) : parseInt(v)||0; }
 function editWOToggle(i,j){ const s=editWO.exercises[i].sets[j]; s.done=!s.done; renderEditWO(); }
@@ -1051,6 +1196,27 @@ function saveRunEdit(id){
   save(); closeModal(); renderRuns(); toast('Run updated.');
 }
 
+/* ----- walks (inside workout tab) ----- */
+function renderWorkoutWalks(){
+  const walks=[...DB.walks].sort((a,b)=>a.date<b.date?1:-1);
+  const totSteps=DB.walks.reduce((a,w)=>a+(w.steps||0),0);
+  const totKm=DB.walks.reduce((a,w)=>a+(w.km||0),0);
+  const totMin=DB.walks.reduce((a,w)=>a+(w.min||0),0);
+  $('#walkStats').innerHTML = DB.walks.length ? `
+    <div class="card"><div class="stat-label">Walks logged</div><div class="stat-value accent-cardio num">${DB.walks.length}</div><div class="stat-note">all-time</div></div>
+    <div class="card"><div class="stat-label">Total steps</div><div class="stat-value accent-cardio num">${totSteps.toLocaleString()}</div><div class="stat-note">${totKm?totKm.toFixed(1)+' km covered':''}</div></div>
+    <div class="card"><div class="stat-label">Time on feet</div><div class="stat-value accent-gold num">${Math.round(totMin/60*10)/10}<small> hrs</small></div><div class="stat-note">${totMin.toLocaleString()} minutes</div></div>`
+    : '<div class="card empty" style="grid-column:1/-1">No walks yet. Tap “+ Log walk” after your next one.</div>';
+  $('#walkList').innerHTML = walks.length ? walks.map(w=>`
+    <div class="list-row"><div><strong>🚶 ${esc(w.label||'Walk')}</strong>${w.notes?' <span class="muted">· '+esc(w.notes)+'</span>':''}
+      <div class="tiny">${fmtDate(w.date)}</div></div>
+      <div style="display:flex; gap:8px; align-items:center">
+        <button class="btn btn-ghost btn-sm" onclick="editWalk('${w.id}')" aria-label="Edit walk">✎</button>
+        <button class="btn btn-ghost btn-sm" onclick="delWalk('${w.id}')" aria-label="Delete walk">✕</button>
+      </div></div>`).join('')
+    : '<div class="empty">No walks yet.</div>';
+}
+
 /* ================= EXERCISES ================= */
 function renderExercises(){
   const q=($('#exSearch').value||'').toLowerCase();
@@ -1065,14 +1231,19 @@ function renderExercises(){
         : '<span class="tiny">No data yet</span>';
       return `<div class="list-row" style="cursor:pointer" onclick="openExerciseDetail('${e.id}')">
         <div><strong>${esc(e.name)}</strong>${e.custom?' <span class="tiny">· custom</span>':''}
-        <div class="tiny">${st.sessions.length} session${st.sessions.length===1?'':'s'}</div></div>${right}</div>`;
+        <div class="tiny">${st.sessions.length} session${st.sessions.length===1?'':'s'}</div></div>
+        <div style="display:flex; gap:8px; align-items:center">${right}
+        <button class="btn btn-ghost btn-sm" onclick="event.stopPropagation(); openEditExercise('${e.id}')" title="Edit name & body part group" aria-label="Edit exercise">✎</button>
+        </div></div>`;
     }).join('')}`).join('') || '<div class="empty">No exercises match.</div>';
 }
+const BODY_GROUPS=['Chest','Back','Shoulders','Arms','Forearms','Legs','Glutes','Core','Full Body','Cardio','Other','Custom'];
+function groupOptions(sel){ return BODY_GROUPS.map(c=>`<option${c===sel?' selected':''}>${c}</option>`).join(''); }
 function openNewExercise(){
   openModal(`<h3>New exercise</h3>
     <label class="field"><span>Name</span><input class="input" id="nexName" placeholder="e.g. Bulgarian Split Squat"></label>
-    <label class="field"><span>Category</span>
-      <select class="input" id="nexCat">${['Chest','Back','Legs','Shoulders','Arms','Core','Glutes','Custom'].map(c=>`<option>${c}</option>`).join('')}</select></label>
+    <label class="field"><span>Body part group</span>
+      <select class="input" id="nexCat">${groupOptions('Legs')}</select></label>
     <button class="btn btn-primary" onclick="saveNewExercise()">Add exercise</button>`);
 }
 function saveNewExercise(){
@@ -1080,11 +1251,30 @@ function saveNewExercise(){
   DB.exercises.push({ id:uid(), name, category:$('#nexCat').value, custom:true });
   save(); closeModal(); renderExercises(); toast('Exercise added.');
 }
+/* edit body part group / name for ANY exercise (old or new) */
+function openEditExercise(id){
+  const ex=DB.exercises.find(e=>e.id===id); if(!ex) return;
+  openModal(`<h3>Edit exercise</h3>
+    <label class="field"><span>Name</span><input class="input" id="eexName" value="${esc(ex.name)}"></label>
+    <label class="field"><span>Body part group</span>
+      <select class="input" id="eexCat">${groupOptions(ex.category)}</select></label>
+    <div style="display:flex; gap:10px; flex-wrap:wrap">
+      <button class="btn btn-primary btn-sm" onclick="saveEditExercise('${id}')">Save changes</button>
+      ${ex.custom?`<button class="btn btn-danger btn-sm" onclick="deleteExercise('${id}')">Delete exercise</button>`:''}
+    </div>`);
+}
+function saveEditExercise(id){
+  const ex=DB.exercises.find(e=>e.id===id); if(!ex) return;
+  const name=$('#eexName').value.trim(); if(!name){ toast('Give it a name.'); return; }
+  ex.name=name; ex.category=$('#eexCat').value;
+  save(); closeModal(); renderExercises(); toast('Exercise updated.');
+}
 let detailChart=null;
 function openExerciseDetail(id){
   const ex=DB.exercises.find(e=>e.id===id); if(!ex) return;
   const st=exerciseStats(id);
   openModal(`<h3>${esc(ex.name)}</h3>
+    <div style="margin:-8px 0 14px"><span class="chip chip-strength">${esc(ex.category||'Other')}</span>${ex.custom?' <span class="tiny">· custom</span>':''}</div>
     <div class="grid cols-3" style="margin-bottom:14px">
       <div><div class="stat-label">Best weight</div><div class="stat-value num" style="font-size:1.3rem">${st.bestWeight?kgToDisplay(st.bestWeight.kg)+' '+U()+' × '+st.bestWeight.reps:'–'}</div></div>
       <div><div class="stat-label">Est. 1-rep max</div><div class="stat-value accent-gold num" style="font-size:1.3rem">${st.best1RM?kgToDisplay(st.best1RM.kg).toFixed(1)+' '+U():'–'}</div></div>
@@ -1093,7 +1283,10 @@ function openExerciseDetail(id){
     ${st.sessions.length?'<div class="chart-box"><canvas id="chDetail"></canvas></div>':'<div class="empty">Log this exercise in a workout to build its history chart.</div>'}
     <div style="max-height:180px; overflow:auto; margin-top:10px">${st.sessions.slice(0,10).map(s=>`
       <div class="list-row"><span class="tiny">${fmtDate(s.date)}</span><span class="num muted">${s.sets.map(x=>kgToDisplay(x.kg)+'×'+x.reps).join('  ·  ')}</span></div>`).join('')}</div>
-    ${ex.custom?`<button class="btn btn-danger btn-sm" style="margin-top:12px" onclick="deleteExercise('${id}')">Delete exercise</button>`:''}`);
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+      <button class="btn btn-ghost btn-sm" onclick="openEditExercise('${id}')">Edit name &amp; group</button>
+      ${ex.custom?`<button class="btn btn-danger btn-sm" onclick="deleteExercise('${id}')">Delete exercise</button>`:''}
+    </div>`);
   if(st.sessions.length){
     const pts=[...st.sessions].reverse().map(s=>({ x:s.date, y: Math.round(kgToDisplay(Math.max(...s.sets.map(x=>epley(x.kg,x.reps))))*10)/10 }));
     detailChart?.destroy();
@@ -1369,6 +1562,8 @@ function renderSettings(){
   $('#setName').value=DB.settings.name||'';
   $('#setUnits').value=DB.settings.units;
   $('#setFitbitUrl').value=DB.settings.fitbitCsvUrl||'';
+  const t=DB.settings.macroTargets||{};
+  $('#tgtKcal').value=t.kcal??''; $('#tgtProtein').value=t.protein??''; $('#tgtCarbs').value=t.carbs??''; $('#tgtFat').value=t.fat??'';
 }
 function saveFitbitUrl(){ DB.settings.fitbitCsvUrl=$('#setFitbitUrl').value.trim(); save(); toast('Fitbit link saved.'); }
 function setTheme(t){ DB.settings.theme=t; document.body.dataset.theme=t; save(); renderSettings(); setTimeout(redrawAllSafe,50); }
@@ -1440,6 +1635,7 @@ function renderToday(){
      <div class="muted tiny" style="margin-top:2px">${m.detail} · wake 07:00 · lights out 23:00 · <em>the nightly coach confirms tonight</em></div></div>`;
   renderChecklist();
   renderFitbit();
+  renderNutrition();
   renderCheckinForm();
   renderTodayWalks();
 }
@@ -1478,6 +1674,45 @@ function parseLatestFitbit(csv){
   return { date:col('date'), sleep:col('sleep'), steps:col('step'), hr:col('resting')||col('hr') };
 }
 
+/* ----- nutrition: calories & macros ----- */
+function nutritionFor(date){ return DB.nutrition[date]||null; }
+function todayNutrition(){ return nutritionFor(todayISO()); }
+function macroTargets(){ return DB.settings.macroTargets||{}; }
+function saveNutrition(){
+  const kcal=parseInt($('#nutKcal').value)||0, protein=parseInt($('#nutProtein').value)||0,
+        carbs=parseInt($('#nutCarbs').value)||0, fat=parseInt($('#nutFat').value)||0;
+  if(!kcal && !protein && !carbs && !fat){ toast('Enter at least one number.'); return; }
+  DB.nutrition[todayISO()]={ kcal, protein, carbs, fat };
+  save(); renderNutrition(); toast('Nutrition saved.');
+}
+function macroBar(label, val, tgt, cls, redOver){
+  const has=tgt>0, pct=has?Math.min(100,Math.round(val/tgt*100)):0, over=has && val>tgt && redOver;
+  return `<div class="macro-row">
+    <div class="macro-head"><span>${label}</span>
+      <span><b class="num">${val}</b>${has?` <span class="macro-tgt">/ ${tgt}</span>`:''}</span></div>
+    ${has?`<div class="bar ${cls} ${over?'over':''}"><div style="width:${pct}%"></div></div>`:''}
+  </div>`;
+}
+function renderNutrition(){
+  const n=todayNutrition();
+  if(n){ $('#nutKcal').value=n.kcal||''; $('#nutProtein').value=n.protein||''; $('#nutCarbs').value=n.carbs||''; $('#nutFat').value=n.fat||''; }
+  const t=macroTargets(), anyTarget=t.kcal||t.protein||t.carbs||t.fat, el=$('#nutProgress');
+  if(!n && !anyTarget){ el.innerHTML='<p class="muted tiny">Log your daily totals to track calories and macros. Set targets in Settings for progress bars, and it counts toward your recap.</p>'; return; }
+  const v=n||{kcal:0,protein:0,carbs:0,fat:0};
+  el.innerHTML =
+    macroBar('🔥 Calories', v.kcal||0, t.kcal||0, 'k', true) +
+    macroBar('🍗 Protein (g)', v.protein||0, t.protein||0, 'p', false) +
+    macroBar('🍚 Carbs (g)', v.carbs||0, t.carbs||0, 'c', false) +
+    macroBar('🥑 Fat (g)', v.fat||0, t.fat||0, 'f', false);
+}
+function saveMacroTargets(){
+  DB.settings.macroTargets={
+    kcal:parseInt($('#tgtKcal').value)||null, protein:parseInt($('#tgtProtein').value)||null,
+    carbs:parseInt($('#tgtCarbs').value)||null, fat:parseInt($('#tgtFat').value)||null };
+  save(); toast('Targets saved.');
+  if($('#page-today').classList.contains('visible')) renderNutrition();
+}
+
 function renderCheckinForm(){
   const c=todayCheckin(); if(!c) return;
   $('#ciReadiness').value=c.readiness??''; $('#ciSleepScore').value=c.sleepScore??'';
@@ -1505,9 +1740,12 @@ function copyDayForClaude(){
   const act=[gym?'gym logged':'', ...runs.map(r=>`run ${r.km}km`), ...walks.map(w=>`walk ${w.label}`)].filter(Boolean).join(', ');
   const fitbit=[ c.readiness?`Readiness ${c.readiness}`:'', c.sleepScore?`Sleep score ${c.sleepScore}`:'',
     c.sleepTime?`Sleep ${c.sleepTime}`:'', c.steps?`${c.steps} steps`:'', c.restingHr?`Resting HR ${c.restingHr}`:'' ].filter(Boolean).join(' · ');
+  const n=todayNutrition();
+  const nutrition = n ? `Nutrition: ${n.kcal||0} kcal · P${n.protein||0} C${n.carbs||0} F${n.fat||0}` : '';
   const lines=[
     `Daily check-in — ${t}`,
     fitbit ? `Fitbit: ${fitbit}` : '',
+    nutrition,
     `Energy: ${c.energy??'?'}/5 · Moved: ${c.moved||'?'}${act?` (${act})`:''}`,
     `Morning routine: ${c.checklistDone}/${c.checklistTotal}${missed.length?` — missed: ${missed.join(', ')}`:''}`,
     `Posture stretches: ${c.stretches?'yes':'no'}`,
@@ -1537,7 +1775,11 @@ function saveWalk(){
   const date=$('#wkDate').value||todayISO();
   DB.walks.push({ id:uid(), date, steps, km, min, notes:$('#wkNotes').value.trim(), label });
   save(); closeModal(); toast('Walk logged.');
-  renderToday();
+  refreshWalkViews();
+}
+function refreshWalkViews(){
+  if($('#page-today').classList.contains('visible')) renderToday();
+  else if($('#page-workout').classList.contains('visible') && workoutMode==='walk') renderWorkoutWalks();
 }
 function renderTodayWalks(){
   const walks=DB.walks.filter(w=>w.date===todayISO());
@@ -1571,12 +1813,103 @@ function saveWalkEdit(id){
   if(!steps && !km && !min){ toast('Add steps, distance, or minutes.'); return; }
   w.date=$('#ewDate').value||w.date; w.steps=steps; w.km=km; w.min=min; w.notes=$('#ewNotes').value.trim();
   w.label=[km?km+'km':'', steps?steps+' steps':'', min?min+'min':''].filter(Boolean).join(' · ');
-  save(); closeModal(); renderToday(); toast('Walk updated.');
+  save(); closeModal(); refreshWalkViews(); toast('Walk updated.');
 }
 function delWalk(id){
   if(!confirm('Delete this walk?')) return;
   DB.walks=DB.walks.filter(w=>w.id!==id);
-  save(); closeModal(); renderToday(); toast('Walk deleted.');
+  save(); closeModal(); refreshWalkViews(); toast('Walk deleted.');
+}
+
+/* ================= RECAP (daily overview / TikTok) ================= */
+function recapDate(){ return $('#recapDate').value || todayISO(); }
+function setRecapToday(){ $('#recapDate').value=todayISO(); renderRecap(); }
+function trainingFor(date){
+  return { gyms:DB.workouts.filter(w=>w.date===date), runs:DB.runs.filter(r=>r.date===date), walks:DB.walks.filter(w=>w.date===date) };
+}
+function dayGoals(date){
+  const { gyms, runs, walks }=trainingFor(date);
+  const moved = gyms.length||runs.length||walks.length;
+  const n=nutritionFor(date), t=macroTargets();
+  const ck=DB.checklist[date]||{};
+  const routineDone=CHECKLIST_ITEMS.every(it=> it.id==='move' ? (!!ck.move||moved) : !!ck[it.id]);
+  const goals=[{ label:'Trained / moved', ok:!!moved }];
+  if(t.protein) goals.push({ label:`Protein ${t.protein}g+`, ok:!!(n && n.protein>=t.protein) });
+  if(t.kcal)    goals.push({ label:`Calories ≤ ${t.kcal}`, ok:!!(n && n.kcal>0 && n.kcal<=t.kcal) });
+  goals.push({ label:'Morning routine', ok:routineDone });
+  return goals;
+}
+function renderRecap(){
+  if(!$('#recapDate').value) $('#recapDate').value=todayISO();
+  const date=recapDate();
+  const { gyms, runs, walks }=trainingFor(date);
+  const goals=dayGoals(date);
+  const done=goals.filter(g=>g.ok).length, all=goals.length, perfect=done===all;
+  const isToday=date===todayISO();
+  const dObj=new Date(date+'T12:00');
+  const weekday=dObj.toLocaleDateString(undefined,{weekday:'long'});
+  const nice=dObj.toLocaleDateString(undefined,{day:'numeric',month:'long',year:'numeric'});
+  const name=DB.settings.name;
+
+  const exItems=[];
+  gyms.forEach(w=>w.exercises.forEach(e=>{
+    const doneSets=e.sets.filter(s=>s.done); if(!doneSets.length) return;
+    const top=doneSets.reduce((b,s)=>(s.kg||0)>(b.kg||0)?s:b, doneSets[0]);
+    exItems.push({ name:exName(e.exerciseId), top: top.kg? `${doneSets.length}×  top ${kgToDisplay(top.kg)}${U()}×${top.reps}` : `${doneSets.length} set${doneSets.length===1?'':'s'}` });
+  }));
+  runs.forEach(r=>exItems.push({ name:`🏃 Run ${r.km.toFixed(2)} km`, top:`${fmtDur(r.sec)} · ${paceStr(r.sec/r.km)}` }));
+  walks.forEach(w=>exItems.push({ name:`🚶 Walk`, top: w.label||'' }));
+  const exHtml = exItems.length
+    ? exItems.map(x=>`<div class="recap-ex"><span>${esc(x.name)}</span><span class="top">${esc(x.top)}</span></div>`).join('')
+    : '<div class="tiny muted">No training logged this day.</div>';
+
+  const n=nutritionFor(date), t=macroTargets();
+  const nutHtml = n
+    ? `<div class="recap-kcal num">${(n.kcal||0).toLocaleString()} <small>kcal${t.kcal?` / ${t.kcal}`:''}</small></div>
+        <div class="recap-macros">
+          <div class="recap-macro"><div class="v num accent-strength">${n.protein||0}g</div><div class="l">Protein</div></div>
+          <div class="recap-macro"><div class="v num accent-cardio">${n.carbs||0}g</div><div class="l">Carbs</div></div>
+          <div class="recap-macro"><div class="v num accent-gold">${n.fat||0}g</div><div class="l">Fat</div></div>
+        </div>`
+    : '<div class="tiny muted">No nutrition logged this day.</div>';
+
+  const goalPills = goals.map(g=>`<span class="recap-goal ${g.ok?'on':''}"><span class="tick">${g.ok?'✓':''}</span>${esc(g.label)}</span>`).join('');
+
+  $('#recapCard').innerHTML = `
+    <div class="recap" id="recapShot">
+      <div class="recap-top">
+        <div class="recap-brand">FIT<span>FORGE</span> · DAILY RECAP</div>
+        <div class="recap-date">${isToday?'Today':esc(weekday)}</div>
+        <div class="recap-day">${esc(nice)}${name?` · ${esc(name)}`:''}</div>
+        <div class="recap-verdict ${perfect?'win':'mid'}">
+          <span class="big">${perfect?'🏆':'📊'}</span>
+          ${perfect?'Perfect day — all goals hit':`${done} of ${all} goals complete`}
+        </div>
+        <div class="recap-goals">${goalPills}</div>
+      </div>
+      <div class="recap-sections">
+        <div class="recap-sec"><div class="stat-label">🏋️ Training done</div>${exHtml}</div>
+        <div class="recap-sec"><div class="stat-label">🍽️ Calories & macros</div>${nutHtml}</div>
+      </div>
+    </div>`;
+}
+function copyRecap(){
+  const date=recapDate();
+  const { gyms, runs, walks }=trainingFor(date);
+  const goals=dayGoals(date), done=goals.filter(g=>g.ok).length;
+  const n=nutritionFor(date), exNames=[];
+  gyms.forEach(w=>w.exercises.forEach(e=>{ if(e.sets.some(s=>s.done)) exNames.push(exName(e.exerciseId)); }));
+  runs.forEach(r=>exNames.push(`Run ${r.km.toFixed(2)}km`));
+  walks.forEach(w=>exNames.push(`Walk ${(w.label||'').trim()}`.trim()));
+  const lines=[
+    `FitForge recap — ${fmtDate(date)}`,
+    exNames.length?`Training: ${exNames.join(', ')}`:'Training: rest day',
+    n?`Nutrition: ${n.kcal||0} kcal · P${n.protein||0} C${n.carbs||0} F${n.fat||0}`:'Nutrition: not logged',
+    `Goals: ${done}/${goals.length} complete${done===goals.length?' — perfect day 🏆':''}`
+  ];
+  const text=lines.join('\n');
+  if(navigator.clipboard?.writeText){ navigator.clipboard.writeText(text).then(()=>toast('Recap copied 📋'),()=>fallbackCopy(text)); }
+  else fallbackCopy(text);
 }
 
 /* ================= INIT ================= */
