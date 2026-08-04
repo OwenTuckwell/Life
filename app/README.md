@@ -18,7 +18,7 @@ Settings → "Fitbit auto-fill" takes a **published Google Sheet CSV link** (fro
 - **No auto two-way sync** — the "Copy my day" paste is the bridge to the controller. (A connector-based auto path is possible later if Owen connects Google Sheets on claude.ai.)
 
 ## Data model (added to the FitForge DB)
-- `checkins[]` — `{date, sleepH, steps, energy, moved, note, stretches, checklistDone, checklistTotal}`
+- `checkins[]` — `{date, readiness, sleepScore, sleepTime, steps, restingHr, energy, moved, note, stretches, checklistDone, checklistTotal}` (Fitbit fields mirror the app: Readiness, Sleep score, Sleep time, Steps, Resting HR)
 - `walks[]` — `{id, date, steps, km, min, notes, label}`
 - `checklist{}` — `{ 'YYYY-MM-DD': { itemId: true } }`
 - `settings.fitbitCsvUrl` — the published-CSV link
