@@ -55,7 +55,13 @@ Your words: *"if I slip, I slip hard."* One missed thing knocks over the next. H
 ## The breakfast fix (for your 9–10am slump)
 You're tired mid-morning because you skip breakfast and run on empty. The egg-free meal plan (`nutrition/meal-plan.md`) fixes this — a protein + oats bowl each morning. Expect the crash to fade within a week.
 
-## Reminder times
-- **7:15am** — morning brief (just after you wake)
-- **10:30pm** — log nudge (after your girlfriend heads off, before bed)
+## Controller touchpoints (what fires, when)
+These are the live push nudges (see `system/how-it-works.md`). All handled for you — no alarms to set.
+- **07:00** — wake brief (today's shape + movement)
+- **08:25** — leave for work (Mon/Tue/Wed) · **08:40** — leave for gym (Thu/Sat/Sun)
+- **16:55 Wed** — leave for golf · **16:40 Thu** — leave for Dad's
+- **22:00** — nightly plan + "how did today go?" check-in
+- **22:30** — wind-down lock (lights out by 23:00)
 - **Sun 10am** — weekly review
+
+**Movement each day:** gym days are fixed (Thu/Sat/Sun); on every other day the 22:00 brief decides walk / run / rest based on your load and how you're doing (`system/nightly.md`). Fri golf + weekend ref games are read off the calendar, not fixed triggers.
