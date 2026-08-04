@@ -42,6 +42,18 @@ Save. Done — a fresh row lands every morning.
 ## 7. Tell the controller
 Message Claude the Sheet's name ("Fitbit data"). It reads the latest row via the Google Drive connector each night — bad sleep quietly softens the next morning, low steps pushes the walk, a good streak green-lights an extra session. Logic: `habits/health-data.md`.
 
+## 8. Connect it to the FitForge app (auto-fill the Today page)
+This makes your sleep/steps show up in the app and pre-fill the nightly check-in — no typing.
+
+1. In the Fitbit Sheet: **File → Share → Publish to web**.
+2. In the dialog: under **Link**, pick your **Fitbit** sheet (not "Entire document") and change the format from *Web page* to **Comma-separated values (.csv)**.
+3. Click **Publish** → confirm → **copy the link** it gives you (ends in `output=csv`).
+   - *Note:* "Publish to web" makes only that sheet's rows public via the link (the link is unguessable, but treat it as shareable). It's separate from the sheet's normal private sharing.
+4. Open **FitForge → Settings → "Fitbit auto-fill" → paste the link → Save link**.
+5. Go to **Today** — the Fitbit panel now shows your latest sleep, steps and resting HR, and the check-in's sleep/steps fields pre-fill from it.
+
+If it doesn't load: the link must be the **CSV** one (not a normal share link), the sheet tab must be named/selected correctly, and the column headers should include *Date, Sleep, Steps, Resting HR* (the app matches on those words). No link, or a private one, just means you type the numbers in by hand — nothing breaks.
+
 ## If something breaks
 - **No data / 401 in the log** → re-run `authorize` (token expired or scope changed). `reset` clears the auth to start fresh.
 - **403 on sleep/HR** → the Fitbit app type isn't *Personal*; fix it at dev.fitbit.com.
