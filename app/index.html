@@ -299,9 +299,16 @@ canvas{ max-width:100%; }
       </div>
       <div class="card" style="margin-top:16px">
         <div class="stat-label" style="margin-bottom:12px">🌙 Nightly check-in</div>
+        <div class="tiny muted" style="margin-bottom:6px">⌚ Straight off your Fitbit app</div>
         <div class="grid cols-4">
-          <label class="field"><span>Sleep (h)</span><input class="input num" type="number" step="0.1" min="0" id="ciSleep" placeholder="8"></label>
+          <label class="field"><span>Readiness</span><input class="input num" type="number" min="0" max="100" id="ciReadiness" placeholder="72"></label>
+          <label class="field"><span>Sleep score</span><input class="input num" type="number" min="0" max="100" id="ciSleepScore" placeholder="84"></label>
+          <label class="field"><span>Sleep time</span><input class="input" id="ciSleepTime" placeholder="7h 32m"></label>
           <label class="field"><span>Steps</span><input class="input num" type="number" min="0" id="ciSteps" placeholder="8000"></label>
+          <label class="field"><span>Resting HR</span><input class="input num" type="number" min="0" id="ciRestingHr" placeholder="58"></label>
+        </div>
+        <div class="tiny muted" style="margin:12px 0 6px">🙂 How you feel</div>
+        <div class="grid cols-2">
           <label class="field"><span>Energy (1–5)</span>
             <select class="input" id="ciEnergy"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
           </label>
@@ -1458,8 +1465,9 @@ function renderFitbit(){
       <div class="fb-stat"><span>👟 Steps</span><b>${row.steps??'–'}</b></div>
       <div class="fb-stat"><span>❤️ Resting HR</span><b>${row.hr??'–'}</b></div>
       <div class="fb-stat"><span>📅 ${row.date??''}</span><b></b></div>`;
-    if(row.sleep && !$('#ciSleep').value) $('#ciSleep').value=row.sleep;
+    if(row.sleep && !$('#ciSleepTime').value) $('#ciSleepTime').value=row.sleep+'h';
     if(row.steps && !$('#ciSteps').value) $('#ciSteps').value=row.steps;
+    if(row.hr && !$('#ciRestingHr').value) $('#ciRestingHr').value=row.hr;
   }).catch(()=>{ el.innerHTML='<p class="muted tiny">Couldn\'t reach the sheet (offline, or the link isn\'t public).</p>'; });
 }
 function parseLatestFitbit(csv){
@@ -1472,13 +1480,17 @@ function parseLatestFitbit(csv){
 
 function renderCheckinForm(){
   const c=todayCheckin(); if(!c) return;
-  $('#ciSleep').value=c.sleepH??''; $('#ciSteps').value=c.steps??'';
+  $('#ciReadiness').value=c.readiness??''; $('#ciSleepScore').value=c.sleepScore??'';
+  $('#ciSleepTime').value=c.sleepTime??''; $('#ciSteps').value=c.steps??''; $('#ciRestingHr').value=c.restingHr??'';
   $('#ciEnergy').value=c.energy??''; $('#ciMoved').value=c.moved??''; $('#ciNote').value=c.note??'';
 }
 function saveCheckin(){
   const date=todayISO();
   const doneCount=CHECKLIST_ITEMS.filter(it=>isChecked(it.id)).length;
-  const rec={ date, sleepH:parseFloat($('#ciSleep').value)||null, steps:parseInt($('#ciSteps').value)||null,
+  const rec={ date,
+    readiness:parseInt($('#ciReadiness').value)||null, sleepScore:parseInt($('#ciSleepScore').value)||null,
+    sleepTime:$('#ciSleepTime').value.trim()||null, steps:parseInt($('#ciSteps').value)||null,
+    restingHr:parseInt($('#ciRestingHr').value)||null,
     energy:$('#ciEnergy').value||null, moved:$('#ciMoved').value||null, note:$('#ciNote').value.trim(),
     stretches:isChecked('stretch'), checklistDone:doneCount, checklistTotal:CHECKLIST_ITEMS.length };
   const i=DB.checkins.findIndex(x=>x.date===date);
@@ -1491,10 +1503,12 @@ function copyDayForClaude(){
   const missed=CHECKLIST_ITEMS.filter(it=>!isChecked(it.id)).map(it=>it.label.replace(/^\S+\s/,''));
   const walks=DB.walks.filter(w=>w.date===t), runs=DB.runs.filter(r=>r.date===t), gym=DB.workouts.some(w=>w.date===t);
   const act=[gym?'gym logged':'', ...runs.map(r=>`run ${r.km}km`), ...walks.map(w=>`walk ${w.label}`)].filter(Boolean).join(', ');
+  const fitbit=[ c.readiness?`Readiness ${c.readiness}`:'', c.sleepScore?`Sleep score ${c.sleepScore}`:'',
+    c.sleepTime?`Sleep ${c.sleepTime}`:'', c.steps?`${c.steps} steps`:'', c.restingHr?`Resting HR ${c.restingHr}`:'' ].filter(Boolean).join(' · ');
   const lines=[
     `Daily check-in — ${t}`,
-    `Sleep: ${c.sleepH??'?'} h · Steps: ${c.steps??'?'} · Energy: ${c.energy??'?'}/5`,
-    `Moved: ${c.moved||'?'}${act?` (${act})`:''}`,
+    fitbit ? `Fitbit: ${fitbit}` : '',
+    `Energy: ${c.energy??'?'}/5 · Moved: ${c.moved||'?'}${act?` (${act})`:''}`,
     `Morning routine: ${c.checklistDone}/${c.checklistTotal}${missed.length?` — missed: ${missed.join(', ')}`:''}`,
     `Posture stretches: ${c.stretches?'yes':'no'}`,
     c.note?`Note: ${c.note}`:''

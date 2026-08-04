@@ -17,7 +17,7 @@ The main message. Two jobs: find out how today went, and hand him tomorrow decid
 
 **The message (keep it phone-length — a tight, scannable brief, not an essay):**
 
-1. **Check-in (ask, don't assume):** "How did today go?" — nudge for: did you move / gym done, rough step count, energy, and anything that slipped. One line. His reply gets logged (see below).
+1. **Check-in (ask, don't assume):** "How did today go?" — nudge for: did you move / gym done, energy, and anything that slipped, plus his Fitbit numbers (Readiness, Sleep score, Sleep time, Steps, Resting HR — he reads them off the Fitbit app, or sends them via the FitForge "Copy my day" paste). One line. His reply gets logged (see below), and **low Readiness / poor sleep softens tomorrow's movement; high Readiness green-lights pushing** (see `habits/health-data.md`).
 2. **🌙 Asleep by / wake:** the numbers, explicitly. Default **lights out 23:00 → wake 07:00** (~8h). Hold wake at 07:00 seven days a week — it's the keystone. Only shift for a real reason logged in `one-offs.md` (e.g. early start, early tee time) and say why.
 3. **🏋️ Tomorrow's movement:** state it plainly — **walk / run / gym**. Decision rules below.
 4. **⏱️ Tomorrow's shape:** the day's anchors from the weekly schedule + any `one-offs.md` override (leave-for-work time, gym, golf tee + leave time, Dad's, ref game). Just the anchors, not a timetable.
