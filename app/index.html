@@ -1741,7 +1741,8 @@ function copyDayForClaude(){
   const fitbit=[ c.readiness?`Readiness ${c.readiness}`:'', c.sleepScore?`Sleep score ${c.sleepScore}`:'',
     c.sleepTime?`Sleep ${c.sleepTime}`:'', c.steps?`${c.steps} steps`:'', c.restingHr?`Resting HR ${c.restingHr}`:'' ].filter(Boolean).join(' · ');
   const n=todayNutrition();
-  const nutrition = n ? `Nutrition: ${n.kcal||0} kcal · P${n.protein||0} C${n.carbs||0} F${n.fat||0}` : '';
+  const mt=DB.settings.macroTargets||{};
+  const nutrition = n ? `Nutrition: ${n.kcal||0}${mt.kcal?'/'+mt.kcal:''} kcal · P${n.protein||0}${mt.protein?'/'+mt.protein:''} C${n.carbs||0} F${n.fat||0}${(mt.kcal||mt.protein)?' (actual/target)':''}` : '';
   const lines=[
     `Daily check-in — ${t}`,
     fitbit ? `Fitbit: ${fitbit}` : '',
