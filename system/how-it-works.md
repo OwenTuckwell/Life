@@ -1,0 +1,37 @@
+# How the controller works (read this first)
+
+This repo used to be a set of files *you* maintained, plus a couple of fixed push times. It's now an **active controller**: it wakes itself up on a schedule, reads your live Google Calendar and your recent logs, decides what you need *right now*, and pushes it to your phone. Same repo, but it runs the day instead of just describing it.
+
+## The engine
+Behind the scenes there are **scheduled triggers** (Anthropic "Routines"). Each one fires at a set time, spins up a fresh Claude session, and that session:
+1. Reads the relevant spec file in `system/` (the logic below).
+2. Checks **Google Calendar** for today/tomorrow (one-off early starts, golf tee times, ref games, birthdays).
+3. Reads recent entries in `progress/log.md` (how the last few days actually went).
+4. Reads `habits/health-data.md` for any sleep/steps data available.
+5. Decides the message, **pushes it to your phone**, and — for the nightly check-in — logs your reply back into the repo.
+
+Because every fire reads and writes the repo, **the repo is the memory.** No single session has to stay alive; the git history is the continuity.
+
+## The live schedule (all times Europe/London)
+| Local | Days | Trigger | Spec |
+|-------|------|---------|------|
+| 07:00 | daily | Wake brief | `system/daytime.md` |
+| 08:25 | Mon–Wed | Leave for work | `system/daytime.md` |
+| 08:40 | Thu/Sat/Sun | Leave for gym | `system/daytime.md` |
+| 16:55 | Wed | Leave for golf | `system/daytime.md` |
+| 16:40 | Thu | Leave for Dad's | `system/daytime.md` |
+| 22:00 | daily | Nightly plan + check-in | `system/nightly.md` |
+| 22:30 | daily | Wind-down lock | `system/nightly.md` |
+
+Variable events (Fri golf tee time, weekend ref game) aren't fixed triggers — the **22:00 nightly brief** reads them off your calendar and gives you the leave time for tomorrow.
+
+## How to change it (this is the point)
+- **Change *what a nudge says* or the decision logic** → edit the spec file (`system/nightly.md`, `system/daytime.md`). The triggers read these each time they fire, so an edit takes effect the same day.
+- **Change *when* a nudge fires, or add/remove one** → tell Claude "add a nudge at X" / "move the wake brief to 06:45" and it edits the trigger itself. (These live outside the repo, in your Routines.)
+- **One-off changes** ("early start tomorrow", "golf's at 14:00 Friday") → just tell Claude, or put it on your calendar; the nightly/wake brief picks it up automatically.
+
+## ⚠️ Clocks (DST)
+The triggers are stored in UTC. Right now it's **British Summer Time (UTC+1)**, so each UTC time is set one hour behind the local time above. **When the clocks go back on Sun 26 Oct 2026**, every trigger will start firing one hour early unless shifted +1h. There's a one-off reminder set for ~25 Oct to do this. If a nudge ever arrives an hour off, that's why — tell Claude "fix the clocks" and it'll re-align them.
+
+## What still needs your phone (one time)
+The pushes reach you through the **Claude mobile app**. Install it, sign in as the same account, allow notifications. That's the whole setup — see `phone-setup.md`. Everything else (alarms, Shortcuts, calendar widgets) is now optional backup, not required.

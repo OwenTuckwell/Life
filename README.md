@@ -1,46 +1,51 @@
-# Life OS
+# Life OS — your controller
 
-A living system for going from *average* to *your best*. This isn't a motivational poster — it's a set of files you actually maintain, plus a coach (Claude) who checks in, adjusts the plan, and keeps you accountable.
+Not a repo you have to remember to open. A **controller** that runs your day: it wakes itself on a schedule, checks your live calendar and how the last few days went, decides what you need, and **pushes it to your phone** — a plan every night, nudges through the day, and a check-in that keeps it all honest.
 
 ## The one idea that makes this work
 
 You don't rise to the level of your goals. You fall to the level of your systems.
-Impressive people aren't more disciplined than you — they've just removed the daily decision. The plan decides; they execute. That's the whole trick, and it's learnable.
+Impressive people aren't more disciplined than you — they've removed the daily decision. The plan decides; they execute. This repo *is* that plan, and now it runs itself so the decision is already made before you wake up.
 
-## How this repo is organized
+## How it actually runs (start here)
 
-| Folder | What lives here |
+**`system/how-it-works.md`** — the engine: the scheduled triggers, what fires when, and how to change any of it. Read that first. The short version:
+
+- **Two messages every night** — **22:00** (tomorrow's plan + "how did today go?") and **22:30** (wind-down lock, lights out by 23:00). Spec: `system/nightly.md`.
+- **Nudges through the day** — 07:00 wake brief, leave-for-work / leave-for-gym / leave-for-golf / leave-for-Dad's, each reading your live calendar so one-offs beat the routine. Spec: `system/daytime.md`.
+- **It adapts** — gym days are fixed (Thu/Sat/Sun); everything else (walk / run / rest) is decided each night off your load and how you're doing. Not the same routine on repeat.
+
+## The repo, at a glance
+
+| Folder / file | What it's for |
 |--------|-----------------|
-| `goals/` | Your north star (who you're becoming) and the current 90-day targets |
-| `habits/` | The daily non-negotiables and the tracker where you log them |
-| `fitness/` | Training + nutrition plan (starts simple, scales up) |
-| `reviews/` | Weekly review — the single most important habit in here |
-| `progress/` | Running log of what you actually did, wins, and setbacks |
+| `system/` | **The controller's brain** — the logic each trigger runs. Edit these to change what the nudges say or decide. |
+| `goals/` | North star + the current 90-day targets |
+| `habits/` | Weekly schedule, morning routine, the tracker, and `health-data.md` (Fitbit/sleep/steps) |
+| `fitness/` | Training plan (gym A/B) + nutrition reference |
+| `progress/log.md` | **The memory** — every night's check-in lands here; tomorrow's brief reads it back |
+| `reviews/` | The Sunday weekly review |
 
-## How to use it (the loop)
+## The loop
 
-1. **Every morning** — open `habits/daily-system.md`, do the non-negotiables, tick them in `habits/tracker.md`.
-2. **Any time** — tell me what you did or what got in the way. I update the plan.
-3. **Every Sunday** — 10 minutes with `reviews/weekly-review-template.md`. This is where average people quit and consistent people compound.
-4. **Every ~90 days** — we set new targets in `goals/`.
+1. **Live it** — the controller pushes; you execute. No opening files required.
+2. **Reply at night** — tell it how the day went; it logs it and shapes tomorrow.
+3. **Redirect any time** — "early start tomorrow", "move my wake to 6:45", "golf's at 2pm Friday". It adjusts the plan or the triggers.
+4. **Sunday** — 10 min with `reviews/weekly-review-template.md`.
+5. **Every ~90 days** — new targets in `goals/`.
 
-## Daily brief format (how Owen wants his morning "what's the plan?")
-Each morning Owen messages "what's the plan today?" Respond with:
-- ☀️ **The 7:00–8:30 morning action plan** (from `habits/morning-routine.md`) — lead with this; it's the priority. Adapt to whether it's a work day or gym day.
-- ⏱️ Today's timeline (the day's anchors from `habits/weekly-schedule.md`)
-- 🏋️ Gym: is it a session, which workout (A/B), and the lifts (`fitness/starter-plan.md`)
-- 📌 Anything to know (girlfriend's birthday, Sunday weekly review, ref game, etc.)
-- ❌ NO meals/macros — **MacroFactor runs nutrition.** The `nutrition/` files are reference only; don't push meals in the daily brief.
+## One-time phone setup
+The pushes reach you through the **Claude mobile app** — install it, sign in, allow notifications. That's it. See `phone-setup.md`. (The old iPhone alarms/Shortcuts are now optional backup, not the system.)
 
-Gym A/B rotation: gym days are Thu/Sat/Sun. Week 1 = A/B/A, week 2 = B/A/B, alternating.
+## Health data (Fitbit)
+There's no direct Fitbit/Google Health connector, but the nightly check-in asks for your sleep/steps, and you can pipe Fitbit into a Google Sheet the controller reads automatically. Details + setup: `habits/health-data.md`.
 
 ## The rules
 
-- **Start embarrassingly small.** A habit you'll actually do beats a perfect plan you won't. We can always add.
+- **Start embarrassingly small.** A habit you'll actually do beats a perfect plan you won't.
 - **Consistency over intensity.** 80% every day beats 100% twice a week then burnout.
-- **Never miss twice.** Missing once is life. Missing twice is the start of a new (worse) habit. Just don't skip two in a row — ever.
-- **Track it or it didn't happen.** What gets measured gets managed.
-- **Progress, not perfection.** This document is meant to be edited, ignored, restarted, and edited again. That's not failure — that's the system working.
+- **Never miss twice.** Missing once is life. Missing twice starts a worse habit. Never skip two in a row.
+- **The check-in is the intervention.** For a consistency problem, reporting the day beats any workout. Reply at night even when you missed — *especially* then.
 
 ---
-*Built with, and maintained by, Claude. Talk to me any time — I'll keep this current.*
+*Built with, and run by, Claude. Talk to me any time — I'll keep this current and adjust the controller on the fly.*
