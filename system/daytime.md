@@ -20,7 +20,7 @@ Message:
 Check `system/one-offs.md` for a one-off earlier start first. Default message: "🚗 Leave for work now — 30-min drive, 09:00 start. Phone/keys/wallet." If a one-off sets an earlier start, the **07:00 brief and this nudge both shift** — the 22:00 brief the night before will have already flagged it.
 
 ## 08:40 — Leave for gym (Thu / Fri)
-Gym is 09:00, ~15-min drive. **Thursday is the fixed gym day.** **Friday is gym too — UNLESS `system/one-offs.md` says golf is on that day** (then it's an 18-hole golf morning, and last night's brief will have set the golf leave time instead — send that, or skip this nudge). Default message: "🏋️ Leave for the gym — Workout [A/B] today. Water, pre-gym snack, let's go." Name the workout (from the A/B alternation — check the last gym entry). Weekend gym (Sat/Sun with no football) isn't a fixed nudge — the nightly brief gives that leave time.
+Gym is 09:00, ~15-min drive. **Thursday AND Friday are both fixed gym days** — they don't move, and golf works around them (never drop the Friday gym for golf). Message: "🏋️ Leave for the gym — Workout [A/B] today. Water, pre-gym snack, let's go." Name the workout (from the A/B alternation — check the last gym entry). Weekend gym (Sat/Sun with no football) isn't a fixed nudge — the nightly brief gives that leave time.
 
 ## 16:55 — Leave for golf (Wed, weather permitting)
 9 holes with his brother, 17:30, ~20-min drive. Check `system/one-offs.md`: if golf's washed out / not on this week, skip or soften. Otherwise: "⛳ Leave for golf — 9 holes, 17:30 tee. Clubs in the car."
@@ -32,7 +32,7 @@ Dinner, round ~17:00, ~20-min drive. "🍽️ Leave for Dad's — dinner ~17:00.
 
 ## Variable events (handled via `system/one-offs.md`, not a fixed trigger)
 - **Football (Sat &/or Sun)** — game time varies weekly and depends on weather. Once Owen logs the game(s), the nightly brief gives the leave time and makes that day football; a weekend day with **no** game becomes a gym session. Football counts as real activity (legs + cardio).
-- **Fri 18-hole golf** — weather permitting. When Owen says golf's on (and the tee time), it goes in `one-offs.md`; the **22:00 Thursday brief** reads it, replaces Friday's gym with golf, and gives the leave time (tee − 35 min: 20 travel + 15 buffer). Big steps day → no separate run.
+- **Fri 18-hole golf** — weather permitting, and **around** the fixed Friday gym (after it, or another day) — golf never replaces the gym. When Owen says golf's on (and the tee time), it goes in `one-offs.md` and the brief gives the leave time (tee − 35 min: 20 travel + 15 buffer). Big steps day → no separate run.
 - **Extra/3rd gym session** — on tight weeks the nightly brief may slot an after-work (or occasionally before-work) session; when it does, it tells Owen the time in the brief. Not a standing trigger.
 - **Anything new** — a meeting, appointment, day off, travel, wash-out: Owen tells Claude, it lands in `one-offs.md`, and the next relevant nudge picks it up. No trigger editing needed.
 
