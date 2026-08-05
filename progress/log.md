@@ -2,6 +2,14 @@
 
 The story of the work. Add to the top. On the hard days, scroll down and see how far you've come.
 
+## 2026-08-05 — Wed
+- What I did: Walk 5.5 km / 65 min (~11k steps total). Nutrition dialled — 1740/1800 kcal, **protein 163g (over the 155 target)**. Did the posture daily-4 (first proper day). Morning routine 11/13 (missed shave + SPF).
+- Win: Protein hit + calories under target + 11k steps + stretches done. Solid, disciplined day.
+- Struggle: Tired until after lunch, very tired by bed. Sleep score only 64 despite 7h14 — quality, not quantity. Fat low at 21g.
+- Fitbit: Readiness 64 · Sleep score 64 · Sleep 7h14 · 11k steps · RHR 65.
+- Tomorrow (Thu 08-06): Gym (anchor day, Workout A/B) + Dad's dinner ~17:00. Priority tonight: **protect sleep — lights out 23:00.**
+- Coach note: Energy dip is most likely sleep *quality* + the low fat (21g under-does hormones/satiety — nudge fat up: nuts, olive oil, oily fish). Readiness 64 is fine to train, but if tonight's sleep is poor again, keep Thursday's gym **controlled — don't chase PRs**. Both weekend days are football, so Thu + Fri gym are your two strength sessions; **don't force a 3rd this tired week** — recover for the games.
+
 ## 2026-08-03 — Day 6
 - Chaos morning: nosebleed ate the run time, porridge erupted all over the microwave, boiler died (no hot water → couldn't shave, dishes half-done). **Still made it to work on time.**
 - Win: showed up on time despite everything, and didn't let the morning knock over the whole day.
