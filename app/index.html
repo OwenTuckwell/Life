@@ -334,10 +334,15 @@ canvas{ max-width:100%; }
       <div class="grid cols-2" style="margin-top:16px; align-items:start">
         <div class="card">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px">
-            <div class="stat-label">☀️ Morning checklist</div>
-            <span class="chip num" id="checklistProgress">0/0</span>
+            <div class="stat-label">☀️ Morning</div>
+            <span class="chip num" id="morningProgress">0/0</span>
           </div>
-          <div id="checklistItems"></div>
+          <div id="morningItems"></div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin:18px 0 12px">
+            <div class="stat-label">📅 Daily — anytime today</div>
+            <span class="chip num" id="dailyProgress">0/0</span>
+          </div>
+          <div id="dailyItems"></div>
         </div>
         <div class="card">
           <div class="stat-label" style="margin-bottom:12px">⚡ Quick log</div>
@@ -1596,11 +1601,9 @@ function resetData(){
 }
 
 /* ================= TODAY / DAILY HUB ================= */
-const CHECKLIST_ITEMS = [
+const MORNING_ITEMS = [
   {id:'weigh',      label:'⚖️ Weigh-in (log in MacroFactor)'},
   {id:'water',      label:'💧 Big glass of water'},
-  {id:'move',       label:'🚶 Move — walk, run, gym or match (any one counts)'},
-  {id:'stretch',    label:'🧍 Posture stretches (the daily 4)'},
   {id:'shower',     label:'🚿 Shower'},
   {id:'shave',      label:'🪒 Shave / shape stubble'},
   {id:'face',       label:'🧼 Wash face — cleanser'},
@@ -1611,12 +1614,18 @@ const CHECKLIST_ITEMS = [
   {id:'hair',       label:'💈 Hair styled / tidy'},
   {id:'dressed',    label:'👕 Dressed — clean & fits'},
 ];
+const DAILY_ITEMS = [
+  {id:'move',    label:'🚶 Move — walk, run, gym or match (any one counts)'},
+  {id:'stretch', label:'🧍 Posture stretches (the daily 4)'},
+  {id:'lights',  label:'🌙 Lights out ~23:00 (protect the sleep)'},
+];
+const CHECKLIST_ITEMS = [...MORNING_ITEMS, ...DAILY_ITEMS]; // combined — used for totals/copy
 function movementForToday(){
   const dow=new Date(todayISO()+'T12:00').getDay(); // 0 Sun … 6 Sat
-  if([4,6,0].includes(dow)) return {emoji:'🏋️', label:'Gym', detail:'full body (A/B alternating) — beat last time'};
-  if(dow===3) return {emoji:'🚶', label:'Easy walk', detail:'golf later — save the legs'};
-  if(dow===5) return {emoji:'⛳', label:'Golf + walk', detail:'18 holes = your big steps day'};
-  return {emoji:'🚶', label:'Walk', detail:'aim ~8–10k steps'};
+  if(dow===4||dow===5) return {emoji:'🏋️', label:'Gym', detail:'full body (A/B alternating) — beat last time'};
+  if(dow===6||dow===0) return {emoji:'⚽', label:'Football or gym', detail:'your game if you\'ve got one, else get a gym session in'};
+  if(dow===3) return {emoji:'🚶', label:'Walk', detail:'golf tonight if the weather holds'};
+  return {emoji:'🚶', label:'Walk', detail:'easy movement day'};
 }
 function todayCheckin(){ return DB.checkins.find(c=>c.date===todayISO()); }
 function checklistForToday(){ return DB.checklist[todayISO()] ??= {}; }
@@ -1640,13 +1649,17 @@ function renderToday(){
   renderTodayWalks();
 }
 function renderChecklist(){
+  renderChecklistGroup(MORNING_ITEMS, '#morningItems', '#morningProgress');
+  renderChecklistGroup(DAILY_ITEMS, '#dailyItems', '#dailyProgress');
+}
+function renderChecklistGroup(items, itemsSel, progSel){
   let done=0;
-  $('#checklistItems').innerHTML = CHECKLIST_ITEMS.map(it=>{
+  $(itemsSel).innerHTML = items.map(it=>{
     const on=isChecked(it.id); if(on) done++;
     return `<button class="ck-row${on?' on':''}" onclick="toggleCheck('${it.id}')">
       <span class="ck-box">${on?'✓':''}</span><span>${it.label}</span></button>`;
   }).join('');
-  $('#checklistProgress').textContent = `${done}/${CHECKLIST_ITEMS.length}`;
+  $(progSel).textContent = `${done}/${items.length}`;
 }
 function toggleCheck(id){ const s=checklistForToday(); s[id]=!isChecked(id); save(); renderChecklist(); }
 
@@ -1736,6 +1749,7 @@ function copyDayForClaude(){
   saveCheckin();
   const c=todayCheckin(), t=todayISO();
   const missed=CHECKLIST_ITEMS.filter(it=>!isChecked(it.id)).map(it=>it.label.replace(/^\S+\s/,''));
+  const mDone=MORNING_ITEMS.filter(it=>isChecked(it.id)).length, dDone=DAILY_ITEMS.filter(it=>isChecked(it.id)).length;
   const walks=DB.walks.filter(w=>w.date===t), runs=DB.runs.filter(r=>r.date===t), gym=DB.workouts.some(w=>w.date===t);
   const act=[gym?'gym logged':'', ...runs.map(r=>`run ${r.km}km`), ...walks.map(w=>`walk ${w.label}`)].filter(Boolean).join(', ');
   const fitbit=[ c.readiness?`Readiness ${c.readiness}`:'', c.sleepScore?`Sleep score ${c.sleepScore}`:'',
@@ -1748,7 +1762,7 @@ function copyDayForClaude(){
     fitbit ? `Fitbit: ${fitbit}` : '',
     nutrition,
     `Energy: ${c.energy??'?'}/5 · Moved: ${c.moved||'?'}${act?` (${act})`:''}`,
-    `Morning routine: ${c.checklistDone}/${c.checklistTotal}${missed.length?` — missed: ${missed.join(', ')}`:''}`,
+    `Morning: ${mDone}/${MORNING_ITEMS.length} · Daily: ${dDone}/${DAILY_ITEMS.length}${missed.length?` — missed: ${missed.join(', ')}`:''}`,
     `Posture stretches: ${c.stretches?'yes':'no'}`,
     c.note?`Note: ${c.note}`:''
   ].filter(Boolean);
