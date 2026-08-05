@@ -27,7 +27,7 @@ Half the morning chaos is solved the night before. At ~22:45:
 - [ ] Up at 7:00, no snooze
 - [ ] ⚖️ Weigh-in — log it in **MacroFactor** (weight + nutrition live there, not in this repo). Same time each morning, before food/water, for a clean trend.
 - [ ] Big glass of water, curtains/daylight open
-- [ ] Walk (or run, 1–2×/week)
+- [ ] Move — the morning walk is the **default**; if you've got a run, gym or match later, **that's your move, skip the walk** (one session counts, no need to double up)
 - [ ] 🧍 Posture stretches — the daily 4 (chin tucks, doorway chest, thoracic extension, wall angels)
 
 **Wash & groom**
