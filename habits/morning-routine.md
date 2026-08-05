@@ -22,13 +22,13 @@ Half the morning chaos is solved the night before. At ~22:45:
 | **8:10–8:22** | 💈 Grooming + get dressed + pack (full checklist below) |
 | **8:22–8:30** | 🎥 Film the day's clip · stand tall · phone/keys/wallet · leave |
 
-## ✅ The full checklist (tick every one — nothing's too small)
+## ✅ The morning checklist (get up & get ready — nothing's too small)
+In the app this is the **☀️ Morning** list. Movement and stretches aren't here — they're **📅 Daily (anytime)** items now (see below), because you might run/gym/play later in the day.
+
 **Wake & body**
 - [ ] Up at 7:00, no snooze
 - [ ] ⚖️ Weigh-in — log it in **MacroFactor** (weight + nutrition live there, not in this repo). Same time each morning, before food/water, for a clean trend.
 - [ ] Big glass of water, curtains/daylight open
-- [ ] Move — the morning walk is the **default**; if you've got a run, gym or match later, **that's your move, skip the walk** (one session counts, no need to double up)
-- [ ] 🧍 Posture stretches — the daily 4 (chin tucks, doorway chest, thoracic extension, wall angels)
 
 **Wash & groom**
 - [ ] Shower
@@ -48,6 +48,12 @@ Half the morning chaos is solved the night before. At ~22:45:
 - [ ] Stand tall — shoulders back
 - [ ] Phone, keys, wallet, water bottle
 - [ ] Leave by 8:30
+
+## 📅 Daily — anytime today (not tied to the morning)
+These are the app's **Daily** list — knock them out whenever they fit:
+- [ ] **Move** — a walk, run, gym session or match. **Any one counts** — logging a run/gym/match auto-ticks this, so no need to also do the morning walk. The walk is just the default on a day with nothing else on.
+- [ ] 🧍 **Posture stretches** — the daily 4 (chin tucks, doorway chest, thoracic extension, wall angels). Morning's an easy slot, but any time works.
+- [ ] 🌙 **Lights out ~23:00** — protect the sleep (the keystone). The 22:30 wind-down nudge cues this.
 
 ## Rules for the morning
 - **No phone scrolling until you've moved.** (Social's blocked till 9 anyway.)
