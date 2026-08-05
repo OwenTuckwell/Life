@@ -343,6 +343,7 @@ canvas{ max-width:100%; }
             <span class="chip num" id="dailyProgress">0/0</span>
           </div>
           <div id="dailyItems"></div>
+          <button class="btn btn-ghost btn-sm" style="margin-top:8px" onclick="showStretches()">🧍 What are the daily 4 stretches?</button>
         </div>
         <div class="card">
           <div class="stat-label" style="margin-bottom:12px">⚡ Quick log</div>
@@ -1662,6 +1663,17 @@ function renderChecklistGroup(items, itemsSel, progSel){
   $(progSel).textContent = `${done}/${items.length}`;
 }
 function toggleCheck(id){ const s=checklistForToday(); s[id]=!isChecked(id); save(); renderChecklist(); }
+function showStretches(){
+  openModal(`<h3>Posture — the daily 4 (~4 min)</h3>
+    <p class="muted tiny" style="margin-bottom:14px">Undoes the desk/phone slouch (forward head + rounded shoulders). Any time of day — the gym's face pulls &amp; rows do the strengthening; these open the tight front.</p>
+    <ol style="padding-left:18px; display:grid; gap:12px; margin-bottom:4px">
+      <li><b>Chin tucks — ×10.</b> Stand/sit tall, gently draw your head straight back (make a "double chin"), hold 3–5s, release. Retrains the deep neck muscles — the best one for your side profile too.</li>
+      <li><b>Doorway chest stretch — 30s.</b> Forearms on a doorframe, elbows ~shoulder height, step one foot through and lean until you feel it across the chest / front of the shoulders.</li>
+      <li><b>Thoracic extension — 30s.</b> Sit in a chair, hands behind your head, gently arch your upper back over the chair's top edge and breathe. (Or slow cat-cow ×8 on hands and knees.)</li>
+      <li><b>Wall angels — ×10.</b> Back to a wall — low back, head and arms touching — slide your arms up and down like a snow-angel, keeping contact.</li>
+    </ol>
+    <p class="muted tiny" style="margin-top:12px">All-day cues: shoulders back / stand tall · don't jut your head at screens · screen at eye level. Rushed? Just the chin tucks still counts.</p>`);
+}
 
 function renderFitbit(){
   const el=$('#fitbitPanel'); const url=(DB.settings.fitbitCsvUrl||'').trim();
@@ -1847,12 +1859,25 @@ function dayGoals(date){
   const moved = gyms.length||runs.length||walks.length;
   const n=nutritionFor(date), t=macroTargets();
   const ck=DB.checklist[date]||{};
-  const routineDone=CHECKLIST_ITEMS.every(it=> it.id==='move' ? (!!ck.move||moved) : !!ck[it.id]);
+  const isCk=id=> id==='move' ? (!!ck.move||moved) : !!ck[id];
+  const morningDone=MORNING_ITEMS.every(it=>isCk(it.id));
+  const dailyDone=DAILY_ITEMS.every(it=>isCk(it.id));
   const goals=[{ label:'Trained / moved', ok:!!moved }];
   if(t.protein) goals.push({ label:`Protein ${t.protein}g+`, ok:!!(n && n.protein>=t.protein) });
   if(t.kcal)    goals.push({ label:`Calories ≤ ${t.kcal}`, ok:!!(n && n.kcal>0 && n.kcal<=t.kcal) });
-  goals.push({ label:'Morning routine', ok:routineDone });
+  goals.push({ label:'Morning routine', ok:morningDone });
+  goals.push({ label:'Daily habits', ok:dailyDone });
   return goals;
+}
+const RECAP_SHORT={ move:'🚶 Move', stretch:'🧍 Posture stretches', lights:'🌙 Lights out' };
+function checklistRecapHtml(date){
+  const { gyms, runs, walks }=trainingFor(date);
+  const moved = gyms.length||runs.length||walks.length;
+  const ck=DB.checklist[date]||{};
+  const isCk=id=> id==='move' ? (!!ck.move||moved) : !!ck[id];
+  const mDone=MORNING_ITEMS.filter(it=>isCk(it.id)).length;
+  const dailyRows=DAILY_ITEMS.map(it=>`<div class="recap-ex"><span>${RECAP_SHORT[it.id]||esc(it.label)}</span><span class="top">${isCk(it.id)?'✓':'—'}</span></div>`).join('');
+  return `<div class="recap-ex"><span>☀️ Morning routine</span><span class="top">${mDone}/${MORNING_ITEMS.length}</span></div>${dailyRows}`;
 }
 function renderRecap(){
   if(!$('#recapDate').value) $('#recapDate').value=todayISO();
@@ -1905,6 +1930,7 @@ function renderRecap(){
       <div class="recap-sections">
         <div class="recap-sec"><div class="stat-label">🏋️ Training done</div>${exHtml}</div>
         <div class="recap-sec"><div class="stat-label">🍽️ Calories & macros</div>${nutHtml}</div>
+        <div class="recap-sec"><div class="stat-label">✅ Checklist</div>${checklistRecapHtml(date)}</div>
       </div>
     </div>`;
 }
