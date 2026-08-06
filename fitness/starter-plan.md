@@ -1,70 +1,78 @@
-# Fitness — Gym Plan (Beginner)
+# Fitness — Gym Plan (3-workout rotation)
 
-You've got a gym — so we use it. This is a proper **3×/week full-body beginner program**. It's the fastest, most proven way from "average" to visibly strong and lean. Full-body 3× beats fancy "bro splits" for beginners because you train each movement often and recover well.
+Built around your reality: **football + running already train your legs and conditioning**, so the gym leans into the **upper body** — that's where you go harder and where "looking good" shows most. One leg day covers the rest so nothing's neglected.
 
-> Note: if you have any injury or health condition, get the ok from a doctor first. Start lighter than you think — leave 2–3 reps "in the tank" while you learn the movements. Good form now = no setbacks later. If you're unsure how to do a lift, ask a gym staff member for a form check; it's what they're there for.
+> Note: if you have any injury or health condition, get the ok from a doctor first. Leave 2–3 reps "in the tank" while you learn a movement. Good form now = no setbacks later. Unsure how to do a lift? Ask gym staff for a form check — it's what they're there for.
 
-## The week (your slots)
-- **3 gym sessions — Thu / Sat / Sun mornings**, alternating Workout A and B. Thursday is your fixed anchor; the weekend two flex around your ref game. (See `habits/weekly-schedule.md` for the full week.)
-- **Golf Wed (9 holes) + Fri (18 holes)** covers a huge chunk of your steps/cardio — that's a real training stimulus, not nothing.
-- **8–10k steps most days** — walk on the other days. This is your fat-loss engine.
-- **Sleep + protein daily** — you grow on rest, not in the gym. Fixed wake/sleep time is your keystone (see the Cascade Protection Protocol).
+## The three workouts — rotate them
+- **A — Legs + core** · **B — Upper Push** · **C — Upper Pull**
+- **Cycle A → B → C → A → …** across your sessions (Thu / Sat / Sun + the occasional Friday or extra weekday). Two of every three are **upper** — that's the emphasis.
+- **The one rule about legs:** **Workout A (legs) goes on THURSDAY** — away from the weekend so your legs recover before football. If A ever has to land right before a Sat/Sun game, keep it **gentle** (lighter, higher reps, 3–4 in the tank). Never smash legs the day before a match.
+- In practice: **Thursday = A**, and your other sessions alternate **B and C** (both football-safe — upper body doesn't interfere with playing). Legs also get worked at football + on your runs, so **one leg day per cycle is plenty**.
+- In FitForge, **name each session A, B or C** as you log it — then "which workout's next?" is obvious at a glance.
 
 ## Every session
-- **Warm-up (5 min):** easy bike/row/incline walk, then a few light warm-up sets of your first lift.
-- **Progressive overload:** each week try to add a rep or a little weight vs last time. When you hit the top of the rep range on all sets with good form, add weight next time. *This* is what drives change — beat your last log, even slightly.
-- **Log every set** (weight × reps) in your progress log or a notes app. If you don't log, you can't progressively overload.
+- **Warm-up (5 min):** easy bike/row, then a couple of light warm-up sets of your first lift.
+- **Progressive overload:** each time, try to add a rep or a little weight vs your last log of that workout. Top of the rep range on all sets with good form → add weight next time. **Beat your last log, even slightly** — that's what drives change.
+- **Log every set** (weight × reps) in FitForge. No log, no overload.
 
-## Why these exercises (it's NOT random)
-This is a **full-body program**: each session trains your whole body through the basic movement patterns, not one body part. Workout A and B cover the same slots from different angles, so across the week you hit everything 2–3× — which is what drives muscle for a beginner.
+---
 
-| Pattern | Workout A | Workout B |
-|---------|-----------|-----------|
-| Legs | Squat (quads) | RDL / leg press (hamstrings, glutes) |
-| Push | Chest press | Incline press |
-| Vertical push | Shoulder press | — |
-| Pull | Seated row (thickness) | Lat pulldown (width) |
-| Rear delts / posture | — | Face pulls |
-| Core | Plank | Hanging knee raise |
-
-**Arms** are trained on every set — presses hit triceps, pulls/rows hit biceps. Plenty for now. *Optional arm finisher if you want bigger arms:* 3 × 10–12 bicep curls + 3 × 10–12 tricep pushdowns, tacked onto the end of any session.
-
-## Workout A
+## Workout A — Legs + Core  *(Thursday / gentle before a game)*
 | Exercise | Sets × Reps | Notes |
 |----------|:-----------:|-------|
-| Squat (goblet → barbell) | 3 × 8–10 | Legs + everything. The king. |
-| Chest press (machine/DB/barbell) | 3 × 8–10 | Push. |
-| Seated cable row | 3 × 10–12 | Pull — great for posture. |
-| Dumbbell shoulder press | 3 × 10 | Shoulders. |
-| Plank | 3 × 30–45s | Core. |
+| Squat (goblet → barbell) | 3 × 8–10 | Quads/glutes — the king. Gentle day: lighter + higher reps. |
+| Romanian deadlift | 3 × 10 | Hamstrings/glutes. |
+| Walking lunge *or* leg press | 3 × 12 | Extra quad/glute — drop this on a gentle pre-game day. |
+| Standing calf raise | 3 × 12–15 | Full stretch, pause at the top. |
+| Hanging leg raise *or* plank | 3 × 12 / 45s | Core. |
 
-## Workout B
+## Workout B — Upper Push  *(chest · shoulders · triceps — go hard)*
 | Exercise | Sets × Reps | Notes |
 |----------|:-----------:|-------|
-| Romanian deadlift or leg press | 3 × 10 | Hamstrings/glutes. |
-| Lat pulldown | 3 × 10–12 | Back width — builds the V-taper. |
-| Incline dumbbell press | 3 × 10 | Upper chest. |
-| Face pulls | 3 × 15 | **Posture fix** — pulls shoulders back, undoes desk hunch. |
-| Hanging knee raise or cable crunch | 3 × 12 | Core/abs. |
+| Bench press (barbell/DB) | 3–4 × 6–10 | Chest — your main pressing lift, push it. |
+| Incline dumbbell press | 3 × 8–12 | Upper chest. |
+| Overhead / shoulder press | 3 × 8–10 | Shoulders. |
+| Lateral raise | 3 × 12–15 | Side delts — width, capped shoulders. |
+| Triceps pushdown | 3 × 10–12 | Triceps. |
 
-*(Whichever machines your gym has, these movement patterns are the same. Swap like-for-like if a machine's taken.)*
+## Workout C — Upper Pull  *(back · rear delts · biceps + core — go hard)*
+| Exercise | Sets × Reps | Notes |
+|----------|:-----------:|-------|
+| Pull-up *or* lat pulldown | 3–4 × 6–10 | Back width — the V-taper. |
+| Barbell row *or* seated cable row | 3 × 8–12 | Back thickness. |
+| Face pull | 3 × 15 | **Posture fix** — rear delts, pulls shoulders back. |
+| Barbell / dumbbell curl | 3 × 10–12 | Biceps. |
+| Hammer curl | 3 × 10–12 | Biceps + forearms. |
+| Cable crunch *or* hanging leg raise | 3 × 12 | Core. |
 
-## Nutrition — keep it stupid simple to start
-- **Protein at every meal** (chicken, turkey, fish, dairy, legumes, whey — no eggs, you're intolerant). Roughly a palm-sized portion per meal — aim to build toward ~1.6g per kg bodyweight/day. See `nutrition/meal-plan.md` for your egg-free daily plan.
-- **Whole foods most of the time.** Consistency beats perfection — aim 80/20, not sainthood.
-- **Don't drink your calories.** Water is the default; watch juice, soda, sugary coffees.
-- **Fat loss = slight calorie deficit; muscle = enough protein + progressive strength training.** No crash diets — they never stick, and you told me consistency is the goal.
+*(Machine taken? Swap like-for-like — same movement pattern.)*
 
-## Cardio & running (asked Day 1)
-You've already got loads of cardio — golf (Wed 9 / Fri 18), reffing, and 8–10k daily steps — so you don't NEED to run for fat loss or fitness.
-- **Don't run every morning.** Daily running eats recovery from lifting (you're building muscle) and a new daily obligation is exactly the over-reach that triggers your slip cascade as a beginner. Plus injury risk with no rest days.
-- **If you enjoy it:** 1–2 easy 3k runs/week, conversational pace, on non-lifting days. Not daily.
-- **Daily movement = the walk** (10k steps), low-impact and sustainable.
-- Nail the core plan for a few weeks first; add more only once it's automatic.
+## Coverage — nothing's missed
+Across A/B/C you hit every pattern, with upper trained ~twice as often as legs:
+
+| Pattern | A (Legs) | B (Push) | C (Pull) |
+|---------|:--------:|:--------:|:--------:|
+| Squat / hinge | Squat, RDL, lunge | — | — |
+| Calves | Calf raise | — | — |
+| Horizontal + incline push | — | Bench, Incline | — |
+| Vertical push | — | Overhead press | — |
+| Side delts / triceps | — | Lateral, Pushdown | — |
+| Vertical + horizontal pull | — | — | Pulldown, Row |
+| Rear delts / posture | — | — | Face pull |
+| Biceps | — | — | Curl, Hammer |
+| Core | leg raise / plank | — | crunch / leg raise |
+
+Legs get direct work on A **plus** football + running; the upper body gets the extra volume (B + C) where you want the growth.
+
+## Nutrition — the other half (MacroFactor)
+- **Protein every meal**, aim your MacroFactor target (~1.6–2g/kg). Protein is what turns the gym work into a better-looking body.
+- Whole foods 80/20, don't drink your calories, slight deficit to lean out. Nutrition + weight live in **MacroFactor**.
+
+## Cardio
+You've got plenty — **football (Sat/Sun) + runs + golf + daily walks**. No need to add steady cardio. If you run, keep it easy and off the days you smash legs.
 
 ## What we track
-- Sessions completed / week (target 3)
-- Daily steps (build toward 8k+)
-- Key lifts trending up (log weight × reps — this is your proof you're getting stronger)
-- Bodyweight, weekly, same time of day (trend, not the daily wobble)
-- Monthly progress photo (private — the mirror lies, photos don't)
+- Sessions / week + which of A/B/C.
+- Key lifts trending up (weight × reps — your proof you're getting stronger), especially upper body.
+- Bodyweight weekly (MacroFactor), monthly progress photo (private).

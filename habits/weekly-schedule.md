@@ -18,7 +18,7 @@ Built around your real week, and around your goal — **looking good means real 
 This is the default week the nudges are built around (Europe/London). Exceptions go in `system/one-offs.md`; this is the baseline everything falls back to:
 - ☀️ Morning routine — daily 07:00–08:00 (wake, breakfast, skincare, stand tall)
 - 💼 Work — Mon & Tue 09:00–17:00, Wed 09:00–16:00 (reminder 35 min before to leave)
-- 🏋️ Gym (full body, alternate A/B) — **Thu + Fri fixed**, + any weekend day with no football
+- 🏋️ Gym — rotate **A (Legs) / B (Push) / C (Pull)** — **Thu anchor** + weekend days without football + occasional Friday/extra (legs = Thursday only)
 - ⚽ Football — most Sat &/or Sun (game time varies; weather-dependent)
 - ⛳ Golf 9 holes w/ brother — Wed 17:30–19:30 (weather permitting; works around gym)
 - 🍽️ Dinner at Dad's — Thu 17:00–20:00
@@ -37,7 +37,7 @@ This is the default week the nudges are built around (Europe/London). Exceptions
 | **Sat** | ⚽ **Football** — or 🏋️ gym if no game | Flexible |
 | **Sun** | ⚽ **Football** — or 🏋️ gym if no game | Rest + 🔁 weekly review + 🍳 meal prep |
 
-**The rule: Thu + Fri gym are locked (floor of 2), aim for 3–4.** The weekend adds gym on any day you're not playing football. Workouts **alternate A / B** each session (the coach checks your last gym log for which is next).
+**The rule: aim for 3–4 sessions, rotating A → B → C.** Thursday's the anchor; weekends add gym on any day you're not playing football; the odd Friday/weekday tops it up. **Legs (Workout A) only on Thursday** (or gentle before a game) — football + running already work your legs, so the gym goes harder on upper body (B & C). Full split in `fitness/starter-plan.md`.
 
 **When the week gets tight** (football *both* weekend days → just the 2 Thu/Fri sessions), the coaching earns its keep: the nightly brief finds a 3rd — **after work with your girlfriend** when there's time (a win-win), a **20-min home/bodyweight session** if there isn't, and only a **before-work** slot if that's genuinely the only gap and your **Readiness** is good. If you're smashed from back-to-back football, it'll say rest — recovery is a valid call, not a miss.
 
@@ -58,12 +58,8 @@ Your words: *"if I slip, I slip hard."* One missed thing knocks over the next. H
 You're tired mid-morning because you skip breakfast and run on empty. The egg-free meal plan (`nutrition/meal-plan.md`) fixes this — a protein + oats bowl each morning. Expect the crash to fade within a week.
 
 ## Controller touchpoints (what fires, when)
-These are the live push nudges (see `system/how-it-works.md`). All handled for you — no alarms to set.
-- **07:00** — wake brief (today's shape + movement)
-- **08:25** — leave for work (Mon/Tue/Wed) · **08:40** — leave for gym (Thu + Fri)
-- **16:55 Wed** — leave for golf (if playing) · **16:40 Thu** — leave for Dad's
-- **22:00** — nightly plan + "how did today go?" check-in
-- **22:30** — wind-down lock (lights out by 23:00)
-- **Sun 10am** — weekly review
+Just **two** push notifications now — the **FitForge app carries the rest** (plan, checklist, logging, check-in).
+- **07:00** — a short morning encouragement to start the day.
+- **23:00** — the check-in: "how did today go?" (reply or tap *Copy my day*) + tomorrow's movement, then lights out.
 
-**Movement each day:** Thu + Fri gym are fixed; the weekend is football-or-gym; the 22:00 brief decides the exact call each night from your load, your Fitbit Readiness, and whatever you've flagged in `system/one-offs.md`. Football, golf and any wash-outs aren't fixed triggers — tell Claude and they go in one-offs.
+**Movement each day:** rotate gym A/B/C (legs = Thursday only); weekend is football-or-gym; the 23:00 check-in sets the exact call from your load, Fitbit Readiness, and anything flagged in `system/one-offs.md`. Football, golf and wash-outs aren't triggers — tell Claude and they go in one-offs. The day-to-day (leave times, checklist) lives in the app now.

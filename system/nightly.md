@@ -1,8 +1,8 @@
-# Nightly control — the two messages (22:00 + 22:30)
+# Nightly control — the 23:00 check-in
 
-These are the heart of the system: every night, two messages that (a) close out today and (b) set tomorrow up so there are **no decisions left to make in the morning**. Owen wanted these specifically — a plan *and* a check-in, not the same canned routine every day.
+> **Now a single short message at 23:00** (the old 22:00 plan + 22:30 wind-down were merged once the FitForge app took over the day). Keep it bedtime-short: close today, set tomorrow's movement in a line, lights out. The movement-decision rules below still apply — that's the main reason to read this file.
 
-Owen parts from his girlfriend ~22:00–22:30, so this lands right as his evening winds down.
+Every night, one message that (a) closes out today with a check-in and (b) sets tomorrow's movement so there's nothing to decide in the morning. Owen replies here or pastes his FitForge "Copy my day"; it gets logged.
 
 ---
 
@@ -27,7 +27,7 @@ Then **push a short teaser** to the phone (e.g. "🌙 Tomorrow's set — asleep 
 
 ### Deciding tomorrow's movement (rule: **Thu + Fri gym locked; aim 3–4; gym comes first**)
 His goal is to look good — that means real gym time. **Thursday and Friday gym are both fixed** (guaranteed floor of 2); the weekend adds more; golf works around the gym, never over it.
-- **Thursday & Friday → Gym, always.** Name the workout — they **alternate A / B each session** (check the last gym entry in the log for which is next).
+- **Gym → rotate 3 workouts: A (Legs+core) · B (Upper Push) · C (Upper Pull)** — cycle A→B→C (`fitness/starter-plan.md`). **Legs (A) only on THURSDAY, or gentle before a Sat/Sun game — never smash legs before football.** So Thursday = A; other sessions alternate B/C (upper, football-safe, go hard). Name which one, checking the last gym entry.
 - **Sat & Sun → Football if he has a game** (check `one-offs.md`; football = the day's movement, real leg + cardio load, keep anything else easy). **No game that day → a gym session** (get the 3rd/4th in).
 - **Golf works around the gym** — Wed 9-holes is evening (no clash); Fri 18-holes only if it fits *after* the Friday gym morning or on another day. Never drop the Friday gym for golf.
 - **Mon / Tue / Wed (work days) → walk** by default (~8–10k steps, morning). Offer a **run** only if he's fresh, hasn't run 1–2× already this week, not next to a heavy day (max 1–2 runs/week).
