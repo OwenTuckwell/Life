@@ -13,17 +13,16 @@ Behind the scenes there are **scheduled triggers** (Anthropic "Routines"). Each 
 Because every fire reads and writes the repo, **the repo is the memory.** No single session has to stay alive; the git history is the continuity.
 
 ## The live schedule (all times Europe/London)
+The **FitForge app now carries the day** — plan, checklist, logging, check-in. So the push notifications are stripped back to just **two**:
+
 | Local | Days | Trigger | Spec |
 |-------|------|---------|------|
-| 07:00 | daily | Wake brief | `system/daytime.md` |
-| 08:25 | Mon–Wed | Leave for work | `system/daytime.md` |
-| 08:40 | Thu/Sat/Sun | Leave for gym | `system/daytime.md` |
-| 16:55 | Wed | Leave for golf | `system/daytime.md` |
-| 16:40 | Thu | Leave for Dad's | `system/daytime.md` |
-| 22:00 | daily | Nightly plan + check-in | `system/nightly.md` |
-| 22:30 | daily | Wind-down lock | `system/nightly.md` |
+| 07:00 | daily | Morning encouragement (a short lift) | prompt only |
+| 23:00 | daily | Check-in — "how did today go?" + tomorrow's movement | `system/nightly.md` |
 
-Variable events (Fri golf tee time, weekend ref game) aren't fixed triggers — tell Claude and they go in `system/one-offs.md`; the **22:00 nightly brief** reads them and gives you the leave time for tomorrow.
+That's it. The old daytime leave-nudges (work/gym/golf/Dad's) and the separate wind-down were retired — Owen didn't need the noise once the app was doing the carrying. (`system/daytime.md` is kept for reference only; nothing fires from it.)
+
+Variable events (a football game time, golf, an early start) aren't triggers — tell Claude and they go in `system/one-offs.md`; the **23:00 check-in** reads them when setting tomorrow.
 
 ## How to change it (this is the point)
 - **Change *what a nudge says* or the decision logic** → edit the spec file (`system/nightly.md`, `system/daytime.md`). The triggers read these each time they fire, so an edit takes effect the same day.
