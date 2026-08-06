@@ -35,7 +35,7 @@ In the app this is the **☀️ Morning** list. Movement and stretches aren't he
 - [ ] Shave (or shape the stubble/beard deliberately)
 - [ ] Wash face — cleanser
 - [ ] Moisturise
-- [ ] SPF moisturiser (daytime — the #1 thing for your skin long-term)
+- [ ] 🧹 5-min tidy — clear the space around you (surfaces, kit, dishes). Small, but it changes how the day feels. *(SPF dropped — Scotland's UV rarely tops 2; wear suncream on the odd bright day, no need to track it.)*
 - [ ] Brush teeth (+ floss)
 - [ ] Deodorant
 - [ ] Hair styled/tidy
