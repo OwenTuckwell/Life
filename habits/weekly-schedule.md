@@ -58,8 +58,9 @@ Your words: *"if I slip, I slip hard."* One missed thing knocks over the next. H
 You're tired mid-morning because you skip breakfast and run on empty. The egg-free meal plan (`nutrition/meal-plan.md`) fixes this — a protein + oats bowl each morning. Expect the crash to fade within a week.
 
 ## Controller touchpoints (what fires, when)
-Just **two** push notifications now — the **FitForge app carries the rest** (plan, checklist, logging, check-in).
+Stripped right back — the **FitForge app carries the rest** (plan, checklist, logging, check-in).
 - **07:00** — a short morning encouragement to start the day.
 - **23:00** — the check-in: "how did today go?" (reply or tap *Copy my day*) + tomorrow's movement, then lights out.
+- **Mon ~19:30** — weekly review (~10 min), aligned to your MacroFactor weekly check-in.
 
 **Movement each day:** rotate gym A/B/C (legs = Thursday only); weekend is football-or-gym; the 23:00 check-in sets the exact call from your load, Fitbit Readiness, and anything flagged in `system/one-offs.md`. Football, golf and wash-outs aren't triggers — tell Claude and they go in one-offs. The day-to-day (leave times, checklist) lives in the app now.
