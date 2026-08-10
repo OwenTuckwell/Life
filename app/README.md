@@ -1,6 +1,6 @@
 # FitForge — the daily app (hosted on Netlify)
 
-`index.html` is Owen's self-hosted training + daily app. It's a single file, no build step, data stored in the browser (localStorage) on his own Netlify site. This is the **logging + viewing surface** of the Life OS; the controller (in `system/`) is the notification + planning engine. The two connect via a one-tap **"Copy my day"** bridge (no shared database — that's not free for a static app).
+`index.html` is Owen's self-hosted training + daily app. It's a single file, no build step, data stored in the browser (localStorage) on his own Netlify site. This is the **logging + viewing surface** of your fitness coach; the coach's brain (in `system/`) is the planning engine. The two connect via a one-tap **"Copy my day"** bridge (no shared database — that's not free for a static app).
 
 ## What's in it
 - **Today** (landing page) — today's movement call, the **morning checklist** (grooming + posture stretches, tappable), **quick-log** (walk / run / gym), a **Fitbit panel**, and the **nightly check-in** (sleep, steps, energy, how it went).

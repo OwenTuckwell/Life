@@ -1,6 +1,6 @@
-# How the controller works (read this first)
+# How the coach works (read this first)
 
-This repo used to be a set of files *you* maintained, plus a couple of fixed push times. It's now an **active controller**: it wakes itself up on a schedule, reads your plan + recent logs + any logged exceptions, decides what you need *right now*, and pushes it to your phone. Same repo, but it runs the day instead of just describing it. There's no live calendar feed — it runs on **the repo + reasoning, with git as the memory.**
+This is the brain of your **fitness coach** — training, food, sleep, recovery. The **FitForge app** carries the day-to-day; this repo holds the plan, the decision rules, and the memory (your logs). When a scheduled check-in fires, it reads your plan + recent logs + any logged exceptions, decides the next call, and can push it to your phone. It runs on **the repo + reasoning, with git as the memory** — no live calendar feed. (Notifications are currently off; the habits are yours now — they can be switched back on any time.)
 
 ## The engine
 Behind the scenes there are **scheduled triggers** (Anthropic "Routines"). Each one fires at a set time, spins up a fresh Claude session, and that session:

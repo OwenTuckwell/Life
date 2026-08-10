@@ -1,4 +1,6 @@
-# Intro Video — Launch ("I gave AI control of my life for 365 days")
+# Intro Video — Launch (historical — the original Day 1 post)
+
+> 🔤 **Framing has shifted** to "my AI **fitness** coach" (see `series-plan.md`). This is kept as the record of the original launch; the "control my life" wording below is the old angle, not the direction going forward.
 
 **This is the INTRO / Episode 0, posted today (Mon).** It explains the whole thing and points at tomorrow. **Day 1 of 365 content starts tomorrow (Tue).**
 

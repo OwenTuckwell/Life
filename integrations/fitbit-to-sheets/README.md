@@ -1,6 +1,6 @@
 # Fitbit → Google Sheet (auto sleep / steps / resting HR)
 
-Pipes your daily Fitbit numbers into a Google Sheet that the Life OS controller reads, so the nightly check-in stops having to ask you. **Free Google account + free Fitbit account. No premium. iPhone is fine** — your Fitbit app already syncs to Fitbit's cloud; the script (`Code.gs`) runs on Google's servers and reads from there. All setup below is done in a browser on your PC; once it's running you never touch it.
+Pipes your daily Fitbit numbers into a Google Sheet that the coach reads, so the nightly check-in stops having to ask you. **Free Google account + free Fitbit account. No premium. iPhone is fine** — your Fitbit app already syncs to Fitbit's cloud; the script (`Code.gs`) runs on Google's servers and reads from there. All setup below is done in a browser on your PC; once it's running you never touch it.
 
 Budget ~15 minutes, one time.
 
