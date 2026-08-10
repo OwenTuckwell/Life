@@ -1,19 +1,19 @@
-# Life OS — your controller
+# My Fitness Coach
 
-Not a repo you have to remember to open. A **controller** that runs your day: it wakes itself on a schedule, checks your plan, how the last few days went, and anything you've flagged, decides what you need, and **pushes it to your phone** — a plan every night, nudges through the day, and a check-in that keeps it all honest. It runs on the repo + reasoning (git is its memory), not a live calendar feed.
+A coach for your **training, food, sleep and recovery** — not your whole life, just the part that makes you fitter, stronger and better put-together. It plans your gym, adapts to how you're actually doing (Fitbit recovery, how you slept, how the week's going), keeps you honest, and gets out of the way. The **FitForge app** is where you live it day to day; this repo is the coach's brain and memory.
 
 ## The one idea that makes this work
 
 You don't rise to the level of your goals. You fall to the level of your systems.
-Impressive people aren't more disciplined than you — they've removed the daily decision. The plan decides; they execute. This repo *is* that plan, and now it runs itself so the decision is already made before you wake up.
+Fit, disciplined people haven't got more willpower than you — they've removed the daily decision. The plan decides; they execute. This is that plan: it hands you each day's training already decided, so there's nothing to argue yourself out of.
 
 ## How it actually runs (start here)
 
-**`system/how-it-works.md`** — the engine: the scheduled triggers, what fires when, and how to change any of it. Read that first. The short version:
+**`system/how-it-works.md`** — the engine and how to change any of it. The short version:
 
-- **Two messages every night** — **22:00** (tomorrow's plan + "how did today go?") and **22:30** (wind-down lock, lights out by 23:00). Spec: `system/nightly.md`.
-- **Nudges through the day** — 07:00 wake brief, leave-for-work / leave-for-gym / leave-for-golf / leave-for-Dad's, each reading `system/one-offs.md` so anything you've flagged beats the routine. Spec: `system/daytime.md`.
-- **It adapts** — gym days are fixed (Thu/Sat/Sun); everything else (walk / run / rest) is decided each night off your load and how you're doing. Not the same routine on repeat.
+- **The app carries the day** — FitForge (on your phone): today's plan, the checklist, gym/walk/run logging, your Fitbit + nutrition numbers, and a nightly check-in you fill in whenever you want.
+- **The coach adapts the training** — a 3-workout rotation (A Legs / B Push / C Pull), legs on Thursday, upper harder; the weekend flexes around football; recovery and Readiness steer intensity. Spec: `fitness/starter-plan.md` + `system/nightly.md`.
+- **Notifications are optional** — currently off (the habits are yours now). A morning lift, a nightly check-in and a weekly review can be switched back on any time — just ask.
 
 ## The repo, at a glance
 
