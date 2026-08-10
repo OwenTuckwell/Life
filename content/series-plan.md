@@ -1,5 +1,7 @@
 # Content Series — "I Let Claude Control My Life for 365 Days"
 
+> ⏸️ **PAUSED from Day 9 (Owen's call, and the right one).** The filming was scaffolding — accountability while the habits bedded in. They've bedded in: Owen's doing everything without the camera, and feeling the difference. Posting publicly started to feel embarrassing in front of friends/family, and the rule was always **"results before clips — if filming becomes the stress, pause the camera, never the training."** So it's parked. No daily film obligation. If he ever wants it back, it's here — private account, or just-for-himself, or public again — entirely his choice. The real record now is the training log + private monthly progress photos.
+
 A daily short-form series documenting the 365-day journey. **Intro / Episode 0 posts Mon 2026-07-27; Day 1 of 365 counts from Tue 2026-07-28.** Posted for accountability first, income second. TikTok + YouTube Shorts + Instagram Reels (same clip, all three).
 
 ## The concept

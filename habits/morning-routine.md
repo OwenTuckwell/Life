@@ -20,7 +20,7 @@ Half the morning chaos is solved the night before. At ~22:45:
 | **7:40–7:57** | 🚿 Shower + shave + wash face |
 | **7:57–8:10** | 🥣 Porridge — make + eat (45g oats, big bowl, 70% power) |
 | **8:10–8:22** | 💈 Grooming + get dressed + pack (full checklist below) |
-| **8:22–8:30** | 🎥 Film the day's clip · stand tall · phone/keys/wallet · leave |
+| **8:22–8:30** | 🧍 Stand tall · phone/keys/wallet · leave |
 
 ## ✅ The morning checklist (get up & get ready — nothing's too small)
 In the app this is the **☀️ Morning** list. Movement and stretches aren't here — they're **📅 Daily (anytime)** items now (see below), because you might run/gym/play later in the day.
@@ -44,7 +44,6 @@ In the app this is the **☀️ Morning** list. Movement and stretches aren't he
 - [ ] Porridge + protein
 - [ ] Dressed in clean clothes that fit
 - [ ] Bag packed (already done last night — just grab it)
-- [ ] Film the day's clip
 - [ ] Stand tall — shoulders back
 - [ ] Phone, keys, wallet, water bottle
 - [ ] Leave by 8:30
