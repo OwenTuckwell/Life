@@ -308,13 +308,13 @@ canvas{ max-width:100%; }
 </style>
 </head>
 <body data-theme="midnight">
+<div class="aurora" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
 <div class="app">
   <aside class="sidebar">
     <div class="logo">FIT<span>FORGE</span></div>
     <button class="nav-btn active" data-page="today"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg>Today</button>
     <button class="nav-btn" data-page="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</button>
     <button class="nav-btn" data-page="workout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg>Workout</button>
-    <button class="nav-btn" data-page="recap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>Recap</button>
     <button class="nav-btn" data-page="exercises"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Exercises</button>
     <button class="nav-btn" data-page="goals"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>Goals</button>
     <button class="nav-btn" data-page="bodyTrack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-6 4 4 5-8 4 5"/><path d="M3 21h18"/></svg>Body</button>
@@ -352,7 +352,8 @@ canvas{ max-width:100%; }
             <button class="btn btn-cardio btn-sm" onclick="openRunModal()">+ Run</button>
             <button class="btn btn-primary btn-sm" onclick="goWorkout('gym')">+ Gym</button>
           </div>
-          <div class="stat-label" style="margin:4px 0 8px">⌚ Fitbit</div>
+          <div id="ciWalks"></div>
+          <div class="stat-label" style="margin:14px 0 8px">⌚ Fitbit</div>
           <div id="fitbitPanel"></div>
         </div>
       </div>
@@ -372,32 +373,6 @@ canvas{ max-width:100%; }
           <button class="btn btn-ghost btn-sm" onclick="go('settings')">Set daily targets</button>
         </div>
         <div id="nutProgress" style="margin-top:12px"></div>
-      </div>
-      <div class="card" style="margin-top:16px">
-        <div class="stat-label" style="margin-bottom:4px">🌙 Nightly check-in</div>
-        <div class="tiny muted" style="margin-bottom:8px">⌚ Straight off your Fitbit app — <b>sleep &amp; scores = last night</b> (this morning's), <b>steps = today so far</b></div>
-        <div class="grid cols-4">
-          <label class="field"><span>Readiness <span class="tiny muted">(today)</span></span><input class="input num" type="number" min="0" max="100" id="ciReadiness" placeholder="72"></label>
-          <label class="field"><span>Sleep score <span class="tiny muted">(last night)</span></span><input class="input num" type="number" min="0" max="100" id="ciSleepScore" placeholder="84"></label>
-          <label class="field"><span>Sleep time <span class="tiny muted">(last night)</span></span><input class="input" id="ciSleepTime" placeholder="7h 32m"></label>
-          <label class="field"><span>Steps <span class="tiny muted">(today)</span></span><input class="input num" type="number" min="0" id="ciSteps" placeholder="8000"></label>
-          <label class="field"><span>Resting HR</span><input class="input num" type="number" min="0" id="ciRestingHr" placeholder="58"></label>
-        </div>
-        <div class="tiny muted" style="margin:12px 0 6px">🙂 How you feel</div>
-        <div class="grid cols-2">
-          <label class="field"><span>Energy (1–5)</span>
-            <select class="input" id="ciEnergy"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
-          </label>
-          <label class="field"><span>Moved today?</span>
-            <select class="input" id="ciMoved"><option value="">–</option><option value="yes">Yes</option><option value="no">No</option></select>
-          </label>
-        </div>
-        <label class="field"><span>How did today go? (anything that slipped, wins…)</span><input class="input" id="ciNote" placeholder="Optional — this is what the nightly coach reads"></label>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px">
-          <button class="btn btn-primary btn-sm" onclick="saveCheckin()">Save check-in</button>
-          <button class="btn btn-body btn-sm" onclick="copyDayForClaude()">📋 Copy my day for Claude</button>
-        </div>
-        <div id="ciWalks" style="margin-top:12px"></div>
       </div>
     </section>
 
@@ -564,26 +539,12 @@ canvas{ max-width:100%; }
       </div>
     </section>
 
-    <!-- ============ RECAP ============ -->
-    <section class="page" id="page-recap">
-      <div class="page-head">
-        <div><h1 class="page-title">Recap</h1><div class="page-sub">Your day at a glance — screenshot it for the video.</div></div>
-        <label class="field" style="margin-bottom:0"><span class="tiny">Day</span><input class="input" type="date" id="recapDate" onchange="renderRecap()"></label>
-      </div>
-      <div id="recapCard"></div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px">
-        <button class="btn btn-body btn-sm" onclick="copyRecap()">📋 Copy recap text</button>
-        <button class="btn btn-ghost btn-sm" onclick="setRecapToday()">Jump to today</button>
-      </div>
-      <p class="muted tiny" style="margin-top:10px">Tip: screen-record or screenshot the card above for your TikTok. It uses your current theme, so switch to Daylight in Settings if you want a bright background.</p>
-    </section>
   </main>
 </div>
 
 <nav class="tabbar">
   <button class="active" data-page="today"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg>Today</button>
   <button data-page="workout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg>Workout</button>
-  <button data-page="recap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>Recap</button>
   <button data-page="goals"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>Goals</button>
   <button data-page="bodyTrack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-6 4 4 5-8 4 5"/><path d="M3 21h18"/></svg>Body</button>
   <button data-page="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.6-2-3.4-2.4 1a7 7 0 0 0-2-1.2L14 3h-4l-.5 2.6a7 7 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.6A7 7 0 0 0 5 12c0 .4 0 .8.1 1.2l-2 1.6 2 3.4 2.4-1a7 7 0 0 0 2 1.2L10 21h4l.5-2.6a7 7 0 0 0 2-1.2l2.4 1 2-3.4-2-1.6c.1-.4.1-.8.1-1.2Z"/></svg>More</button>
@@ -608,6 +569,136 @@ canvas{ max-width:100%; }
 <div class="pb-stamp" id="pbStamp">New PB!</div>
 <div class="toast" id="toast"></div>
 <div class="timer-pill" id="timerPill"><span id="timerText">1:30</span><button onclick="stopTimer()" aria-label="Stop rest timer">✕</button></div>
+
+<style id="redesign">
+/* ============================================================
+   REDESIGN — "Aurora Athletic": deep space, drifting light,
+   glassmorphism, an electric lime→cyan signature. Appended last
+   so it wins the cascade over the base styles above.
+   ============================================================ */
+
+:root, [data-theme="midnight"]{
+  --bg:#070910; --bg2:#0C0F18;
+  --surface:rgba(20,24,38,.60); --surface2:rgba(44,50,72,.48);
+  --border:rgba(255,255,255,.09); --text:#EAF0FF; --text2:#9AA7C9; --text3:#606C8E;
+  --strength:#B6FF3C; --strength-soft:rgba(182,255,60,.14);
+  --cardio:#2BE8D6; --cardio-soft:rgba(43,232,214,.14);
+  --body:#A98CFF; --body-soft:rgba(169,140,255,.16);
+  --gold:#FFCF5C; --danger:#FF6584; --ok:#57E39A;
+  --radius:20px; --shadow:0 18px 50px -14px rgba(0,0,0,.7);
+  --grad:linear-gradient(115deg,#B6FF3C,#2BE8D6);
+}
+
+html,body{ background:var(--bg); }
+body{ position:relative; min-height:100vh; }
+
+/* ---- aurora background (dark theme) ---- */
+.aurora{ position:fixed; inset:-25%; z-index:-2; pointer-events:none; filter:blur(90px) saturate(1.2); opacity:1; }
+.aurora i{ position:absolute; display:block; border-radius:50%; mix-blend-mode:screen; }
+.aurora .b1{ width:52vw; height:52vw; left:-8vw; top:-12vw; background:radial-gradient(circle,#2fd06a,transparent 60%); animation:drift1 26s ease-in-out infinite; }
+.aurora .b2{ width:48vw; height:48vw; right:-12vw; top:2vw; background:radial-gradient(circle,#17a7c4,transparent 60%); animation:drift2 33s ease-in-out infinite; }
+.aurora .b3{ width:46vw; height:46vw; left:20vw; bottom:-18vw; background:radial-gradient(circle,#6a4fe0,transparent 60%); animation:drift3 30s ease-in-out infinite; }
+@keyframes drift1{ 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(6vw,4vw) scale(1.14);} }
+@keyframes drift2{ 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(-5vw,5vw) scale(1.1);} }
+@keyframes drift3{ 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(-4vw,-6vw) scale(1.16);} }
+body::after{ content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:radial-gradient(120% 85% at 50% -10%, transparent 45%, rgba(0,0,0,.4)); }
+[data-theme="daylight"] .aurora, [data-theme="blush"] .aurora{ display:none; }
+[data-theme="daylight"] body::after, [data-theme="blush"] body::after{ display:none; }
+
+/* ---- shell ---- */
+.app{ background:transparent; }
+.main{ background:transparent; }
+.sidebar{ background:linear-gradient(180deg,rgba(14,17,28,.72),rgba(9,11,20,.5)); border-right:1px solid var(--border); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+.logo{ color:var(--text); }
+.logo span{ background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+.nav-btn{ border-radius:12px; }
+.nav-btn.active{ background:var(--strength-soft); color:var(--strength); position:relative; }
+.nav-btn.active::before{ content:""; position:absolute; left:0; top:9px; bottom:9px; width:3px; border-radius:0 3px 3px 0; background:var(--grad); }
+
+/* ---- glass cards + entrance ---- */
+.card{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  backdrop-filter:blur(18px) saturate(1.15); -webkit-backdrop-filter:blur(18px) saturate(1.15);
+  box-shadow:var(--shadow); position:relative; overflow:hidden;
+}
+.card::before{ content:""; position:absolute; left:0; right:0; top:0; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent); }
+.page.visible .card{ animation:cardIn .5s cubic-bezier(.2,.7,.25,1) backwards; }
+.page.visible .card:nth-child(2){ animation-delay:.05s } .page.visible .card:nth-child(3){ animation-delay:.1s } .page.visible .card:nth-child(4){ animation-delay:.15s }
+@keyframes cardIn{ from{ opacity:0; transform:translateY(16px) scale(.99);} to{ opacity:1; transform:none;} }
+
+/* ---- today hero (movement) ---- */
+.hero-plan{ display:flex; align-items:center; gap:18px; padding:22px 24px;
+  border:1px solid rgba(182,255,60,.34) !important;
+  background:linear-gradient(120deg, rgba(182,255,60,.16), rgba(43,232,214,.08) 55%, rgba(20,24,38,.6)) !important; }
+.hero-plan::after{ content:""; position:absolute; right:-60px; top:-60px; width:220px; height:220px; border-radius:50%;
+  background:radial-gradient(circle,rgba(182,255,60,.22),transparent 70%); pointer-events:none; }
+.hero-badge{ flex:none; width:64px; height:64px; border-radius:20px; display:grid; place-items:center; font-size:2rem;
+  background:var(--grad); box-shadow:0 10px 26px -8px rgba(182,255,60,.6); position:relative; z-index:1; }
+.hero-body{ position:relative; z-index:1; }
+.hero-move{ font-family:var(--font-display); font-size:clamp(1.6rem,4vw,2.2rem); line-height:1.05; margin:4px 0 3px;
+  background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+/* ---- buttons ---- */
+.btn{ border-radius:13px; font-weight:700; transition:transform .12s cubic-bezier(.2,.8,.3,1), box-shadow .2s, filter .2s; }
+.btn:hover{ filter:brightness(1.05); } .btn:active{ transform:scale(.96); }
+.btn-primary{ background:var(--grad); color:#08120a; box-shadow:0 8px 22px -8px rgba(182,255,60,.55); }
+.btn-primary:hover{ box-shadow:0 10px 28px -8px rgba(182,255,60,.75); }
+.btn-cardio{ background:linear-gradient(115deg,#2BE8D6,#1fbfd6); color:#04231f; box-shadow:0 8px 22px -8px rgba(43,232,214,.5); }
+.btn-body{ background:linear-gradient(115deg,#A98CFF,#7b6cff); color:#fff; box-shadow:0 8px 22px -8px rgba(169,140,255,.55); }
+.btn-ghost{ background:rgba(255,255,255,.05); border:1px solid var(--border); color:var(--text); backdrop-filter:blur(8px); }
+.btn-ghost:hover{ background:rgba(255,255,255,.1); }
+.btn-danger{ background:transparent; border:1px solid var(--danger); color:var(--danger); }
+
+/* ---- chips / inputs ---- */
+.chip{ border-radius:999px; }
+#morningProgress,#dailyProgress{ background:var(--strength-soft); color:var(--strength); border:1px solid rgba(182,255,60,.3); }
+.input, input.input, select.input, textarea.input{ background:rgba(255,255,255,.045); border:1px solid var(--border); border-radius:12px; }
+.input:focus{ border-color:var(--strength); box-shadow:0 0 0 3px var(--strength-soft); }
+
+/* ---- checklist ---- */
+.ck-row{ background:rgba(255,255,255,.035); border:1px solid var(--border); border-radius:13px; padding:11px 13px;
+  transition:transform .12s, background .2s, border-color .2s, color .2s; }
+.ck-row:hover{ border-color:rgba(182,255,60,.4); transform:translateX(3px); }
+.ck-row.on{ background:var(--strength-soft); border-color:rgba(182,255,60,.45); color:var(--strength); }
+.ck-box{ border-radius:8px; border:2px solid var(--text3); transition:.2s; }
+.ck-row.on .ck-box{ background:var(--grad); border-color:transparent; color:#08120a; animation:pop .34s cubic-bezier(.2,1.5,.4,1); }
+@keyframes pop{ 0%{ transform:scale(.5);} 60%{ transform:scale(1.28);} 100%{ transform:scale(1);} }
+
+/* ---- progress bars ---- */
+.bar{ background:rgba(255,255,255,.07); height:10px; }
+.bar > div{ background:var(--grad); }
+.bar.c > div{ background:linear-gradient(90deg,#2BE8D6,#1fbfd6);} .bar.f > div{ background:linear-gradient(90deg,#FFCF5C,#ffab3c);} .bar.k > div{ background:linear-gradient(90deg,#A98CFF,#7b6cff);}
+
+/* ---- modal / tabbar / toast / timer ---- */
+.modal{ background:linear-gradient(180deg,rgba(26,30,46,.92),rgba(16,19,30,.92)); backdrop-filter:blur(26px) saturate(1.2); border:1px solid var(--border); border-radius:24px; }
+.modal-back{ background:rgba(5,7,12,.6); backdrop-filter:blur(6px); }
+.tabbar{ background:linear-gradient(180deg,rgba(12,15,24,.55),rgba(8,10,18,.92)); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border-top:1px solid var(--border); }
+.tabbar button.active{ color:var(--strength); }
+.toast{ background:var(--grad); color:#08120a; box-shadow:0 10px 34px -8px rgba(43,232,214,.5); }
+.timer-pill{ background:var(--grad); color:#08120a; box-shadow:0 10px 30px -8px rgba(182,255,60,.6); }
+.timer-pill button{ background:rgba(0,0,0,.2); color:#08120a; }
+
+/* ---- segmented control ---- */
+.seg{ background:rgba(255,255,255,.04); border:1px solid var(--border); border-radius:14px; }
+.seg button.active{ background:rgba(255,255,255,.08); box-shadow:0 2px 12px rgba(0,0,0,.35); }
+.seg button[data-mode="gym"].active{ color:var(--strength);} .seg button[data-mode="run"].active,.seg button[data-mode="walk"].active{ color:var(--cardio);}
+
+/* ---- misc polish ---- */
+.stat-value{ letter-spacing:-.015em; }
+.empty{ border:1.5px dashed var(--border); background:rgba(255,255,255,.02); border-radius:var(--radius); }
+.set-done.on{ background:var(--grad); border-color:transparent; color:#08120a; }
+.theme-card.selected{ border-color:var(--strength); box-shadow:0 0 0 3px var(--strength-soft); }
+
+@media (prefers-reduced-motion:reduce){
+  .aurora i{ animation:none !important; }
+  .page.visible .card{ animation:none !important; }
+  .ck-row.on .ck-box{ animation:none !important; }
+}
+</style>
+
 <script>
 /* ================= STATE & STORAGE ================= */
 const KEY = 'fitforge_v1';
@@ -734,7 +825,7 @@ function go(page){
 }
 document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
 function renderPage(p){
-  ({ today:renderToday, dashboard:renderDashboard, workout:renderWorkoutPage, recap:renderRecap, exercises:renderExercises,
+  ({ today:renderToday, dashboard:renderDashboard, workout:renderWorkoutPage, exercises:renderExercises,
      goals:renderGoals, bodyTrack:renderBody, settings:renderSettings })[p]?.();
 }
 
@@ -1639,14 +1730,16 @@ function renderToday(){
   $('#todayGreeting').textContent = name ? `Hi ${esc(name)}` : 'Today';
   $('#todayDate').textContent = d.toLocaleDateString(undefined,{ weekday:'long', day:'numeric', month:'long' });
   const m=movementForToday();
-  $('#todayPlan').innerHTML = `<div class="card" style="border-left:3px solid var(--strength)">
-     <div class="stat-label">Today's movement</div>
-     <div style="font-size:1.15rem; font-weight:700; margin-top:4px">${m.emoji} ${m.label}</div>
-     <div class="muted tiny" style="margin-top:2px">${m.detail} · wake 07:00 · lights out 23:00 · <em>the nightly coach confirms tonight</em></div></div>`;
+  $('#todayPlan').innerHTML = `<div class="hero-plan card">
+     <div class="hero-badge">${m.emoji}</div>
+     <div class="hero-body">
+       <div class="stat-label">Today's movement</div>
+       <div class="hero-move">${m.label}</div>
+       <div class="muted tiny">${m.detail} · wake 07:00 · lights out 23:00</div>
+     </div></div>`;
   renderChecklist();
   renderFitbit();
   renderNutrition();
-  renderCheckinForm();
   renderTodayWalks();
 }
 function renderChecklist(){
@@ -1677,7 +1770,7 @@ function showStretches(){
 
 function renderFitbit(){
   const el=$('#fitbitPanel'); const url=(DB.settings.fitbitCsvUrl||'').trim();
-  if(!url){ el.innerHTML=`<p class="muted tiny">No sheet linked — enter sleep/steps in the check-in, or add your Fitbit sheet in Settings to auto-fill.</p>`; return; }
+  if(!url){ el.innerHTML=`<p class="muted tiny">Add your Fitbit sheet in Settings to see last night's sleep &amp; today's steps here.</p>`; return; }
   el.innerHTML=`<p class="muted tiny">Loading latest from your Fitbit sheet…</p>`;
   fetch(url).then(r=>r.text()).then(txt=>{
     const row=parseLatestFitbit(txt);
@@ -1686,9 +1779,6 @@ function renderFitbit(){
       <div class="fb-stat"><span>👟 Steps</span><b>${row.steps??'–'}</b></div>
       <div class="fb-stat"><span>❤️ Resting HR</span><b>${row.hr??'–'}</b></div>
       <div class="fb-stat"><span>📅 ${row.date??''}</span><b></b></div>`;
-    if(row.sleep && !$('#ciSleepTime').value) $('#ciSleepTime').value=row.sleep+'h';
-    if(row.steps && !$('#ciSteps').value) $('#ciSteps').value=row.steps;
-    if(row.hr && !$('#ciRestingHr').value) $('#ciRestingHr').value=row.hr;
   }).catch(()=>{ el.innerHTML='<p class="muted tiny">Couldn\'t reach the sheet (offline, or the link isn\'t public).</p>'; });
 }
 function parseLatestFitbit(csv){
