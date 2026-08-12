@@ -1,6 +1,6 @@
 # FitForge — the daily app (hosted on Netlify)
 
-`index.html` is Owen's self-hosted training + daily app — a single file, no build step, data in the browser (localStorage) on his own Netlify site. It's now the **centrepiece**: the daily habits and training all live here, and the habits are internalised (notifications off). Design: **"Aurora Athletic"** — deep-space background with a drifting aurora, glassmorphism cards, an electric lime→cyan signature, and tasteful motion (aurora drift, card entrance, checklist pop, button glows), with `prefers-reduced-motion` honoured.
+`index.html` is Owen's self-hosted training + daily app — a single file, no build step, data in the browser (localStorage) on his own Netlify site. It's now the **centrepiece**: the daily habits and training all live here, and the habits are internalised (notifications off). Design: **minimal & clean** — a calm near-monochrome dark palette with a single soft mint accent, hairline dividers, flat cards (no glass/shadows), normal-case type, and **fade-only** motion (content fades in; the checkbox fills fade on complete), with `prefers-reduced-motion` honoured. No emoji anywhere in the UI.
 
 ## What's in it
 - **Today** (landing page) — a movement hero, the **Morning** + **Daily** checklists (tappable, with the daily-4 stretches explainer), **quick-log** (walk / run / gym) with today's logged activity, a **Fitbit panel** (from the optional sheet), and **nutrition** totals.
