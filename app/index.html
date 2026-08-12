@@ -332,40 +332,38 @@ canvas{ max-width:100%; }
       </div>
       <div id="todayPlan"></div>
 
-      <div class="ticker" aria-hidden="true"><div class="ticker__in">SHOW UP <span>/</span> NEVER MISS TWICE <span>/</span> BEAT YESTERDAY <span>/</span> DISCIPLINE OVER MOTIVATION <span>/</span> EARN IT <span>/</span> SHOW UP <span>/</span> NEVER MISS TWICE <span>/</span> BEAT YESTERDAY <span>/</span> DISCIPLINE OVER MOTIVATION <span>/</span> EARN IT <span>/</span> </div></div>
-
       <section class="tblock">
         <div class="bhead">
-          <h2 class="btitle">☀️ Morning</h2>
+          <h2 class="btitle">Morning</h2>
           <div class="ringwrap"><div class="ring" id="morningRing" style="--pct:0"></div><span class="ringtxt" id="morningProgress">0/0</span></div>
         </div>
         <div class="ck-list" id="morningItems"></div>
 
         <div class="bhead" style="margin-top:32px">
-          <h2 class="btitle">📅 Daily <span class="btitle-sub">anytime</span></h2>
+          <h2 class="btitle">Daily <span class="btitle-sub">anytime</span></h2>
           <div class="ringwrap"><div class="ring" id="dailyRing" style="--pct:0"></div><span class="ringtxt" id="dailyProgress">0/0</span></div>
         </div>
         <div class="ck-list" id="dailyItems"></div>
-        <button class="link-btn" onclick="showStretches()">🧍 What are the daily 4 stretches? →</button>
+        <button class="link-btn" onclick="showStretches()">What are the daily 4 stretches?
       </section>
 
       <section class="tblock">
-        <h2 class="btitle">⚡ Log it</h2>
+        <h2 class="btitle">Log it</h2>
         <div class="qa-row">
-          <button class="qa qa-cardio" onclick="openWalkModal()"><span class="qa-em">🚶</span>Walk</button>
-          <button class="qa qa-cardio" onclick="openRunModal()"><span class="qa-em">🏃</span>Run</button>
-          <button class="qa qa-lime" onclick="goWorkout('gym')"><span class="qa-em">🏋️</span>Gym</button>
+          <button class="qa qa-cardio" onclick="openWalkModal()">Walk</button>
+          <button class="qa qa-cardio" onclick="openRunModal()">Run</button>
+          <button class="qa qa-lime" onclick="goWorkout('gym')">Gym</button>
         </div>
         <div id="ciWalks"></div>
       </section>
 
       <div class="two-col">
         <section class="tblock">
-          <h2 class="btitle">⌚ Fitbit</h2>
+          <h2 class="btitle">Fitbit</h2>
           <div id="fitbitPanel"></div>
         </section>
         <section class="tblock">
-          <div class="bhead"><h2 class="btitle">🍽️ Nutrition</h2><span class="tiny muted">from MacroFactor</span></div>
+          <div class="bhead"><h2 class="btitle">Nutrition</h2><span class="tiny muted">from MacroFactor</span></div>
           <div class="grid cols-4">
             <label class="field"><span>Calories</span><input class="input num" type="number" min="0" id="nutKcal" placeholder="1650"></label>
             <label class="field"><span>Protein (g)</span><input class="input num" type="number" min="0" id="nutProtein" placeholder="160"></label>
@@ -516,13 +514,13 @@ canvas{ max-width:100%; }
         <button class="btn btn-primary btn-sm" onclick="saveSettings()">Save profile</button>
       </div>
       <div class="card" style="margin-top:16px">
-        <div class="stat-label" style="margin-bottom:12px">⌚ Fitbit auto-fill (optional)</div>
+        <div class="stat-label" style="margin-bottom:12px">Fitbit auto-fill (optional)</div>
         <p class="muted tiny" style="margin-bottom:12px">Publish your Fitbit Google Sheet to the web as CSV (File → Share → Publish to web → your sheet → CSV) and paste the link here. The Today page will auto-fill sleep &amp; steps from the latest row. Leave blank to enter numbers by hand. Columns expected: Date, Sleep (h), Steps, Resting HR.</p>
         <label class="field"><span>Published CSV link</span><input class="input" id="setFitbitUrl" placeholder="https://docs.google.com/…/pub?output=csv"></label>
         <button class="btn btn-primary btn-sm" onclick="saveFitbitUrl()">Save link</button>
       </div>
       <div class="card" style="margin-top:16px">
-        <div class="stat-label" style="margin-bottom:12px">🍽️ Daily nutrition targets</div>
+        <div class="stat-label" style="margin-bottom:12px">Daily nutrition targets</div>
         <p class="muted tiny" style="margin-bottom:12px">Set your daily goals. Hitting protein and staying at or under calories counts toward a complete day on your recap. Leave blank to just track the numbers without a target.</p>
         <div class="grid cols-4">
           <label class="field"><span>Calories (kcal)</span><input class="input num" type="number" min="0" id="tgtKcal" placeholder="1650"></label>
@@ -1106,7 +1104,7 @@ function toggleDone(i,j){
     startTimer(90);
     if(s.kg>0){
       const prev=exerciseStats(e.exerciseId).best1RM;
-      if(!prev || epley(s.kg,s.reps)>prev.kg) toast('🔥 That set beats your best '+exName(e.exerciseId)+'!');
+      if(!prev || epley(s.kg,s.reps)>prev.kg) toast('That set beats your best '+exName(e.exerciseId)+'!');
     }
   }
 }
@@ -1372,7 +1370,7 @@ function renderWorkoutWalks(){
     <div class="card"><div class="stat-label">Time on feet</div><div class="stat-value accent-gold num">${Math.round(totMin/60*10)/10}<small> hrs</small></div><div class="stat-note">${totMin.toLocaleString()} minutes</div></div>`
     : '<div class="card empty" style="grid-column:1/-1">No walks yet. Tap “+ Log walk” after your next one.</div>';
   $('#walkList').innerHTML = walks.length ? walks.map(w=>`
-    <div class="list-row"><div><strong>🚶 ${esc(w.label||'Walk')}</strong>${w.notes?' <span class="muted">· '+esc(w.notes)+'</span>':''}
+    <div class="list-row"><div><strong>${esc(w.label||'Walk')}</strong>${w.notes?' <span class="muted">· '+esc(w.notes)+'</span>':''}
       <div class="tiny">${fmtDate(w.date)}</div></div>
       <div style="display:flex; gap:8px; align-items:center">
         <button class="btn btn-ghost btn-sm" onclick="editWalk('${w.id}')" aria-label="Edit walk">✎</button>
@@ -1504,7 +1502,7 @@ function renderGoals(){
         <button class="btn btn-ghost btn-sm" onclick="delGoal('${g.id}')" aria-label="Delete goal">✕</button>
       </div>
       <div class="num" style="margin:10px 0 6px; font-weight:700">${curTxt} <span class="muted">/ ${tgtTxt} ${t.unit()}</span>
-        ${pct>=100?'<span class="chip chip-gold" style="margin-left:6px">Done! 🏆</span>':''}</div>
+        ${pct>=100?'<span class="chip chip-gold" style="margin-left:6px">Done</span>':''}</div>
       <div class="bar"><div style="width:${pct}%; background:var(--${t.color})"></div></div>
       <div class="tiny" style="margin-top:6px">${Math.round(pct)}% there</div>
     </div>`;
@@ -1560,27 +1558,27 @@ function achievements(){
   const bestMonth=Math.max(0,...Object.values(monthKm));
   const goalsDone=DB.goals.filter(g=>goalPct(g)>=100).length;
   return [
-    { em:'👟', name:'First steps', desc:'Log your first workout', ok:woN>=1 },
-    { em:'🔟', name:'Double digits', desc:'10 workouts logged', ok:woN>=10 },
-    { em:'🏗️', name:'Iron veteran', desc:'50 workouts logged', ok:woN>=50 },
-    { em:'💯', name:'Century club', desc:'100 workouts logged', ok:woN>=100 },
-    { em:'🏃', name:'Off the couch', desc:'Log your first run', ok:runN>=1 },
-    { em:'🗺️', name:'Road warrior', desc:'100 km run all-time', ok:totalKm>=100 },
-    { em:'🌙', name:'Marathon month', desc:'42.2 km in one month', ok:bestMonth>=42.2 },
-    { em:'🔥', name:'On a roll', desc:'4-week training streak', ok:streak>=4 },
-    { em:'🧊', name:'Unbreakable', desc:'12-week training streak', ok:streak>=12 },
-    { em:'🏋️', name:'Plate club', desc:'Lift 100 kg in a single set', ok:heaviest>=100 },
-    { em:'🌋', name:'Volume monster', desc:'5,000 kg volume in one session', ok:bigSession>=5000 },
-    { em:'📈', name:'Record collector', desc:'PBs on 5 different exercises', ok:pbCount>=5 },
-    { em:'⚖️', name:'Data driven', desc:'10 weigh-ins logged', ok:DB.weights.length>=10 },
-    { em:'🏆', name:'Goal getter', desc:'Complete a goal', ok:goalsDone>=1 }
+    { name:'First steps', desc:'Log your first workout', ok:woN>=1 },
+    { name:'Double digits', desc:'10 workouts logged', ok:woN>=10 },
+    { name:'Iron veteran', desc:'50 workouts logged', ok:woN>=50 },
+    { name:'Century club', desc:'100 workouts logged', ok:woN>=100 },
+    { name:'Off the couch', desc:'Log your first run', ok:runN>=1 },
+    { name:'Road warrior', desc:'100 km run all-time', ok:totalKm>=100 },
+    { name:'Marathon month', desc:'42.2 km in one month', ok:bestMonth>=42.2 },
+    { name:'On a roll', desc:'4-week training streak', ok:streak>=4 },
+    { name:'Unbreakable', desc:'12-week training streak', ok:streak>=12 },
+    { name:'Plate club', desc:'Lift 100 kg in a single set', ok:heaviest>=100 },
+    { name:'Volume monster', desc:'5,000 kg volume in one session', ok:bigSession>=5000 },
+    { name:'Record collector', desc:'PBs on 5 different exercises', ok:pbCount>=5 },
+    { name:'Data driven', desc:'10 weigh-ins logged', ok:DB.weights.length>=10 },
+    { name:'Goal getter', desc:'Complete a goal', ok:goalsDone>=1 }
   ];
 }
 function renderAchievements(){
   const a=achievements();
   const earned=a.filter(x=>x.ok).length;
   $('#achGrid').innerHTML = a.map(x=>`
-    <div class="ach ${x.ok?'earned':''}"><div class="em">${x.em}</div><b>${x.name}</b><span>${x.desc}</span></div>`).join('')
+    <div class="ach ${x.ok?'earned':''}"><div class="em">${x.ok?'✓':''}</div><b>${x.name}</b><span>${x.desc}</span></div>`).join('')
     + `<div style="grid-column:1/-1" class="tiny">${earned} of ${a.length} unlocked</div>`;
 }
 function checkGoalCelebrations(){
@@ -1761,30 +1759,29 @@ function resetData(){
 
 /* ================= TODAY / DAILY HUB ================= */
 const MORNING_ITEMS = [
-  {id:'weigh',      label:'⚖️ Weigh-in (log in MacroFactor)'},
-  {id:'water',      label:'💧 Big glass of water'},
-  {id:'shower',     label:'🚿 Shower'},
-  {id:'shave',      label:'🪒 Shave / shape stubble'},
-  {id:'face',       label:'🧼 Wash face — cleanser'},
-  {id:'moisturise', label:'✨ Moisturise'},
-  {id:'tidy',       label:'🧹 5-min tidy (space around you)'},
-  {id:'teeth',      label:'🪥 Brush teeth'},
-  {id:'deodorant',  label:'🌿 Deodorant'},
-  {id:'hair',       label:'💈 Hair styled / tidy'},
-  {id:'dressed',    label:'👕 Dressed — clean & fits'},
+  {id:'weigh',      label:'Weigh-in (log in MacroFactor)'},
+  {id:'water',      label:'Big glass of water'},
+  {id:'shower',     label:'Shower'},
+  {id:'shave',      label:'Shave / shape stubble'},
+  {id:'face',       label:'Wash face — cleanser'},
+  {id:'moisturise', label:'Moisturise'},
+  {id:'tidy',       label:'5-min tidy (space around you)'},
+  {id:'teeth',      label:'Brush teeth'},
+  {id:'deodorant',  label:'Deodorant'},
+  {id:'hair',       label:'Hair styled / tidy'},
+  {id:'dressed',    label:'Dressed — clean & fits'},
 ];
 const DAILY_ITEMS = [
-  {id:'move',    label:'🚶 Move — walk, run, gym or match (any one counts)'},
-  {id:'stretch', label:'🧍 Posture stretches (the daily 4)'},
-  {id:'lights',  label:'🌙 Lights out ~23:00 (protect the sleep)'},
+  {id:'move',    label:'Move — walk, run, gym or match (any one counts)'},
+  {id:'stretch', label:'Posture stretches (the daily 4)'},
+  {id:'lights',  label:'Lights out ~23:00 (protect the sleep)'},
 ];
-const CHECKLIST_ITEMS = [...MORNING_ITEMS, ...DAILY_ITEMS]; // combined — used for totals/copy
 function movementForToday(){
   const dow=new Date(todayISO()+'T12:00').getDay(); // 0 Sun … 6 Sat
-  if(dow===4||dow===5) return {emoji:'🏋️', label:'Gym', detail:'full body (A/B alternating) — beat last time'};
-  if(dow===6||dow===0) return {emoji:'⚽', label:'Football or gym', detail:'your game if you\'ve got one, else get a gym session in'};
-  if(dow===3) return {emoji:'🚶', label:'Walk', detail:'golf tonight if the weather holds'};
-  return {emoji:'🚶', label:'Walk', detail:'easy movement day'};
+  if(dow===4||dow===5) return {label:'Gym', detail:'full body (A/B alternating) — beat last time'};
+  if(dow===6||dow===0) return {label:'Football or gym', detail:'your game if you\'ve got one, else get a gym session in'};
+  if(dow===3) return {label:'Walk', detail:'golf tonight if the weather holds'};
+  return {label:'Walk', detail:'easy movement day'};
 }
 function todayCheckin(){ return DB.checkins.find(c=>c.date===todayISO()); }
 function checklistForToday(){ return DB.checklist[todayISO()] ??= {}; }
@@ -1798,7 +1795,6 @@ function renderToday(){
   $('#todayDate').textContent = d.toLocaleDateString(undefined,{ weekday:'long', day:'numeric', month:'long' });
   const m=movementForToday();
   $('#todayPlan').innerHTML = `<div class="hero-plan card">
-     <div class="hero-badge">${m.emoji}</div>
      <div class="hero-body">
        <div class="stat-label">Today's movement</div>
        <div class="hero-move">${m.label}</div>
@@ -1844,10 +1840,10 @@ function renderFitbit(){
   fetch(url).then(r=>r.text()).then(txt=>{
     const row=parseLatestFitbit(txt);
     if(!row){ el.innerHTML='<p class="muted tiny">Couldn\'t read that sheet — check the published CSV link in Settings.</p>'; return; }
-    el.innerHTML = `<div class="fb-stat"><span>🛌 Sleep</span><b>${row.sleep??'–'} h</b></div>
-      <div class="fb-stat"><span>👟 Steps</span><b>${row.steps??'–'}</b></div>
-      <div class="fb-stat"><span>❤️ Resting HR</span><b>${row.hr??'–'}</b></div>
-      <div class="fb-stat"><span>📅 ${row.date??''}</span><b></b></div>`;
+    el.innerHTML = `<div class="fb-stat"><span>Sleep</span><b>${row.sleep??'–'} h</b></div>
+      <div class="fb-stat"><span>Steps</span><b>${row.steps??'–'}</b></div>
+      <div class="fb-stat"><span>Resting HR</span><b>${row.hr??'–'}</b></div>
+      <div class="fb-stat"><span>${row.date??''}</span><b></b></div>`;
   }).catch(()=>{ el.innerHTML='<p class="muted tiny">Couldn\'t reach the sheet (offline, or the link isn\'t public).</p>'; });
 }
 function parseLatestFitbit(csv){
@@ -1884,10 +1880,10 @@ function renderNutrition(){
   if(!n && !anyTarget){ el.innerHTML='<p class="muted tiny">Log your daily totals to track calories and macros. Set targets in Settings for progress bars, and it counts toward your recap.</p>'; return; }
   const v=n||{kcal:0,protein:0,carbs:0,fat:0};
   el.innerHTML =
-    macroBar('🔥 Calories', v.kcal||0, t.kcal||0, 'k', true) +
-    macroBar('🍗 Protein (g)', v.protein||0, t.protein||0, 'p', false) +
-    macroBar('🍚 Carbs (g)', v.carbs||0, t.carbs||0, 'c', false) +
-    macroBar('🥑 Fat (g)', v.fat||0, t.fat||0, 'f', false);
+    macroBar('Calories', v.kcal||0, t.kcal||0, 'k', true) +
+    macroBar('Protein (g)', v.protein||0, t.protein||0, 'p', false) +
+    macroBar('Carbs (g)', v.carbs||0, t.carbs||0, 'c', false) +
+    macroBar('Fat (g)', v.fat||0, t.fat||0, 'f', false);
 }
 function saveMacroTargets(){
   DB.settings.macroTargets={
@@ -1896,52 +1892,6 @@ function saveMacroTargets(){
   save(); toast('Targets saved.');
   if($('#page-today').classList.contains('visible')) renderNutrition();
 }
-
-function renderCheckinForm(){
-  const c=todayCheckin(); if(!c) return;
-  $('#ciReadiness').value=c.readiness??''; $('#ciSleepScore').value=c.sleepScore??'';
-  $('#ciSleepTime').value=c.sleepTime??''; $('#ciSteps').value=c.steps??''; $('#ciRestingHr').value=c.restingHr??'';
-  $('#ciEnergy').value=c.energy??''; $('#ciMoved').value=c.moved??''; $('#ciNote').value=c.note??'';
-}
-function saveCheckin(){
-  const date=todayISO();
-  const doneCount=CHECKLIST_ITEMS.filter(it=>isChecked(it.id)).length;
-  const rec={ date,
-    readiness:parseInt($('#ciReadiness').value)||null, sleepScore:parseInt($('#ciSleepScore').value)||null,
-    sleepTime:$('#ciSleepTime').value.trim()||null, steps:parseInt($('#ciSteps').value)||null,
-    restingHr:parseInt($('#ciRestingHr').value)||null,
-    energy:$('#ciEnergy').value||null, moved:$('#ciMoved').value||null, note:$('#ciNote').value.trim(),
-    stretches:isChecked('stretch'), checklistDone:doneCount, checklistTotal:CHECKLIST_ITEMS.length };
-  const i=DB.checkins.findIndex(x=>x.date===date);
-  if(i>=0) DB.checkins[i]=rec; else DB.checkins.push(rec);
-  save(); toast('Check-in saved.');
-}
-function copyDayForClaude(){
-  saveCheckin();
-  const c=todayCheckin(), t=todayISO();
-  const missed=CHECKLIST_ITEMS.filter(it=>!isChecked(it.id)).map(it=>it.label.replace(/^\S+\s/,''));
-  const mDone=MORNING_ITEMS.filter(it=>isChecked(it.id)).length, dDone=DAILY_ITEMS.filter(it=>isChecked(it.id)).length;
-  const walks=DB.walks.filter(w=>w.date===t), runs=DB.runs.filter(r=>r.date===t), gym=DB.workouts.some(w=>w.date===t);
-  const act=[gym?'gym logged':'', ...runs.map(r=>`run ${r.km}km`), ...walks.map(w=>`walk ${w.label}`)].filter(Boolean).join(', ');
-  const fitbit=[ c.readiness?`Readiness ${c.readiness}`:'', c.sleepScore?`Sleep score ${c.sleepScore}`:'',
-    c.sleepTime?`Sleep ${c.sleepTime}`:'', c.steps?`${c.steps} steps`:'', c.restingHr?`Resting HR ${c.restingHr}`:'' ].filter(Boolean).join(' · ');
-  const n=todayNutrition();
-  const mt=DB.settings.macroTargets||{};
-  const nutrition = n ? `Nutrition: ${n.kcal||0}${mt.kcal?'/'+mt.kcal:''} kcal · P${n.protein||0}${mt.protein?'/'+mt.protein:''} C${n.carbs||0} F${n.fat||0}${(mt.kcal||mt.protein)?' (actual/target)':''}` : '';
-  const lines=[
-    `Daily check-in — ${t}`,
-    fitbit ? `Fitbit: ${fitbit}` : '',
-    nutrition,
-    `Energy: ${c.energy??'?'}/5 · Moved: ${c.moved||'?'}${act?` (${act})`:''}`,
-    `Morning: ${mDone}/${MORNING_ITEMS.length} · Daily: ${dDone}/${DAILY_ITEMS.length}${missed.length?` — missed: ${missed.join(', ')}`:''}`,
-    `Posture stretches: ${c.stretches?'yes':'no'}`,
-    c.note?`Note: ${c.note}`:''
-  ].filter(Boolean);
-  const text=lines.join('\n');
-  if(navigator.clipboard?.writeText){ navigator.clipboard.writeText(text).then(()=>toast('Copied — paste it to Claude 📋'),()=>fallbackCopy(text)); }
-  else fallbackCopy(text);
-}
-function fallbackCopy(text){ openModal(`<h3>Copy your day</h3><p class="muted tiny" style="margin-bottom:10px">Select all, copy, and paste it to Claude.</p><textarea class="input" style="height:190px" readonly onclick="this.select()">${esc(text)}</textarea>`); }
 
 function openWalkModal(){
   openModal(`<h3>Log walk</h3>
@@ -1972,7 +1922,7 @@ function renderTodayWalks(){
   const el=$('#ciWalks');
   if(!walks.length){ el.innerHTML=''; return; }
   el.innerHTML = '<div class="stat-label" style="margin-bottom:6px">Walks logged today</div>' + walks.map(w=>`
-    <div class="list-row" style="padding:7px 0"><div class="tiny">🚶 ${esc(w.label)}${w.notes?' · '+esc(w.notes):''}</div>
+    <div class="list-row" style="padding:7px 0"><div class="tiny">${esc(w.label)}${w.notes?' · '+esc(w.notes):''}</div>
       <div style="display:flex; gap:6px">
         <button class="btn btn-ghost btn-sm" onclick="editWalk('${w.id}')" aria-label="Edit walk">✎</button>
         <button class="btn btn-ghost btn-sm" onclick="delWalk('${w.id}')" aria-label="Delete walk">✕</button>
@@ -2007,203 +1957,142 @@ function delWalk(id){
   save(); closeModal(); refreshWalkViews(); toast('Walk deleted.');
 }
 
-/* ================= RECAP (daily overview / TikTok) ================= */
-function recapDate(){ return $('#recapDate').value || todayISO(); }
-function setRecapToday(){ $('#recapDate').value=todayISO(); renderRecap(); }
-function trainingFor(date){
-  return { gyms:DB.workouts.filter(w=>w.date===date), runs:DB.runs.filter(r=>r.date===date), walks:DB.walks.filter(w=>w.date===date) };
-}
-function dayGoals(date){
-  const { gyms, runs, walks }=trainingFor(date);
-  const moved = gyms.length||runs.length||walks.length;
-  const n=nutritionFor(date), t=macroTargets();
-  const ck=DB.checklist[date]||{};
-  const isCk=id=> id==='move' ? (!!ck.move||moved) : !!ck[id];
-  const morningDone=MORNING_ITEMS.every(it=>isCk(it.id));
-  const dailyDone=DAILY_ITEMS.every(it=>isCk(it.id));
-  const goals=[{ label:'Trained / moved', ok:!!moved }];
-  if(t.protein) goals.push({ label:`Protein ${t.protein}g+`, ok:!!(n && n.protein>=t.protein) });
-  if(t.kcal)    goals.push({ label:`Calories ≤ ${t.kcal}`, ok:!!(n && n.kcal>0 && n.kcal<=t.kcal) });
-  goals.push({ label:'Morning routine', ok:morningDone });
-  goals.push({ label:'Daily habits', ok:dailyDone });
-  return goals;
-}
-const RECAP_SHORT={ move:'🚶 Move', stretch:'🧍 Posture stretches', lights:'🌙 Lights out' };
-function checklistRecapHtml(date){
-  const { gyms, runs, walks }=trainingFor(date);
-  const moved = gyms.length||runs.length||walks.length;
-  const ck=DB.checklist[date]||{};
-  const isCk=id=> id==='move' ? (!!ck.move||moved) : !!ck[id];
-  const mDone=MORNING_ITEMS.filter(it=>isCk(it.id)).length;
-  const dailyRows=DAILY_ITEMS.map(it=>`<div class="recap-ex"><span>${RECAP_SHORT[it.id]||esc(it.label)}</span><span class="top">${isCk(it.id)?'✓':'—'}</span></div>`).join('');
-  return `<div class="recap-ex"><span>☀️ Morning routine</span><span class="top">${mDone}/${MORNING_ITEMS.length}</span></div>${dailyRows}`;
-}
-function renderRecap(){
-  if(!$('#recapDate').value) $('#recapDate').value=todayISO();
-  const date=recapDate();
-  const { gyms, runs, walks }=trainingFor(date);
-  const goals=dayGoals(date);
-  const done=goals.filter(g=>g.ok).length, all=goals.length, perfect=done===all;
-  const isToday=date===todayISO();
-  const dObj=new Date(date+'T12:00');
-  const weekday=dObj.toLocaleDateString(undefined,{weekday:'long'});
-  const nice=dObj.toLocaleDateString(undefined,{day:'numeric',month:'long',year:'numeric'});
-  const name=DB.settings.name;
-
-  const exItems=[];
-  gyms.forEach(w=>w.exercises.forEach(e=>{
-    const doneSets=e.sets.filter(s=>s.done); if(!doneSets.length) return;
-    const top=doneSets.reduce((b,s)=>(s.kg||0)>(b.kg||0)?s:b, doneSets[0]);
-    exItems.push({ name:exName(e.exerciseId), top: top.kg? `${doneSets.length}×  top ${kgToDisplay(top.kg)}${U()}×${top.reps}` : `${doneSets.length} set${doneSets.length===1?'':'s'}` });
-  }));
-  runs.forEach(r=>exItems.push({ name:`🏃 Run ${r.km.toFixed(2)} km`, top:`${fmtDur(r.sec)} · ${paceStr(r.sec/r.km)}` }));
-  walks.forEach(w=>exItems.push({ name:`🚶 Walk`, top: w.label||'' }));
-  const exHtml = exItems.length
-    ? exItems.map(x=>`<div class="recap-ex"><span>${esc(x.name)}</span><span class="top">${esc(x.top)}</span></div>`).join('')
-    : '<div class="tiny muted">No training logged this day.</div>';
-
-  const n=nutritionFor(date), t=macroTargets();
-  const nutHtml = n
-    ? `<div class="recap-kcal num">${(n.kcal||0).toLocaleString()} <small>kcal${t.kcal?` / ${t.kcal}`:''}</small></div>
-        <div class="recap-macros">
-          <div class="recap-macro"><div class="v num accent-strength">${n.protein||0}g</div><div class="l">Protein</div></div>
-          <div class="recap-macro"><div class="v num accent-cardio">${n.carbs||0}g</div><div class="l">Carbs</div></div>
-          <div class="recap-macro"><div class="v num accent-gold">${n.fat||0}g</div><div class="l">Fat</div></div>
-        </div>`
-    : '<div class="tiny muted">No nutrition logged this day.</div>';
-
-  const goalPills = goals.map(g=>`<span class="recap-goal ${g.ok?'on':''}"><span class="tick">${g.ok?'✓':''}</span>${esc(g.label)}</span>`).join('');
-
-  $('#recapCard').innerHTML = `
-    <div class="recap" id="recapShot">
-      <div class="recap-top">
-        <div class="recap-brand">FIT<span>FORGE</span> · DAILY RECAP</div>
-        <div class="recap-date">${isToday?'Today':esc(weekday)}</div>
-        <div class="recap-day">${esc(nice)}${name?` · ${esc(name)}`:''}</div>
-        <div class="recap-verdict ${perfect?'win':'mid'}">
-          <span class="big">${perfect?'🏆':'📊'}</span>
-          ${perfect?'Perfect day — all goals hit':`${done} of ${all} goals complete`}
-        </div>
-        <div class="recap-goals">${goalPills}</div>
-      </div>
-      <div class="recap-sections">
-        <div class="recap-sec"><div class="stat-label">🏋️ Training done</div>${exHtml}</div>
-        <div class="recap-sec"><div class="stat-label">🍽️ Calories & macros</div>${nutHtml}</div>
-        <div class="recap-sec"><div class="stat-label">✅ Checklist</div>${checklistRecapHtml(date)}</div>
-      </div>
-    </div>`;
-}
-function copyRecap(){
-  const date=recapDate();
-  const { gyms, runs, walks }=trainingFor(date);
-  const goals=dayGoals(date), done=goals.filter(g=>g.ok).length;
-  const n=nutritionFor(date), exNames=[];
-  gyms.forEach(w=>w.exercises.forEach(e=>{ if(e.sets.some(s=>s.done)) exNames.push(exName(e.exerciseId)); }));
-  runs.forEach(r=>exNames.push(`Run ${r.km.toFixed(2)}km`));
-  walks.forEach(w=>exNames.push(`Walk ${(w.label||'').trim()}`.trim()));
-  const lines=[
-    `FitForge recap — ${fmtDate(date)}`,
-    exNames.length?`Training: ${exNames.join(', ')}`:'Training: rest day',
-    n?`Nutrition: ${n.kcal||0} kcal · P${n.protein||0} C${n.carbs||0} F${n.fat||0}`:'Nutrition: not logged',
-    `Goals: ${done}/${goals.length} complete${done===goals.length?' — perfect day 🏆':''}`
-  ];
-  const text=lines.join('\n');
-  if(navigator.clipboard?.writeText){ navigator.clipboard.writeText(text).then(()=>toast('Recap copied 📋'),()=>fallbackCopy(text)); }
-  else fallbackCopy(text);
-}
-
 /* ================= INIT ================= */
 document.body.dataset.theme=DB.settings.theme||'midnight';
 renderToday();
 window.addEventListener('resize',()=>{ clearTimeout(window._rz); window._rz=setTimeout(redrawAllSafe,250); });
 </script>
 
-<style id="wild">
+<style id="minimal">
 /* ============================================================
-   "BOLD" — matte black, oversized editorial type, electric lime
-   + coral, kinetic. A hard pivot from the soft-glass look.
-   Appended last, so it wins the cascade.
+   MINIMAL — calm, clean, near-monochrome with a single soft
+   accent. Fades only (no pops, slides, sheen, marquee).
+   No emoji. Appended last, so it wins the cascade.
    ============================================================ */
 :root, [data-theme="midnight"]{
-  --bg:#0A0A0C; --bg2:#101014;
-  --text:#F4F4EF; --text2:#A6A6A0; --text3:#6C6C66;
-  --border:rgba(255,255,255,.11);
-  --strength:#C6FF3A; --strength-soft:rgba(198,255,58,.13);
-  --cardio:#2BE8D6; --body:#A98CFF; --accent2:#FF5A3C;
-  --mono:ui-monospace,'SF Mono',Menlo,'Roboto Mono',monospace;
+  --bg:#0E0F13; --bg2:#141519;
+  --surface:#141519; --surface2:#1C1E24;
+  --border:rgba(255,255,255,.08);
+  --text:#ECEDF0; --text2:#93959E; --text3:#5B5D66;
+  --strength:#7FD8AE; --strength-soft:rgba(127,216,174,.12);
+  --cardio:#7FC4E8; --cardio-soft:rgba(127,196,232,.12);
+  --body:#B4A0E8; --body-soft:rgba(180,160,232,.12);
+  --gold:#E8C88A; --danger:#E8879B; --ok:#7FD8AE;
+  --radius:16px; --shadow:none;
+  --font-display:'Inter', system-ui, -apple-system, sans-serif;
+}
+[data-theme="daylight"]{
+  --bg:#FAFAFB; --bg2:#FFFFFF; --surface:#FFFFFF; --surface2:#F2F3F5;
+  --border:rgba(0,0,0,.09); --text:#1A1C20; --text2:#5E626C; --text3:#9A9DA6;
+  --strength:#2FA277; --strength-soft:rgba(47,162,119,.10);
+  --cardio:#3E8FC4; --cardio-soft:rgba(62,143,196,.10);
+  --body:#7C5FCF; --body-soft:rgba(124,95,207,.10);
+  --gold:#C79A3E; --danger:#CE5C74; --ok:#2FA277; --shadow:none;
+  --font-display:'Inter', system-ui, -apple-system, sans-serif;
 }
 html,body{ background:var(--bg); }
 
-/* flatten the aurora to a faint static wash — go graphic, not glassy */
-.aurora{ filter:blur(120px); opacity:.22; }
-.aurora i{ animation-duration:70s; }
-body::after{ display:none; }
+/* flat, calm ground — no aurora, no vignette */
+.aurora{ display:none !important; }
+body::after{ display:none !important; }
 
-/* crisp flat cards (data pages) */
-.card{ background:#101014; border:1px solid var(--border); box-shadow:none; border-radius:16px; backdrop-filter:none; -webkit-backdrop-filter:none; }
-.card::before{ display:none; }
+/* ---- fades only ---- */
+@keyframes fadeIn{ from{ opacity:0; } to{ opacity:1; } }
+.page.visible{ animation:fadeIn .4s ease both; }
+.page.visible .card{ animation:fadeIn .45s ease both; }
+.hero-plan::before{ display:none !important; }   /* no sheen sweep */
+.hero-badge{ display:none !important; }           /* no floating badge */
 
-/* ---- oversized editorial type ---- */
-.page-title{ font-size:clamp(2.6rem,8vw,4.4rem); letter-spacing:-.03em; text-transform:uppercase; line-height:.9; }
-.page-sub{ font-family:var(--mono); text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; color:var(--text2); }
-.btitle{ text-transform:uppercase; font-size:clamp(1.3rem,3.6vw,1.75rem); letter-spacing:-.01em; }
-.btitle-sub{ font-family:var(--mono); letter-spacing:.1em; text-transform:uppercase; font-size:.7rem; }
-.logo{ letter-spacing:-.02em; } .logo span{ background:none; -webkit-text-fill-color:var(--strength); color:var(--strength); }
+/* ---- flat cards, hairline border ---- */
+.card{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none; }
+.card::before{ display:none !important; }
 
-/* ---- HERO: full-bleed lime block, giant black word ---- */
-.hero-plan{ background:var(--strength) !important; border:none !important; border-radius:22px; margin-top:14px; padding:28px 30px !important; gap:22px; overflow:hidden; }
-.hero-plan::after{ display:none; }
-.hero-plan::before{ background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.4) 50%,transparent 62%) !important; }
-.hero-badge{ background:#0A0A0C !important; color:var(--strength) !important; box-shadow:none !important; border-radius:16px; width:60px; height:60px; }
-.hero-plan .stat-label{ color:rgba(0,0,0,.55); font-family:var(--mono); letter-spacing:.14em; }
-.hero-move{ background:none !important; -webkit-text-fill-color:#0A0A0C; color:#0A0A0C !important;
-  font-size:clamp(2.6rem,10vw,4.6rem) !important; text-transform:uppercase; letter-spacing:-.04em; line-height:.86; margin:2px 0; }
-.hero-plan .muted{ color:rgba(0,0,0,.72) !important; font-family:var(--mono); text-transform:uppercase; letter-spacing:.06em; font-size:.7rem; }
+/* ---- typography: quiet, normal-case ---- */
+.page-title{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.7rem,3.4vw,2.1rem);
+  letter-spacing:-.02em; text-transform:none; line-height:1.1; }
+.page-sub{ font-family:var(--font-body); text-transform:none; letter-spacing:0; font-size:.92rem; color:var(--text2); }
+.btitle{ font-family:var(--font-display); font-weight:650; text-transform:none; font-size:1.15rem; letter-spacing:-.01em; }
+.btitle-sub{ font-family:var(--font-body); text-transform:none; letter-spacing:0; font-size:.85rem; font-weight:400; color:var(--text3); }
+.logo{ font-family:var(--font-display); font-weight:700; letter-spacing:-.01em; }
+.logo span{ background:none; -webkit-text-fill-color:var(--strength); color:var(--strength); }
+.stat-value{ font-family:var(--font-display); font-weight:700; letter-spacing:-.02em; }
+.stat-label{ letter-spacing:.06em; }
 
-/* ---- MARQUEE ticker ---- */
-.ticker{ margin:18px 0 6px; overflow:hidden; border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:11px 0; }
-.ticker__in{ display:inline-block; white-space:nowrap; animation:marq 22s linear infinite; font-family:var(--mono); text-transform:uppercase; letter-spacing:.14em; font-size:.78rem; color:var(--text); }
-.ticker__in span{ color:var(--accent2); margin:0 10px; font-weight:700; }
-@keyframes marq{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+/* ---- hero: calm card with a thin accent edge ---- */
+.hero-plan{ background:var(--surface) !important; border:1px solid var(--border) !important;
+  border-left:2px solid var(--strength) !important; border-radius:var(--radius); margin-top:6px;
+  padding:20px 22px !important; gap:0; overflow:hidden; }
+.hero-plan::after{ display:none !important; }
+.hero-plan .stat-label{ color:var(--text3); font-family:var(--font-body); letter-spacing:.08em; text-transform:uppercase; font-size:.68rem; }
+.hero-move{ background:none !important; -webkit-text-fill-color:var(--text); color:var(--text) !important;
+  font-family:var(--font-display); font-weight:700; font-size:clamp(1.5rem,4vw,2rem) !important;
+  text-transform:none; letter-spacing:-.02em; line-height:1.1; margin:3px 0; }
+.hero-plan .muted{ color:var(--text2) !important; font-family:var(--font-body); text-transform:none; letter-spacing:0; font-size:.82rem; }
 
-/* ---- EDITORIAL checklist: numbered, big, strikethrough ---- */
-.ck-list{ counter-reset:ck; border-top:1px solid var(--border); }
-.ck-list::before{ display:none; }
-.ck-row{ counter-increment:ck; gap:18px !important; padding:16px 2px !important; border-bottom:1px solid var(--border) !important; align-items:center; transition:transform .14s, background .2s; }
-.ck-row::before{ content:counter(ck,decimal-leading-zero); font-family:var(--mono); font-size:.78rem; color:var(--text3); width:22px; flex:none; transition:color .2s; }
-.ck-row.on::before{ color:var(--strength); }
-.ck-lbl{ font-size:1.06rem; font-weight:600; flex:1; }
-.ck-row.on{ color:inherit; }
-.ck-row.on .ck-lbl{ text-decoration:line-through; text-decoration-color:var(--strength); text-decoration-thickness:2px; color:var(--text2); }
-.ck-box{ order:3; width:28px; height:28px; border-radius:9px; background:transparent; border:2px solid var(--text3); box-shadow:none; }
-.ck-row.on .ck-box{ background:var(--strength); border-color:transparent; color:#0A0A0C; box-shadow:none; }
-.ck-row:hover{ transform:translateX(6px); }
+/* ---- checklist: clean rows, hairline dividers, fade-in ---- */
+.ck-list{ counter-reset:none; border-top:1px solid var(--border); }
+.ck-list::before{ display:none !important; }
+.ck-row{ counter-increment:none; gap:13px !important; padding:13px 4px !important;
+  border-bottom:1px solid var(--border) !important; align-items:center;
+  animation:fadeIn .4s ease both; animation-delay:calc(var(--i,0)*.03s);
+  transition:background .2s, color .2s; border-radius:0; }
+.ck-row::before{ display:none !important; }
+.ck-row:hover{ transform:none; background:var(--surface2); }
+.ck-lbl{ font-size:.98rem; font-weight:500; flex:1; }
+.ck-row.on{ color:var(--text2); }
+.ck-row.on .ck-lbl{ text-decoration:none; color:var(--text3); }
+.ck-box{ order:0; width:24px; height:24px; border-radius:50%; background:transparent;
+  border:1.5px solid var(--text3); box-shadow:none; color:transparent; font-size:13px;
+  transition:background .25s ease, border-color .25s ease, color .25s ease; }
+.ck-row.on .ck-box{ background:var(--strength); border-color:var(--strength); color:var(--bg); box-shadow:none; animation:none !important; }
 
-/* rings keep round; recolor to lime, no glow */
-.ring{ filter:none; }
-.ringtxt{ font-family:var(--mono); }
+/* progress rings — soft accent, no glow */
+.ring{ filter:none; background:conic-gradient(var(--strength) calc(var(--pct)*3.6deg), var(--surface2) 0deg); }
+.ringtxt{ font-family:var(--font-body); font-weight:600; }
+#morningProgress,#dailyProgress{ background:none; border:none; color:var(--text2); }
 
-/* ---- LOG IT: bold outline buttons ---- */
-.qa{ background:transparent !important; border:1.5px solid var(--border) !important; border-radius:16px; padding:22px 10px !important; text-transform:uppercase; letter-spacing:.05em; font-size:1.02rem; box-shadow:none !important; }
-.qa:hover{ transform:translateY(-3px); }
-.qa-lime:hover{ border-color:var(--strength) !important; background:var(--strength-soft) !important; }
-.qa-cardio:hover{ border-color:var(--cardio) !important; background:var(--cardio-soft) !important; }
+/* ---- log it: quiet outline tiles ---- */
+.qa{ background:var(--surface) !important; border:1px solid var(--border) !important; border-radius:var(--radius);
+  padding:20px 10px !important; text-transform:none; letter-spacing:0; font-size:.98rem; font-weight:600;
+  box-shadow:none !important; transition:background .2s, border-color .2s; }
+.qa:hover{ transform:none; background:var(--surface2); }
+.qa-lime:hover{ border-color:var(--strength) !important; }
+.qa-cardio:hover{ border-color:var(--cardio) !important; }
+.qa:active{ transform:none; }
 
-/* ---- buttons / nav / tabbar ---- */
-.btn{ text-transform:uppercase; letter-spacing:.05em; font-weight:800; border-radius:12px; }
-.btn-primary{ background:var(--strength); color:#0A0A0C; box-shadow:none; }
-.btn-cardio{ background:var(--cardio); color:#04231f; box-shadow:none; }
-.btn-body{ background:var(--body); color:#0A0A0C; box-shadow:none; }
-.btn-ghost{ background:transparent; border:1px solid var(--border); }
-.nav-btn.active{ background:transparent; color:var(--strength); }
+/* ---- buttons / nav / chrome ---- */
+.btn{ text-transform:none; letter-spacing:0; font-weight:600; border-radius:11px; box-shadow:none !important; }
+.btn:hover{ filter:brightness(1.06); }
+.btn-primary{ background:var(--strength); color:var(--bg); }
+.btn-cardio{ background:var(--cardio); color:#0E1418; }
+.btn-body{ background:var(--body); color:#14101B; }
+.btn-ghost{ background:transparent; border:1px solid var(--border); color:var(--text); }
+.nav-btn.active{ background:var(--strength-soft); color:var(--strength); }
 .nav-btn.active::before{ background:var(--strength); }
-.tabbar{ background:#0A0A0C; backdrop-filter:none; -webkit-backdrop-filter:none; }
+.tabbar{ background:var(--bg2); backdrop-filter:none; -webkit-backdrop-filter:none; }
 .tabbar button.active{ color:var(--strength); }
-.toast{ background:var(--strength); color:#0A0A0C; }
-.timer-pill{ background:var(--strength); color:#0A0A0C; }
-.link-btn{ color:var(--accent2); text-transform:uppercase; font-family:var(--mono); letter-spacing:.08em; font-size:.76rem; }
+.toast{ background:var(--text); color:var(--bg); box-shadow:none; }
+.timer-pill{ background:var(--strength); color:var(--bg); box-shadow:none; }
+.timer-pill button{ background:rgba(0,0,0,.18); color:var(--bg); }
+.link-btn{ color:var(--strength); text-transform:none; font-family:var(--font-body); letter-spacing:0; font-size:.88rem; font-weight:500; }
 
-@media (prefers-reduced-motion:reduce){ .ticker__in{ animation:none !important; } }
+/* ---- inputs / segmented / modal ---- */
+.input,input.input,select.input,textarea.input{ background:var(--bg2); border:1px solid var(--border); border-radius:11px; }
+.input:focus{ border-color:var(--strength); box-shadow:none; }
+.seg{ background:var(--bg2); border:1px solid var(--border); }
+.seg button.active{ background:var(--surface2); box-shadow:none; }
+.modal{ background:var(--surface); backdrop-filter:none; -webkit-backdrop-filter:none; border:1px solid var(--border); border-radius:18px; }
+.modal-back{ background:rgba(0,0,0,.55); backdrop-filter:blur(2px); -webkit-backdrop-filter:blur(2px); }
+.chip{ box-shadow:none; }
+.ach{ border-radius:14px; }
+.ach .em{ font-size:1.1rem; color:var(--text3); }
+.ach.earned{ border-color:var(--strength); box-shadow:none; }
+.ach.earned .em{ color:var(--strength); }
+
+@media (prefers-reduced-motion:reduce){
+  .page.visible, .page.visible .card, .ck-row{ animation:none !important; }
+}
 </style>
 </body>
 </html>
