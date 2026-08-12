@@ -331,48 +331,50 @@ canvas{ max-width:100%; }
         <button class="btn btn-ghost btn-sm" onclick="go('dashboard')">Stats ›</button>
       </div>
       <div id="todayPlan"></div>
-      <div class="grid cols-2" style="margin-top:16px; align-items:start">
-        <div class="card">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px">
-            <div class="stat-label">☀️ Morning</div>
-            <span class="chip num" id="morningProgress">0/0</span>
-          </div>
-          <div id="morningItems"></div>
-          <div style="display:flex; justify-content:space-between; align-items:center; margin:18px 0 12px">
-            <div class="stat-label">📅 Daily — anytime today</div>
-            <span class="chip num" id="dailyProgress">0/0</span>
-          </div>
-          <div id="dailyItems"></div>
-          <button class="btn btn-ghost btn-sm" style="margin-top:8px" onclick="showStretches()">🧍 What are the daily 4 stretches?</button>
+      <section class="tblock">
+        <div class="bhead">
+          <h2 class="btitle">☀️ Morning</h2>
+          <div class="ringwrap"><div class="ring" id="morningRing" style="--pct:0"></div><span class="ringtxt" id="morningProgress">0/0</span></div>
         </div>
-        <div class="card">
-          <div class="stat-label" style="margin-bottom:12px">⚡ Quick log</div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px">
-            <button class="btn btn-cardio btn-sm" onclick="openWalkModal()">+ Walk</button>
-            <button class="btn btn-cardio btn-sm" onclick="openRunModal()">+ Run</button>
-            <button class="btn btn-primary btn-sm" onclick="goWorkout('gym')">+ Gym</button>
-          </div>
-          <div id="ciWalks"></div>
-          <div class="stat-label" style="margin:14px 0 8px">⌚ Fitbit</div>
+        <div class="ck-list" id="morningItems"></div>
+
+        <div class="bhead" style="margin-top:32px">
+          <h2 class="btitle">📅 Daily <span class="btitle-sub">anytime</span></h2>
+          <div class="ringwrap"><div class="ring" id="dailyRing" style="--pct:0"></div><span class="ringtxt" id="dailyProgress">0/0</span></div>
+        </div>
+        <div class="ck-list" id="dailyItems"></div>
+        <button class="link-btn" onclick="showStretches()">🧍 What are the daily 4 stretches? →</button>
+      </section>
+
+      <section class="tblock">
+        <h2 class="btitle">⚡ Log it</h2>
+        <div class="qa-row">
+          <button class="qa qa-cardio" onclick="openWalkModal()"><span class="qa-em">🚶</span>Walk</button>
+          <button class="qa qa-cardio" onclick="openRunModal()"><span class="qa-em">🏃</span>Run</button>
+          <button class="qa qa-lime" onclick="goWorkout('gym')"><span class="qa-em">🏋️</span>Gym</button>
+        </div>
+        <div id="ciWalks"></div>
+      </section>
+
+      <div class="two-col">
+        <section class="tblock">
+          <h2 class="btitle">⌚ Fitbit</h2>
           <div id="fitbitPanel"></div>
-        </div>
-      </div>
-      <div class="card" style="margin-top:16px">
-        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px">
-          <div class="stat-label">🍽️ Nutrition today</div>
-          <span class="tiny muted">Log totals from MacroFactor</span>
-        </div>
-        <div class="grid cols-4">
-          <label class="field"><span>Calories (kcal)</span><input class="input num" type="number" min="0" id="nutKcal" placeholder="1650"></label>
-          <label class="field"><span>Protein (g)</span><input class="input num" type="number" min="0" id="nutProtein" placeholder="160"></label>
-          <label class="field"><span>Carbs (g)</span><input class="input num" type="number" min="0" id="nutCarbs" placeholder="150"></label>
-          <label class="field"><span>Fat (g)</span><input class="input num" type="number" min="0" id="nutFat" placeholder="55"></label>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin:2px 0 4px">
-          <button class="btn btn-primary btn-sm" onclick="saveNutrition()">Save nutrition</button>
-          <button class="btn btn-ghost btn-sm" onclick="go('settings')">Set daily targets</button>
-        </div>
-        <div id="nutProgress" style="margin-top:12px"></div>
+        </section>
+        <section class="tblock">
+          <div class="bhead"><h2 class="btitle">🍽️ Nutrition</h2><span class="tiny muted">from MacroFactor</span></div>
+          <div class="grid cols-4">
+            <label class="field"><span>Calories</span><input class="input num" type="number" min="0" id="nutKcal" placeholder="1650"></label>
+            <label class="field"><span>Protein (g)</span><input class="input num" type="number" min="0" id="nutProtein" placeholder="160"></label>
+            <label class="field"><span>Carbs (g)</span><input class="input num" type="number" min="0" id="nutCarbs" placeholder="150"></label>
+            <label class="field"><span>Fat (g)</span><input class="input num" type="number" min="0" id="nutFat" placeholder="55"></label>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin:2px 0 4px">
+            <button class="btn btn-primary btn-sm" onclick="saveNutrition()">Save</button>
+            <button class="btn btn-ghost btn-sm" onclick="go('settings')">Targets</button>
+          </div>
+          <div id="nutProgress" style="margin-top:12px"></div>
+        </section>
       </div>
     </section>
 
@@ -692,10 +694,72 @@ body::after{ content:""; position:fixed; inset:0; z-index:-1; pointer-events:non
 .set-done.on{ background:var(--grad); border-color:transparent; color:#08120a; }
 .theme-card.selected{ border-color:var(--strength); box-shadow:0 0 0 3px var(--strength-soft); }
 
+/* ============ DE-BOX: frameless Today, rings, timeline, tiles ============ */
+@property --pct{ syntax:'<number>'; inherits:false; initial-value:0; }
+
+/* soften cards app-wide — float, don't box */
+.card{ border:none; background:rgba(255,255,255,.03); box-shadow:0 26px 70px -38px rgba(0,0,0,.9); border-radius:26px; }
+.card::before{ opacity:.45; }
+
+/* frameless Today blocks */
+.tblock{ margin-top:34px; }
+.tblock:first-of-type{ margin-top:22px; }
+.bhead{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px; }
+.btitle{ font-family:var(--font-display); font-size:1.4rem; letter-spacing:.01em; }
+.btitle-sub{ font-family:var(--font-body); font-weight:400; font-size:.9rem; color:var(--text3); margin-left:6px; }
+.two-col{ display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+@media (max-width:760px){ .two-col{ grid-template-columns:1fr; gap:0; } }
+
+/* progress ring */
+.ringwrap{ position:relative; width:56px; height:56px; display:grid; place-items:center; flex:none; }
+.ring{ position:absolute; inset:0; border-radius:50%;
+  background:conic-gradient(var(--strength) calc(var(--pct)*3.6deg), rgba(255,255,255,.09) 0deg);
+  -webkit-mask:radial-gradient(farthest-side, transparent 63%, #000 65%); mask:radial-gradient(farthest-side, transparent 63%, #000 65%);
+  transition:--pct .85s cubic-bezier(.3,.8,.3,1); filter:drop-shadow(0 0 6px rgba(182,255,60,.35)); }
+.ringtxt{ position:relative; z-index:1; font-size:.72rem; font-weight:800; font-variant-numeric:tabular-nums; }
+
+/* timeline checklist — frameless rows + connecting line */
+.ck-list{ position:relative; }
+.ck-list::before{ content:""; position:absolute; left:20px; top:18px; bottom:18px; width:2px; border-radius:2px;
+  background:linear-gradient(var(--strength-soft), rgba(255,255,255,.05)); }
+.ck-row{ background:none !important; border:none !important; border-radius:0; width:100%; text-align:left;
+  display:flex; align-items:center; gap:15px; padding:10px 6px; color:var(--text); position:relative;
+  animation:rowIn .45s cubic-bezier(.2,.7,.3,1) backwards; animation-delay:calc(var(--i,0)*.045s); transition:transform .14s, color .2s; }
+.ck-row:hover{ transform:translateX(4px); }
+.ck-box{ width:30px; height:30px; border-radius:50%; border:2px solid var(--text3); background:var(--bg2);
+  display:grid; place-items:center; font-size:14px; font-weight:800; color:transparent; transition:.2s; position:relative; z-index:1; }
+.ck-row.on{ color:var(--strength); }
+.ck-row.on .ck-box{ background:var(--grad); border-color:transparent; color:#08120a; box-shadow:0 0 14px rgba(182,255,60,.55); animation:pop .34s cubic-bezier(.2,1.5,.4,1); }
+.ck-lbl{ font-size:1rem; }
+@keyframes rowIn{ from{ opacity:0; transform:translateX(-12px);} to{ opacity:1; transform:none;} }
+.link-btn{ background:none; border:none; color:var(--cardio); font-weight:600; font-size:.9rem; padding:14px 6px 0; }
+.link-btn:hover{ filter:brightness(1.15); }
+
+/* quick-action tiles */
+.qa-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:6px; }
+.qa{ display:flex; flex-direction:column; align-items:center; gap:9px; padding:22px 10px; border-radius:22px;
+  background:linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid var(--border);
+  color:var(--text); font-weight:700; font-size:1rem; transition:transform .16s cubic-bezier(.2,.8,.3,1), box-shadow .25s, border-color .25s; }
+.qa-em{ font-size:2rem; line-height:1; }
+.qa:hover{ transform:translateY(-4px); }
+.qa-lime:hover{ border-color:rgba(182,255,60,.5); box-shadow:0 16px 40px -14px rgba(182,255,60,.55); }
+.qa-cardio:hover{ border-color:rgba(43,232,214,.5); box-shadow:0 16px 40px -14px rgba(43,232,214,.5); }
+.qa:active{ transform:translateY(-1px) scale(.97); }
+
+/* hero motion — sheen sweep + floating badge */
+.hero-plan{ overflow:hidden; }
+.hero-plan::before{ content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:linear-gradient(105deg, transparent 34%, rgba(255,255,255,.16) 48%, transparent 60%);
+  transform:translateX(-130%); animation:sheen 6s ease-in-out infinite; }
+@keyframes sheen{ 0%,72%{ transform:translateX(-130%);} 100%{ transform:translateX(130%);} }
+.hero-badge{ animation:floaty 4.5s ease-in-out infinite; }
+@keyframes floaty{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-6px);} }
+
 @media (prefers-reduced-motion:reduce){
-  .aurora i{ animation:none !important; }
-  .page.visible .card{ animation:none !important; }
+  .aurora i, .hero-plan::before, .hero-badge{ animation:none !important; }
+  .page.visible .card, .ck-row{ animation:none !important; }
   .ck-row.on .ck-box{ animation:none !important; }
+  .ring{ transition:none !important; }
 }
 </style>
 
@@ -1743,17 +1807,19 @@ function renderToday(){
   renderTodayWalks();
 }
 function renderChecklist(){
-  renderChecklistGroup(MORNING_ITEMS, '#morningItems', '#morningProgress');
-  renderChecklistGroup(DAILY_ITEMS, '#dailyItems', '#dailyProgress');
+  renderChecklistGroup(MORNING_ITEMS, '#morningItems', 'morning');
+  renderChecklistGroup(DAILY_ITEMS, '#dailyItems', 'daily');
 }
-function renderChecklistGroup(items, itemsSel, progSel){
+function renderChecklistGroup(items, itemsSel, key){
   let done=0;
-  $(itemsSel).innerHTML = items.map(it=>{
+  $(itemsSel).innerHTML = items.map((it,idx)=>{
     const on=isChecked(it.id); if(on) done++;
-    return `<button class="ck-row${on?' on':''}" onclick="toggleCheck('${it.id}')">
-      <span class="ck-box">${on?'✓':''}</span><span>${it.label}</span></button>`;
+    return `<button class="ck-row${on?' on':''}" style="--i:${idx}" onclick="toggleCheck('${it.id}')">
+      <span class="ck-box">${on?'✓':''}</span><span class="ck-lbl">${it.label}</span></button>`;
   }).join('');
-  $(progSel).textContent = `${done}/${items.length}`;
+  const pct = items.length ? Math.round(done/items.length*100) : 0;
+  const ring=document.getElementById(key+'Ring'); if(ring) ring.style.setProperty('--pct', pct);
+  const txt=document.getElementById(key+'Progress'); if(txt) txt.textContent=`${done}/${items.length}`;
 }
 function toggleCheck(id){ const s=checklistForToday(); s[id]=!isChecked(id); save(); renderChecklist(); }
 function showStretches(){
