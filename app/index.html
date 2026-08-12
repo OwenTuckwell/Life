@@ -331,6 +331,9 @@ canvas{ max-width:100%; }
         <button class="btn btn-ghost btn-sm" onclick="go('dashboard')">Stats ›</button>
       </div>
       <div id="todayPlan"></div>
+
+      <div class="ticker" aria-hidden="true"><div class="ticker__in">SHOW UP <span>/</span> NEVER MISS TWICE <span>/</span> BEAT YESTERDAY <span>/</span> DISCIPLINE OVER MOTIVATION <span>/</span> EARN IT <span>/</span> SHOW UP <span>/</span> NEVER MISS TWICE <span>/</span> BEAT YESTERDAY <span>/</span> DISCIPLINE OVER MOTIVATION <span>/</span> EARN IT <span>/</span> </div></div>
+
       <section class="tblock">
         <div class="bhead">
           <h2 class="btitle">☀️ Morning</h2>
@@ -2114,5 +2117,93 @@ document.body.dataset.theme=DB.settings.theme||'midnight';
 renderToday();
 window.addEventListener('resize',()=>{ clearTimeout(window._rz); window._rz=setTimeout(redrawAllSafe,250); });
 </script>
+
+<style id="wild">
+/* ============================================================
+   "BOLD" — matte black, oversized editorial type, electric lime
+   + coral, kinetic. A hard pivot from the soft-glass look.
+   Appended last, so it wins the cascade.
+   ============================================================ */
+:root, [data-theme="midnight"]{
+  --bg:#0A0A0C; --bg2:#101014;
+  --text:#F4F4EF; --text2:#A6A6A0; --text3:#6C6C66;
+  --border:rgba(255,255,255,.11);
+  --strength:#C6FF3A; --strength-soft:rgba(198,255,58,.13);
+  --cardio:#2BE8D6; --body:#A98CFF; --accent2:#FF5A3C;
+  --mono:ui-monospace,'SF Mono',Menlo,'Roboto Mono',monospace;
+}
+html,body{ background:var(--bg); }
+
+/* flatten the aurora to a faint static wash — go graphic, not glassy */
+.aurora{ filter:blur(120px); opacity:.22; }
+.aurora i{ animation-duration:70s; }
+body::after{ display:none; }
+
+/* crisp flat cards (data pages) */
+.card{ background:#101014; border:1px solid var(--border); box-shadow:none; border-radius:16px; backdrop-filter:none; -webkit-backdrop-filter:none; }
+.card::before{ display:none; }
+
+/* ---- oversized editorial type ---- */
+.page-title{ font-size:clamp(2.6rem,8vw,4.4rem); letter-spacing:-.03em; text-transform:uppercase; line-height:.9; }
+.page-sub{ font-family:var(--mono); text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; color:var(--text2); }
+.btitle{ text-transform:uppercase; font-size:clamp(1.3rem,3.6vw,1.75rem); letter-spacing:-.01em; }
+.btitle-sub{ font-family:var(--mono); letter-spacing:.1em; text-transform:uppercase; font-size:.7rem; }
+.logo{ letter-spacing:-.02em; } .logo span{ background:none; -webkit-text-fill-color:var(--strength); color:var(--strength); }
+
+/* ---- HERO: full-bleed lime block, giant black word ---- */
+.hero-plan{ background:var(--strength) !important; border:none !important; border-radius:22px; margin-top:14px; padding:28px 30px !important; gap:22px; overflow:hidden; }
+.hero-plan::after{ display:none; }
+.hero-plan::before{ background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.4) 50%,transparent 62%) !important; }
+.hero-badge{ background:#0A0A0C !important; color:var(--strength) !important; box-shadow:none !important; border-radius:16px; width:60px; height:60px; }
+.hero-plan .stat-label{ color:rgba(0,0,0,.55); font-family:var(--mono); letter-spacing:.14em; }
+.hero-move{ background:none !important; -webkit-text-fill-color:#0A0A0C; color:#0A0A0C !important;
+  font-size:clamp(2.6rem,10vw,4.6rem) !important; text-transform:uppercase; letter-spacing:-.04em; line-height:.86; margin:2px 0; }
+.hero-plan .muted{ color:rgba(0,0,0,.72) !important; font-family:var(--mono); text-transform:uppercase; letter-spacing:.06em; font-size:.7rem; }
+
+/* ---- MARQUEE ticker ---- */
+.ticker{ margin:18px 0 6px; overflow:hidden; border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:11px 0; }
+.ticker__in{ display:inline-block; white-space:nowrap; animation:marq 22s linear infinite; font-family:var(--mono); text-transform:uppercase; letter-spacing:.14em; font-size:.78rem; color:var(--text); }
+.ticker__in span{ color:var(--accent2); margin:0 10px; font-weight:700; }
+@keyframes marq{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+
+/* ---- EDITORIAL checklist: numbered, big, strikethrough ---- */
+.ck-list{ counter-reset:ck; border-top:1px solid var(--border); }
+.ck-list::before{ display:none; }
+.ck-row{ counter-increment:ck; gap:18px !important; padding:16px 2px !important; border-bottom:1px solid var(--border) !important; align-items:center; transition:transform .14s, background .2s; }
+.ck-row::before{ content:counter(ck,decimal-leading-zero); font-family:var(--mono); font-size:.78rem; color:var(--text3); width:22px; flex:none; transition:color .2s; }
+.ck-row.on::before{ color:var(--strength); }
+.ck-lbl{ font-size:1.06rem; font-weight:600; flex:1; }
+.ck-row.on{ color:inherit; }
+.ck-row.on .ck-lbl{ text-decoration:line-through; text-decoration-color:var(--strength); text-decoration-thickness:2px; color:var(--text2); }
+.ck-box{ order:3; width:28px; height:28px; border-radius:9px; background:transparent; border:2px solid var(--text3); box-shadow:none; }
+.ck-row.on .ck-box{ background:var(--strength); border-color:transparent; color:#0A0A0C; box-shadow:none; }
+.ck-row:hover{ transform:translateX(6px); }
+
+/* rings keep round; recolor to lime, no glow */
+.ring{ filter:none; }
+.ringtxt{ font-family:var(--mono); }
+
+/* ---- LOG IT: bold outline buttons ---- */
+.qa{ background:transparent !important; border:1.5px solid var(--border) !important; border-radius:16px; padding:22px 10px !important; text-transform:uppercase; letter-spacing:.05em; font-size:1.02rem; box-shadow:none !important; }
+.qa:hover{ transform:translateY(-3px); }
+.qa-lime:hover{ border-color:var(--strength) !important; background:var(--strength-soft) !important; }
+.qa-cardio:hover{ border-color:var(--cardio) !important; background:var(--cardio-soft) !important; }
+
+/* ---- buttons / nav / tabbar ---- */
+.btn{ text-transform:uppercase; letter-spacing:.05em; font-weight:800; border-radius:12px; }
+.btn-primary{ background:var(--strength); color:#0A0A0C; box-shadow:none; }
+.btn-cardio{ background:var(--cardio); color:#04231f; box-shadow:none; }
+.btn-body{ background:var(--body); color:#0A0A0C; box-shadow:none; }
+.btn-ghost{ background:transparent; border:1px solid var(--border); }
+.nav-btn.active{ background:transparent; color:var(--strength); }
+.nav-btn.active::before{ background:var(--strength); }
+.tabbar{ background:#0A0A0C; backdrop-filter:none; -webkit-backdrop-filter:none; }
+.tabbar button.active{ color:var(--strength); }
+.toast{ background:var(--strength); color:#0A0A0C; }
+.timer-pill{ background:var(--strength); color:#0A0A0C; }
+.link-btn{ color:var(--accent2); text-transform:uppercase; font-family:var(--mono); letter-spacing:.08em; font-size:.76rem; }
+
+@media (prefers-reduced-motion:reduce){ .ticker__in{ animation:none !important; } }
+</style>
 </body>
 </html>
